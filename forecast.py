@@ -1,0 +1,407 @@
+#!/usr/bin/env python3
+"""Prévision d'aurores boréales pour Tromsø et Grindavík.
+
+Sources :
+  - NOAA SWPC 3-day forecast (Kp par tranche de 3 h UT)  -> source de référence
+  - GFZ Kp ensemble forecast (médiane, quartiles, min, max)
+  - Open-Meteo (couverture nuageuse horaire)
+  - Lune / soleil : calcul local (bibliothèque ephem), pas d'API
+
+Sorties : <out>/index.html, <out>/data.json, alerte ntfy si Kp NOAA >= 5.
+Tout est calculé en UTC ; seules les lignes d'information affichent des heures locales.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import sys
+import urllib.request
+from dataclasses import dataclass, field
+from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+import ephem
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+
+UTC = timezone.utc
+ROOT = Path(__file__).resolve().parent
+
+NOAA_URL = "https://services.swpc.noaa.gov/text/3-day-forecast.txt"
+GFZ_URL = "https://spaceweather.gfz.de/fileadmin/Kp-Forecast/CSV/kp_product_file_FORECAST_PAGER_SWIFT_LAST.json"
+OPEN_METEO_URL = (
+    "https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}"
+    "&hourly=cloud_cover&forecast_days=5&timezone=GMT"
+)
+USER_AGENT = "aurora-forecast/1.0 (+https://github.com/alexis-sk/aurora)"
+
+SITES = {
+    "tromso": {"name": "Tromsø", "lat": 69.6492, "lon": 18.9553, "tz": "Europe/Oslo",
+               "note": "Aurores fréquentes dès Kp 2, belles dès Kp 3."},
+    "grindavik": {"name": "Grindavík", "lat": 63.8424, "lon": -22.4338, "tz": "Atlantic/Reykjavik",
+                  "note": "Kp 2 commence à suffire, Kp 4 = très bonnes chances."},
+}
+WEIGHTS = {"kp": 0.4, "clouds": 0.4, "moon": 0.2}
+ALERT_KP = 5.0
+NIGHT_SLOTS = [(0, 15), (0, 18), (0, 21), (1, 0), (1, 3), (1, 6)]  # (décalage jour, heure UTC de début)
+SUN_DARK_ALT = -6.0          # soleil sous -6° = fin du crépuscule civil
+NOAA_STALE_HOURS = 18
+GFZ_STALE_HOURS = 48
+JOURS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+JOURS_COURTS = ["lun.", "mar.", "mer.", "jeu.", "ven.", "sam.", "dim."]
+
+
+# --------------------------------------------------------------------------- scoring
+def kp_score(kp: float) -> float:
+    """Kp -> score 0..1 (règle validée : 0-4 -> 0..0.40, 4-5 -> 0.40..0.85, 5-6 -> 0.85..1, >=6 -> 1)."""
+    if kp <= 0:
+        return 0.0
+    if kp <= 4:
+        return 0.4 * kp / 4
+    if kp <= 5:
+        return 0.4 + 0.45 * (kp - 4)
+    if kp < 6:
+        return 0.85 + 0.15 * (kp - 5)
+    return 1.0
+
+
+# --------------------------------------------------------------------------- fetch
+def fetch(url: str) -> str:
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return resp.read().decode("utf-8")
+
+
+# --------------------------------------------------------------------------- parsers
+MONTHS = {m: i for i, m in enumerate(
+    ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
+
+
+def parse_noaa(text: str) -> tuple[datetime, dict[datetime, float]]:
+    """Retourne (date d'émission, {début de tranche UTC: Kp})."""
+    m = re.search(r":Issued:\s+(\d{4}) (\w{3}) (\d{1,2}) (\d{2})(\d{2}) UTC", text)
+    if not m:
+        raise ValueError("NOAA : ligne :Issued: introuvable")
+    issued = datetime(int(m[1]), MONTHS[m[2]], int(m[3]), int(m[4]), int(m[5]), tzinfo=UTC)
+
+    lines = text.splitlines()
+    idx = next((i for i, l in enumerate(lines) if l.startswith("NOAA Kp index breakdown")), None)
+    if idx is None:
+        raise ValueError("NOAA : tableau 'Kp index breakdown' introuvable")
+    days = []
+    for mon, day in re.findall(r"([A-Z][a-z]{2})\s+(\d{1,2})", lines[idx + 2]):
+        d = date(issued.year, MONTHS[mon], int(day))
+        if (d - issued.date()).days > 300:      # passage d'année (bulletin de fin décembre)
+            d = d.replace(year=d.year - 1)
+        elif (issued.date() - d).days > 300:
+            d = d.replace(year=d.year + 1)
+        days.append(d)
+    if len(days) != 3:
+        raise ValueError(f"NOAA : 3 dates attendues, trouvé {days}")
+
+    kp: dict[datetime, float] = {}
+    for line in lines[idx + 3: idx + 12]:
+        row = re.match(r"\s*(\d{2})-(\d{2})UT\s+(.*)", line)
+        if not row:
+            continue
+        hour = int(row[1])
+        values = re.findall(r"\d+(?:\.\d+)?", re.sub(r"\(G\d\)", "", row[3]))
+        for d, v in zip(days, values):
+            kp[datetime(d.year, d.month, d.day, hour, tzinfo=UTC)] = float(v)
+    if len(kp) != 24:
+        raise ValueError(f"NOAA : 24 valeurs attendues, {len(kp)} lues")
+    return issued, kp
+
+
+def parse_gfz(raw: str) -> dict[datetime, dict[str, float]]:
+    data = json.loads(raw)
+    times = data["Time (UTC)"]
+    cols = {"median": "median", "q25": "0.25-quantile", "q75": "0.75-quantile",
+            "min": "minimum", "max": "maximum"}
+    out = {}
+    for k, t in times.items():
+        dt = datetime.strptime(t, "%d-%m-%Y %H:%M").replace(tzinfo=UTC)
+        out[dt] = {name: float(data[src][k]) for name, src in cols.items()}
+    return out
+
+
+def parse_open_meteo(raw: str) -> dict[datetime, float]:
+    data = json.loads(raw)
+    if data.get("error"):
+        raise ValueError(f"Open-Meteo : {data.get('reason')}")
+    h = data["hourly"]
+    return {datetime.fromisoformat(t).replace(tzinfo=UTC): c
+            for t, c in zip(h["time"], h["cloud_cover"]) if c is not None}
+
+
+# --------------------------------------------------------------------------- astro
+def _observer(site: dict, when: datetime) -> ephem.Observer:
+    o = ephem.Observer()
+    o.lat, o.lon = str(site["lat"]), str(site["lon"])
+    o.elevation = 0
+    o.pressure = 0  # pas de réfraction : suffisant pour un critère "levée / couchée"
+    o.date = ephem.Date(when.replace(tzinfo=None))
+    return o
+
+
+def body_alt(site: dict, when: datetime, body) -> float:
+    b = body()
+    b.compute(_observer(site, when))
+    return float(b.alt) * 180 / 3.141592653589793
+
+
+def moon_illum(when: datetime) -> float:
+    m = ephem.Moon()
+    m.compute(ephem.Date(when.replace(tzinfo=None)))
+    return float(m.moon_phase) * 100
+
+
+def moon_events(site: dict, start: datetime) -> dict:
+    """Prochains lever / coucher de lune après `start`, en heure locale du site."""
+    tz = ZoneInfo(site["tz"])
+    o = _observer(site, start)
+    res = {}
+    for key, fn in (("rise", o.next_rising), ("set", o.next_setting)):
+        try:
+            dt = ephem.Date(fn(ephem.Moon())).datetime().replace(tzinfo=UTC).astimezone(tz)
+            res[key] = f"{JOURS_COURTS[dt.weekday()]} {dt:%H:%M}"
+        except ephem.AlwaysUpError:
+            res[key] = "aucun (lune toujours levée)"
+        except ephem.NeverUpError:
+            res[key] = "aucun (lune sous l'horizon)"
+    return res
+
+
+# --------------------------------------------------------------------------- model
+@dataclass
+class SiteSlot:
+    clouds_min: float | None = None
+    clouds_max: float | None = None
+    clouds_mean: float | None = None
+    moon_alt: float = 0.0
+    moon_up_frac: float = 0.0
+    dark: bool = False
+    score: float | None = None
+
+
+@dataclass
+class Slot:
+    start: datetime
+    kp: float | None
+    gfz: dict | None
+    illum: float
+    sites: dict[str, SiteSlot] = field(default_factory=dict)
+
+    @property
+    def label(self) -> str:
+        return f"{self.start:%H}h-{(self.start + timedelta(hours=3)):%H}h"
+
+
+def build_slot(start: datetime, noaa: dict, gfz: dict | None, clouds: dict) -> Slot:
+    samples = [start + timedelta(minutes=m) for m in (30, 90, 150)]
+    mid = samples[1]
+    slot = Slot(start=start, kp=noaa.get(start), gfz=(gfz or {}).get(start), illum=moon_illum(mid))
+    for key, site in SITES.items():
+        s = SiteSlot()
+        hours = [clouds.get(key, {}).get(start + timedelta(hours=h)) for h in range(3)]
+        hours = [h for h in hours if h is not None]
+        if hours:
+            s.clouds_min, s.clouds_max = min(hours), max(hours)
+            s.clouds_mean = sum(hours) / len(hours)
+        alts = [body_alt(site, t, ephem.Moon) for t in samples]
+        s.moon_alt = alts[1]
+        s.moon_up_frac = sum(a > 0 for a in alts) / len(alts)
+        s.dark = body_alt(site, mid, ephem.Sun) < SUN_DARK_ALT
+        if s.dark and slot.kp is not None and s.clouds_mean is not None:
+            moon_score = 1 - (slot.illum / 100) * s.moon_up_frac
+            s.score = (WEIGHTS["kp"] * kp_score(slot.kp)
+                       + WEIGHTS["clouds"] * (1 - s.clouds_mean / 100)
+                       + WEIGHTS["moon"] * moon_score)
+        slot.sites[key] = s
+    return slot
+
+
+def build_night(d: date, noaa: dict, gfz: dict | None, clouds: dict) -> dict:
+    slots = [build_slot(datetime(d.year, d.month, d.day, tzinfo=UTC) + timedelta(days=off, hours=h),
+                        noaa, gfz, clouds) for off, h in NIGHT_SLOTS]
+    with_kp = [s for s in slots if s.kp is not None]
+    best = max(with_kp, key=lambda s: s.kp) if with_kp else None
+    site_scores = {}
+    for key in SITES:
+        scored = [s.sites[key].score for s in slots if s.sites[key].score is not None]
+        site_scores[key] = max(scored) if scored else None
+    return {
+        "date": d,
+        "title": f"{d.isoformat()} - {JOURS[d.weekday()]}",
+        "slots": slots,
+        "kp_max": best.kp if best else None,
+        "best_window": (best.start, best.start + timedelta(hours=3)) if best else None,
+        "site_scores": site_scores,
+        "has_noaa": bool(with_kp),
+    }
+
+
+def next_saturday(today: date) -> date:
+    return today + timedelta(days=(5 - today.weekday()) % 7)
+
+
+def utc_offset_label(tz: str, now: datetime) -> str:
+    off = now.astimezone(ZoneInfo(tz)).utcoffset()
+    hours = off.total_seconds() / 3600
+    return f"UTC{hours:+g}"
+
+
+# --------------------------------------------------------------------------- alert
+def send_alert(alerts: list[Slot], page_url: str) -> str:
+    lines = [f"{JOURS_COURTS[s.start.weekday()]} {s.start:%d/%m %H}h UTC : Kp {s.kp:g}" for s in alerts]
+    body = "Kp NOAA >= 5 prévu :\n" + "\n".join(lines)
+    topic = os.environ.get("NTFY_TOPIC", "").strip()
+    if not topic:
+        return "alerte non envoyée (secret NTFY_TOPIC absent)"
+    req = urllib.request.Request(
+        f"https://ntfy.sh/{topic}", data=body.encode("utf-8"), method="POST",
+        headers={"Title": f"Aurores : Kp {max(s.kp for s in alerts):g} prévu",
+                 "Priority": "high", "Tags": "milky_way", "Click": page_url,
+                 "User-Agent": USER_AGENT})
+    urllib.request.urlopen(req, timeout=20).read()
+    return "alerte envoyée sur ntfy"
+
+
+# --------------------------------------------------------------------------- main
+def load_sources(fixtures: Path | None):
+    """Retourne (noaa_text, gfz_raw, {site: open_meteo_raw}, erreurs)."""
+    errors = []
+
+    def get(name, url):
+        try:
+            if fixtures:
+                return (fixtures / name).read_text(encoding="utf-8")
+            return fetch(url)
+        except Exception as e:  # noqa: BLE001 - on veut continuer avec les autres sources
+            errors.append(f"{name} : {e}")
+            return None
+
+    noaa = get("noaa.txt", NOAA_URL)
+    gfz = get("gfz.json", GFZ_URL)
+    meteo = {k: get(f"open_meteo_{k}.json", OPEN_METEO_URL.format(**s)) for k, s in SITES.items()}
+    return noaa, gfz, meteo, errors
+
+
+def run(out: Path, now: datetime, fixtures: Path | None, page_url: str) -> int:
+    noaa_raw, gfz_raw, meteo_raw, errors = load_sources(fixtures)
+    warnings: list[str] = []
+
+    noaa_issued, noaa = None, {}
+    if noaa_raw:
+        try:
+            noaa_issued, noaa = parse_noaa(noaa_raw)
+            if now - noaa_issued > timedelta(hours=NOAA_STALE_HOURS):
+                warnings.append(f"Bulletin NOAA ancien (émis le {noaa_issued:%d/%m %H:%M} UTC).")
+        except ValueError as e:
+            errors.append(str(e))
+
+    gfz, gfz_first = None, None
+    if gfz_raw:
+        try:
+            parsed = parse_gfz(gfz_raw)
+            gfz_first = min(parsed)
+            if now - gfz_first > timedelta(hours=GFZ_STALE_HOURS):
+                warnings.append(f"Fichier GFZ périmé (commence le {gfz_first:%d/%m/%Y}) : colonnes GFZ masquées.")
+            else:
+                gfz = parsed
+        except (ValueError, KeyError) as e:
+            errors.append(f"GFZ : {e}")
+
+    clouds = {}
+    for key, raw in meteo_raw.items():
+        if raw:
+            try:
+                clouds[key] = parse_open_meteo(raw)
+            except (ValueError, KeyError) as e:
+                errors.append(f"Open-Meteo {SITES[key]['name']} : {e}")
+
+    noaa_days = sorted({t.date() for t in noaa})
+    nights = [build_night(d, noaa, gfz, clouds) for d in noaa_days]
+
+    sat_date = next_saturday(now.date())
+    sat = build_night(sat_date, noaa, gfz, clouds)
+    reco = None
+    if sat["has_noaa"]:
+        scored = {k: v for k, v in sat["site_scores"].items() if v is not None}
+        if scored:
+            best = max(scored, key=scored.get)
+            reco = {"key": best, "name": SITES[best]["name"], "score": scored[best],
+                    "moon": moon_events(SITES[best], datetime(sat_date.year, sat_date.month, sat_date.day, 12, tzinfo=UTC)),
+                    "illum": moon_illum(datetime(sat_date.year, sat_date.month, sat_date.day, 22, tzinfo=UTC))}
+
+    alerts = [Slot(t, k, None, 0) for t, k in sorted(noaa.items()) if k >= ALERT_KP]
+    alert_status = None
+    if alerts:
+        try:
+            alert_status = send_alert(alerts, page_url)
+        except Exception as e:  # noqa: BLE001
+            alert_status = f"échec de l'envoi de l'alerte : {e}"
+            errors.append(alert_status)
+
+    paris = ZoneInfo("Europe/Paris")
+    ctx = {
+        "now_paris": now.astimezone(paris).strftime("%d/%m/%Y %H:%M:%S"),
+        "now_utc": now.strftime("%d/%m/%Y %H:%M"),
+        "weights": WEIGHTS,
+        "sites": SITES,
+        "sat": sat, "reco": reco,
+        "nights": nights,
+        "noaa_issued": noaa_issued,
+        "gfz_ok": gfz is not None,
+        "offsets": {"Paris": utc_offset_label("Europe/Paris", now),
+                    **{s["name"]: utc_offset_label(s["tz"], now) for s in SITES.values()}},
+        "alerts": alerts, "alert_kp": ALERT_KP,
+        "errors": errors, "warnings": warnings,
+    }
+    env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
+    env.filters["kp"] = lambda v: "—" if v is None else f"{v:g}"
+    env.filters["num"] = lambda v: "—" if v is None else f"{v:.2f}".replace(".", ",")
+    env.filters["jour"] = lambda d: JOURS_COURTS[d.weekday()]
+    env.filters["pct"] = lambda v: "—" if v is None else f"{v * 100:.0f} %"
+
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "index.html").write_text(env.get_template("index.html.j2").render(**ctx), encoding="utf-8")
+    (out / "data.json").write_text(json.dumps(to_json(ctx, now), indent=1, ensure_ascii=False), encoding="utf-8")
+
+    reco_txt = f"{reco['name']} ({reco['score']:.0%})" if reco else "pas de données"
+    summary = [f"NOAA émis : {noaa_issued}", f"Samedi {sat_date} : {reco_txt}",
+               f"Alertes Kp>={ALERT_KP:g} : {len(alerts)} ({alert_status or 'aucune'})", *[f"⚠ {w}" for w in warnings],
+               *[f"✖ {e}" for e in errors]]
+    print("\n".join(summary))
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+            f.write("\n".join(f"- {l}" for l in summary) + "\n")
+    return 1 if (not noaa or any("échec" in e for e in errors)) else 0
+
+
+def to_json(ctx: dict, now: datetime) -> dict:
+    def night(n):
+        return {"date": n["date"].isoformat(), "kp_max": n["kp_max"], "site_scores": n["site_scores"],
+                "slots": [{"start": s.start.isoformat(), "kp": s.kp, "gfz": s.gfz, "moon_illum": round(s.illum, 1),
+                           "sites": {k: vars(v) for k, v in s.sites.items()}} for s in n["slots"]]}
+    return {"generated_utc": now.isoformat(), "noaa_issued": ctx["noaa_issued"].isoformat() if ctx["noaa_issued"] else None,
+            "saturday": night(ctx["sat"]), "recommendation": ctx["reco"] and {k: ctx["reco"][k] for k in ("key", "score")},
+            "nights": [night(n) for n in ctx["nights"]], "alerts": [{"start": s.start.isoformat(), "kp": s.kp} for s in ctx["alerts"]],
+            "warnings": ctx["warnings"], "errors": ctx["errors"]}
+
+
+def main() -> int:
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--out", default="site", type=Path)
+    p.add_argument("--fixtures", type=Path, help="lire les sources depuis un dossier local (tests)")
+    p.add_argument("--now", help="date/heure UTC simulée, ex. 2026-10-16T17:15")
+    p.add_argument("--page-url", default=os.environ.get("PAGE_URL", ""))
+    a = p.parse_args()
+    now = datetime.fromisoformat(a.now).replace(tzinfo=UTC) if a.now else datetime.now(UTC)
+    return run(a.out, now, a.fixtures, a.page_url)
+
+
+if __name__ == "__main__":
+    sys.exit(main())

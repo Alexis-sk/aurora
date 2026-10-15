@@ -1,0 +1,84 @@
+"""Tests hors ligne : python -m unittest discover tests"""
+import json
+import sys
+import tempfile
+import unittest
+from datetime import date, datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+import forecast as f  # noqa: E402
+
+UTC = timezone.utc
+FIX = ROOT / "tests" / "fixtures"
+
+
+class KpScore(unittest.TestCase):
+    def test_paliers(self):
+        cases = {0: 0, 2: 0.2, 4: 0.4, 4.5: 0.625, 5: 0.85, 5.5: 0.925, 6: 1.0, 8: 1.0, -1: 0}
+        for kp, expected in cases.items():
+            self.assertAlmostEqual(f.kp_score(kp), expected, places=6, msg=f"Kp {kp}")
+
+    def test_monotone(self):
+        values = [f.kp_score(x / 100) for x in range(0, 900)]
+        self.assertEqual(values, sorted(values))
+
+
+class Parsers(unittest.TestCase):
+    def test_noaa_reel(self):
+        issued, kp = f.parse_noaa((FIX / "real_2026-10-14" / "noaa.txt").read_text())
+        self.assertEqual(issued, datetime(2026, 10, 14, 12, 30, tzinfo=UTC))
+        self.assertEqual(len(kp), 24)
+        self.assertEqual(kp[datetime(2026, 10, 14, 21, tzinfo=UTC)], 3.67)
+        self.assertEqual(kp[datetime(2026, 10, 16, 0, tzinfo=UTC)], 2.33)
+
+    def test_noaa_annotations_tempete(self):
+        _, kp = f.parse_noaa((FIX / "storm_synthetic" / "noaa.txt").read_text())
+        self.assertEqual(kp[datetime(2026, 10, 17, 21, tzinfo=UTC)], 6.0)   # "6.00 (G2)"
+        self.assertEqual(kp[datetime(2026, 10, 18, 0, tzinfo=UTC)], 5.67)
+
+    def test_noaa_passage_annee(self):
+        text = (":Issued: 2026 Dec 31 1230 UTC\n\nNOAA Kp index breakdown Dec 31-Jan 02 2027\n\n"
+                "             Dec 31       Jan 01       Jan 02\n"
+                + "".join(f"{h:02d}-{(h + 3) % 24:02d}UT   1.00   2.00   3.00\n" for h in range(0, 24, 3)))
+        _, kp = f.parse_noaa(text)
+        self.assertIn(datetime(2026, 12, 31, 0, tzinfo=UTC), kp)
+        self.assertIn(datetime(2027, 1, 2, 21, tzinfo=UTC), kp)
+
+    def test_gfz(self):
+        g = f.parse_gfz((FIX / "storm_synthetic" / "gfz.json").read_text())
+        self.assertEqual(min(g), datetime(2026, 10, 16, tzinfo=UTC))
+        self.assertEqual(set(next(iter(g.values()))), {"median", "q25", "q75", "min", "max"})
+
+
+class Samedi(unittest.TestCase):
+    def test_next_saturday(self):
+        self.assertEqual(f.next_saturday(date(2026, 10, 15)), date(2026, 10, 17))  # jeudi
+        self.assertEqual(f.next_saturday(date(2026, 10, 17)), date(2026, 10, 17))  # samedi même
+
+    def run_scenario(self, name, now):
+        with tempfile.TemporaryDirectory() as d:
+            code = f.run(Path(d), datetime.fromisoformat(now).replace(tzinfo=UTC), FIX / name, "")
+            data = json.loads((Path(d) / "data.json").read_text())
+            html = (Path(d) / "index.html").read_text()
+        return code, data, html
+
+    def test_samedi_vide_et_gfz_perime(self):
+        code, data, html = self.run_scenario("real_2026-10-14", "2026-10-14T13:15")
+        self.assertEqual(code, 0)
+        self.assertIsNone(data["recommendation"])
+        self.assertIn("pas encore de données NOAA", html)
+        self.assertTrue(any("GFZ périmé" in w for w in data["warnings"]))
+        self.assertEqual(data["alerts"], [])
+
+    def test_tempete_vendredi_soir(self):
+        code, data, html = self.run_scenario("storm_synthetic", "2026-10-16T17:15")
+        self.assertEqual(code, 0)
+        self.assertEqual(data["recommendation"]["key"], "grindavik")   # ciel dégagé vs Tromsø couvert
+        self.assertEqual(len(data["alerts"]), 4)
+        self.assertIn("Grindavík : UTC+0", html)
+
+
+if __name__ == "__main__":
+    unittest.main()
