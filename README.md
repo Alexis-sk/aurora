@@ -19,7 +19,7 @@ La page est publiée sur GitHub Pages, à l'adresse <https://alexis-sk.github.io
 
 **Score d'un site pour la nuit** = meilleure tranche. La destination recommandée pour samedi est le site ayant le meilleur score. L'encadré reste vide tant que NOAA ne couvre pas la nuit de samedi.
 
-**Alerte** : à chaque run où une tranche NOAA des trois jours atteint Kp ≥ 5, le workflow ouvre une issue `aurora-alert` qui mentionne le propriétaire du dépôt, ou commente l'issue déjà ouverte. Le propriétaire reçoit alors un mail et un push via l'app GitHub Mobile. L'issue est fermée au premier run sans Kp ≥ 5. Aucun secret n'est nécessaire, le jeton natif du workflow suffit.
+**Alerte** : à chaque run où une tranche NOAA des trois jours atteint Kp ≥ 5, le workflow ouvre une issue `aurora-alert` qui mentionne le propriétaire du dépôt, ou commente l'issue déjà ouverte. 
 
 ## Mise en route (une fois)
 
