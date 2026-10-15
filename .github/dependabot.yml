@@ -1,0 +1,18 @@
+# Mises à jour automatiques proposées en PR (une PR groupée par écosystème et par mois).
+version: 2
+updates:
+  - package-ecosystem: github-actions   # actions du workflow, épinglées par SHA
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: pip              # requirements.txt (ephem, jinja2)
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      python:
+        patterns: ["*"]
