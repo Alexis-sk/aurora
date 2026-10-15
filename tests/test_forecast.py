@@ -78,6 +78,23 @@ class Samedi(unittest.TestCase):
         self.assertEqual(data["recommendation"]["key"], "grindavik")   # ciel dégagé vs Tromsø couvert
         self.assertEqual(len(data["alerts"]), 4)
         self.assertIn("Grindavík : UTC+0", html)
+        self.assertEqual(data["saturday"]["noaa_slots"], 6)
+        self.assertNotIn("Nuit partielle", html)
+
+    def test_samedi_partiel_jeudi(self):
+        # bulletin couvrant 15-17/10 : nuit de samedi 17 couverte jusqu'à 00h UTC seulement
+        text = (FIX / "storm_synthetic" / "noaa.txt").read_text().replace("Oct 16 1230", "Oct 15 1230") \
+            .replace("Oct 16-Oct 18", "Oct 15-Oct 17").replace("Oct 16       Oct 17       Oct 18", "Oct 15       Oct 16       Oct 17")
+        with tempfile.TemporaryDirectory() as d:
+            src = Path(d) / "src"; src.mkdir()
+            for name in ("gfz.json", "open_meteo_tromso.json", "open_meteo_grindavik.json"):
+                (src / name).write_text((FIX / "storm_synthetic" / name).read_text())
+            (src / "noaa.txt").write_text(text)
+            f.run(Path(d) / "out", datetime(2026, 10, 15, 13, 15, tzinfo=UTC), src, "")
+            data = json.loads((Path(d) / "out" / "data.json").read_text())
+            html = (Path(d) / "out" / "index.html").read_text()
+        self.assertEqual(data["saturday"]["noaa_slots"], 3)
+        self.assertIn("Nuit partielle : 3/6", html)
 
 
 if __name__ == "__main__":

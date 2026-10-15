@@ -18,6 +18,7 @@
   .highlight strong { color: #000; }
   .highlight .city { color: #c40000; font-weight: 800; }
   .empty { color: var(--muted); font-style: italic; }
+  .partial { color: var(--warn); background: var(--warn-bg); padding: 6px 10px; border-radius: 6px; }
   .meta-line { margin: 4px 0; line-height: 1.25; }
   .meta-line strong { color: var(--blue-dark); }
   .info-blue { color: var(--blue-dark); margin: 4px 0; }
@@ -115,6 +116,9 @@
 {%- if reco %}
   <p><strong>Destination recommandée</strong> : <span class="city">{{ reco.name }}</span> — Score&nbsp;: {{ reco.score|pct }} — KP max nuit&nbsp;: {{ kpcell(sat.kp_max) }}
   {%- for key, sc in sat.site_scores.items() if key != reco.key %} <em>({{ sites[key].name }} : {{ sc|pct }})</em>{% endfor %}</p>
+  {%- if sat.noaa_slots < sat.total_slots %}
+  <p class="partial">⚠ Nuit partielle : {{ sat.noaa_slots }}/{{ sat.total_slots }} tranches couvertes par NOAA — score calculé sur ces tranches seulement (la nuit complète arrive avec le bulletin de la veille).</p>
+  {%- endif %}
   <p><strong>Lune</strong> <em>(heure locale {{ reco.name }})</em> : lever {{ reco.moon.rise }}, coucher {{ reco.moon.set }}, illumination {{ "%.0f"|format(reco.illum) }}%</p>
   {{ table(sat, with_scores=true) }}
 {%- else %}

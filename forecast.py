@@ -240,6 +240,8 @@ def build_night(d: date, noaa: dict, gfz: dict | None, clouds: dict) -> dict:
         "best_window": (best.start, best.start + timedelta(hours=3)) if best else None,
         "site_scores": site_scores,
         "has_noaa": bool(with_kp),
+        "noaa_slots": len(with_kp),
+        "total_slots": len(slots),
     }
 
 
@@ -384,6 +386,7 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str) -> int:
 def to_json(ctx: dict, now: datetime) -> dict:
     def night(n):
         return {"date": n["date"].isoformat(), "kp_max": n["kp_max"], "site_scores": n["site_scores"],
+                "noaa_slots": n["noaa_slots"],
                 "slots": [{"start": s.start.isoformat(), "kp": s.kp, "gfz": s.gfz, "moon_illum": round(s.illum, 1),
                            "sites": {k: vars(v) for k, v in s.sites.items()}} for s in n["slots"]]}
     return {"generated_utc": now.isoformat(), "noaa_issued": ctx["noaa_issued"].isoformat() if ctx["noaa_issued"] else None,
