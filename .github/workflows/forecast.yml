@@ -67,7 +67,8 @@ jobs:
           if [ -f alert.md ]; then
             BODY="@${OWNER} $(cat alert.md)"
             if [ -z "$OPEN" ]; then
-              gh issue create --repo "$REPO" --label "$LABEL" --title "Alerte aurores : Kp ≥ 5 prévu" --body "$BODY"
+              URL=$(gh issue create --repo "$REPO" --label "$LABEL" --title "Alerte aurores : Kp ≥ 5 prévu" --body "$BODY")
+              gh issue lock "${URL##*/}" --repo "$REPO"   # commentaires réservés aux collaborateurs
             else
               gh issue comment "$OPEN" --repo "$REPO" --body "$BODY"
             fi
@@ -81,7 +82,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs
-          git diff --cached --quiet || git commit -m "forecast $(date -u +%Y-%m-%dT%H:%MZ)"
+          git diff --cached --quiet || git commit -m "update $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
 
       - uses: actions/configure-pages@v5
