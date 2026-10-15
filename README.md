@@ -19,12 +19,12 @@ La page est publiée sur GitHub Pages, à l'adresse <https://alexis-sk.github.io
 
 **Score d'un site pour la nuit** = meilleure tranche. La destination recommandée pour samedi est le site ayant le meilleur score. L'encadré reste vide tant que NOAA ne couvre pas la nuit de samedi.
 
-**Alerte** : à chaque run, si une tranche NOAA des trois jours atteint Kp ≥ 5, une notification est envoyée via [ntfy](https://ntfy.sh). Il faut pour cela que le secret `NTFY_TOPIC` soit défini.
+**Alerte** : à chaque run où une tranche NOAA des trois jours atteint Kp ≥ 5, le workflow ouvre une issue `aurora-alert` qui mentionne le propriétaire du dépôt, ou commente l'issue déjà ouverte. Le propriétaire reçoit alors un mail et un push via l'app GitHub Mobile. L'issue est fermée au premier run sans Kp ≥ 5. Aucun secret n'est nécessaire, le jeton natif du workflow suffit.
 
 ## Mise en route (une fois)
 
 1. **Settings → Pages → Build and deployment → Source : « GitHub Actions »**.
-2. **Alerte (optionnel)** : installer l'application ntfy sur le téléphone et s'abonner à un nom de topic long et aléatoire. Les topics ntfy.sh sont publics pour qui en connaît le nom. Créer ensuite le secret **Settings → Secrets and variables → Actions → New repository secret** avec le nom `NTFY_TOPIC` et le nom du topic comme valeur.
+2. **Alerte** : installer GitHub Mobile et activer ses notifications. Pour tester, lancer **Run workflow** en cochant « Envoyer une alerte de test ».
 3. **Premier run** : onglet **Actions → Aurora forecast → Run workflow**.
 
 ## En local

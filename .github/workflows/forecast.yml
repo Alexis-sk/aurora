@@ -6,10 +6,16 @@ on:
     - cron: "15 1 * * *"
     - cron: "15 13 * * *"
     - cron: "15 17 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_alert:
+        description: "Envoyer une alerte de test (issue GitHub)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write   # commit de docs/ (historique + évite la désactivation du cron après 60 j sans activité)
+  issues: write     # alerte : issue GitHub qui mentionne le propriétaire (mail + push GitHub Mobile)
   pages: write
   id-token: write
 
@@ -40,9 +46,34 @@ jobs:
 
       - name: Forecast
         env:
-          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           PAGE_URL: https://alexis-sk.github.io/aurora/
-        run: python forecast.py --out docs
+        run: python forecast.py --out docs --alert-file alert.md
+
+      - name: Alerte (issue GitHub)
+        if: ${{ !cancelled() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          OWNER: ${{ github.repository_owner }}
+          TEST_ALERT: ${{ inputs.test_alert }}
+        run: |
+          set -euo pipefail
+          LABEL=aurora-alert
+          gh label create "$LABEL" --repo "$REPO" --color d43d00 --description "Alerte Kp NOAA >= 5" --force >/dev/null
+          if [ "${TEST_ALERT:-false}" = "true" ]; then
+            printf 'Notification de **test** déclenchée manuellement : aucune alerte réelle. Le prochain run planifié fermera cette issue.\n' > alert.md
+          fi
+          OPEN=$(gh issue list --repo "$REPO" --label "$LABEL" --state open --json number --jq '.[0].number // empty')
+          if [ -f alert.md ]; then
+            BODY="@${OWNER} $(cat alert.md)"
+            if [ -z "$OPEN" ]; then
+              gh issue create --repo "$REPO" --label "$LABEL" --title "Alerte aurores : Kp ≥ 5 prévu" --body "$BODY"
+            else
+              gh issue comment "$OPEN" --repo "$REPO" --body "$BODY"
+            fi
+          elif [ -n "$OPEN" ]; then
+            gh issue close "$OPEN" --repo "$REPO" --comment "Fin d'alerte : plus aucune tranche NOAA à Kp ≥ 5."
+          fi
 
       - name: Commit data
         if: ${{ !cancelled() && hashFiles('docs/index.html') != '' }}

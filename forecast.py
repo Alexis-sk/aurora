@@ -7,7 +7,7 @@ Sources :
   - Open-Meteo (couverture nuageuse horaire)
   - Lune / soleil : calcul local (bibliothèque ephem), pas d'API
 
-Sorties : <out>/index.html, <out>/data.json, alerte ntfy si Kp NOAA >= 5.
+Sorties : <out>/index.html, <out>/data.json, et --alert-file (markdown) si Kp NOAA >= 5.
 Tout est calculé en UTC ; seules les lignes d'information affichent des heures locales.
 """
 from __future__ import annotations
@@ -256,19 +256,13 @@ def utc_offset_label(tz: str, now: datetime) -> str:
 
 
 # --------------------------------------------------------------------------- alert
-def send_alert(alerts: list[Slot], page_url: str) -> str:
-    lines = [f"{JOURS_COURTS[s.start.weekday()]} {s.start:%d/%m %H}h UTC : Kp {s.kp:g}" for s in alerts]
-    body = "Kp NOAA >= 5 prévu :\n" + "\n".join(lines)
-    topic = os.environ.get("NTFY_TOPIC", "").strip()
-    if not topic:
-        return "alerte non envoyée (secret NTFY_TOPIC absent)"
-    req = urllib.request.Request(
-        f"https://ntfy.sh/{topic}", data=body.encode("utf-8"), method="POST",
-        headers={"Title": f"Aurores : Kp {max(s.kp for s in alerts):g} prévu",
-                 "Priority": "high", "Tags": "milky_way", "Click": page_url,
-                 "User-Agent": USER_AGENT})
-    urllib.request.urlopen(req, timeout=20).read()
-    return "alerte envoyée sur ntfy"
+def alert_markdown(alerts: list[Slot], noaa_issued: datetime | None, page_url: str) -> str:
+    """Corps de l'alerte (issue GitHub). La création / le commentaire de l'issue est fait par le workflow."""
+    lines = [f"- {JOURS_COURTS[s.start.weekday()]} {s.start:%d/%m} {s.start:%H}h-{(s.start + timedelta(hours=3)):%H}h UTC : **Kp {s.kp:g}**"
+             for s in alerts]
+    issued = f"{noaa_issued:%d/%m/%Y %H:%M} UTC" if noaa_issued else "?"
+    return (f"Kp NOAA ≥ {ALERT_KP:g} prévu (bulletin du {issued}) :\n\n" + "\n".join(lines)
+            + (f"\n\nPage : {page_url}" if page_url else "") + "\n")
 
 
 # --------------------------------------------------------------------------- main
@@ -291,7 +285,7 @@ def load_sources(fixtures: Path | None):
     return noaa, gfz, meteo, errors
 
 
-def run(out: Path, now: datetime, fixtures: Path | None, page_url: str) -> int:
+def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_file: Path | None = None) -> int:
     noaa_raw, gfz_raw, meteo_raw, errors = load_sources(fixtures)
     warnings: list[str] = []
 
@@ -339,13 +333,10 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str) -> int:
                     "illum": moon_illum(datetime(sat_date.year, sat_date.month, sat_date.day, 22, tzinfo=UTC))}
 
     alerts = [Slot(t, k, None, 0) for t, k in sorted(noaa.items()) if k >= ALERT_KP]
-    alert_status = None
-    if alerts:
-        try:
-            alert_status = send_alert(alerts, page_url)
-        except Exception as e:  # noqa: BLE001
-            alert_status = f"échec de l'envoi de l'alerte : {e}"
-            errors.append(alert_status)
+    if alert_file:
+        alert_file.unlink(missing_ok=True)
+        if alerts:
+            alert_file.write_text(alert_markdown(alerts, noaa_issued, page_url), encoding="utf-8")
 
     paris = ZoneInfo("Europe/Paris")
     ctx = {
@@ -374,13 +365,13 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str) -> int:
 
     reco_txt = f"{reco['name']} ({reco['score']:.0%})" if reco else "pas de données"
     summary = [f"NOAA émis : {noaa_issued}", f"Samedi {sat_date} : {reco_txt}",
-               f"Alertes Kp>={ALERT_KP:g} : {len(alerts)} ({alert_status or 'aucune'})", *[f"⚠ {w}" for w in warnings],
+               f"Alertes Kp>={ALERT_KP:g} : {len(alerts)} ", *[f"⚠ {w}" for w in warnings],
                *[f"✖ {e}" for e in errors]]
     print("\n".join(summary))
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
             f.write("\n".join(f"- {l}" for l in summary) + "\n")
-    return 1 if (not noaa or any("échec" in e for e in errors)) else 0
+    return 1 if not noaa else 0
 
 
 def to_json(ctx: dict, now: datetime) -> dict:
@@ -401,9 +392,10 @@ def main() -> int:
     p.add_argument("--fixtures", type=Path, help="lire les sources depuis un dossier local (tests)")
     p.add_argument("--now", help="date/heure UTC simulée, ex. 2026-10-16T17:15")
     p.add_argument("--page-url", default=os.environ.get("PAGE_URL", ""))
+    p.add_argument("--alert-file", type=Path, help="écrit le corps de l'alerte (markdown) si Kp >= seuil")
     a = p.parse_args()
     now = datetime.fromisoformat(a.now).replace(tzinfo=UTC) if a.now else datetime.now(UTC)
-    return run(a.out, now, a.fixtures, a.page_url)
+    return run(a.out, now, a.fixtures, a.page_url, a.alert_file)
 
 
 if __name__ == "__main__":

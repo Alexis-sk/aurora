@@ -81,6 +81,16 @@ class Samedi(unittest.TestCase):
         self.assertEqual(data["saturday"]["noaa_slots"], 6)
         self.assertNotIn("Nuit partielle", html)
 
+    def test_fichier_alerte(self):
+        with tempfile.TemporaryDirectory() as d:
+            alert = Path(d) / "alert.md"
+            f.run(Path(d) / "a", datetime(2026, 10, 16, 17, 15, tzinfo=UTC), FIX / "storm_synthetic", "https://x", alert)
+            body = alert.read_text()
+            self.assertIn("**Kp 6**", body)
+            self.assertIn("sam. 17/10 21h-00h UTC", body)
+            f.run(Path(d) / "b", datetime(2026, 10, 14, 13, 15, tzinfo=UTC), FIX / "real_2026-10-14", "", alert)
+            self.assertFalse(alert.exists())  # plus d'alerte -> fichier supprimé
+
     def test_samedi_partiel_jeudi(self):
         # bulletin couvrant 15-17/10 : nuit de samedi 17 couverte jusqu'à 00h UTC seulement
         text = (FIX / "storm_synthetic" / "noaa.txt").read_text().replace("Oct 16 1230", "Oct 15 1230") \
