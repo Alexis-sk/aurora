@@ -16,6 +16,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import sys
 import urllib.request
 from dataclasses import dataclass, field
@@ -360,6 +361,8 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
     env.filters["pct"] = lambda v: "—" if v is None else f"{v * 100:.0f} %"
 
     out.mkdir(parents=True, exist_ok=True)
+    for asset in (ROOT / "static").glob("*"):  # favicons et fichiers statiques
+        shutil.copy2(asset, out / asset.name)
     (out / "index.html").write_text(env.get_template("index.html.j2").render(**ctx), encoding="utf-8")
     (out / "data.json").write_text(json.dumps(to_json(ctx, now), indent=1, ensure_ascii=False), encoding="utf-8")
 
