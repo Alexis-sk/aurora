@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Info Aurores</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+ <style>
+    :root { --fg:#111; --bg:#fff; --muted:#555; --accent:#4b7bec; --table-border:#e5e7eb; --row:#f9fafb; --blue-dark:#003366; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; line-height:1.6; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    h1 { color: var(--blue-dark); font-size: clamp(1.8rem, 2.4vw, 2.4rem); margin: 0 0 1rem; }
+    h2 { color: var(--blue-dark); font-size: clamp(1.25rem, 1.8vw, 1.5rem); margin-top:2rem; }
+    h3 { color: var(--blue-dark); font-size: 1.1rem; margin-top:1.5rem; }
+    p { margin: .5rem 0; }
+    hr { border:0; border-top:1px solid var(--table-border); margin:1.5rem 0; }
+    .lead { color:var(--muted); margin-bottom:1rem; }
+    .kbd { padding: .1rem .35rem; border:1px solid var(--table-border); border-bottom-width:2px; border-radius:.35rem; background:#fafafa; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .9em;}
+    table { width:100%; border-collapse: collapse; margin:1rem 0 2rem; font-size:.98rem; }
+    th, td { border:1px solid var(--table-border); padding:.6rem .7rem; vertical-align: top; }
+    thead th { background:#f3f4f6; text-align:left; }
+    tbody tr:nth-child(even){ background: var(--row); }
+    .back { display:inline-block; margin-bottom:1rem; color:var(--blue-dark); font-weight:700; }
+    .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1rem 0 2rem; }
+    .table-wrap table { margin:0; }
+    @media (max-width: 640px) { th, td { white-space:nowrap; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a class="back" href="./">← Retour aux prévisions</a>
+    <h1>Paramètres aurores boréales</h1>
+
+    <h2>1. Vent solaire</h2>
+    <p>Flux de particules chargées (protons, électrons) émis par le Soleil.</p>
+    <p><strong>Paramètres clés&nbsp;:</strong> vitesse (km/s), densité (particules/cm³).</p>
+    <p>Plus le vent est rapide et dense, plus il peut compresser et perturber la magnétosphère terrestre → augmente les chances d’aurores.</p>
+    <hr>
+
+    <h2>2. Trou coronal</h2>
+    <p>Région sombre de la couronne solaire, champ magnétique est « ouvert ».</p>
+    <p>Source de vent solaire rapide (jusqu’à 700–800 km/s). Quand ces flux atteignent la Terre, ils augmentent la probabilité d’aurores.</p>
+    <p>Les trous coronaux peuvent persister plusieurs rotations solaires (~27 jours).</p>
+    <hr>
+
+    <h2>3. CME (Éjection de masse coronale)</h2>
+    <p>Énorme bulle de plasma et de champ magnétique éjectée par le Soleil. Voyage jusqu’à la Terre en 1 à 3 jours.</p>
+    <p>provoque des tempêtes géomagnétiques majeures.</p>
+    <hr>
+
+    <h2>4. BT (Champ magnétique interplanétaire total)</h2>
+    <p>Intensité du champ magnétique transporté par le vent solaire (en nT).</p>
+    <p>Plus BT est élevé → plus d’énergie disponible pour les aurores (ex. 20&nbsp;nT ≫ 5&nbsp;nT).</p>
+    <hr>
+
+    <h2>5. BZ (Orientation nord/sud du champ magnétique interplanétaire)</h2>
+    <p>Paramètre clé pour les aurores.</p>
+    <ul>
+      <li><strong>BZ &gt; 0</strong> (nord) : champ solaire aligné avec celui de la Terre → interaction faible.</li>
+      <li><strong>BZ &lt; 0</strong> (sud) : champ solaire opposé au champ terrestre → reconnexion magnétique facilitée → le vent solaire s’injecte plus facilement dans la magnétosphère → aurores probables.</li>
+    </ul>
+    <p>Plus BZ est négatif et plus longtemps il reste négatif, plus les aurores sont intenses et étendues.</p>
+
+    <h2>Interactions entre les paramètres</h2>
+    <ul>
+      <li><strong>Vent solaire rapide seul</strong> → aurores modestes si BZ non pas favorable.</li>
+      <li><strong>Trou coronal + BZ négatif</strong> → aurores fréquentes, possible plusieurs nuits.</li>
+      <li><strong>CME + BT fort + BZ négatif</strong> → Tempêtes géomagnétiques, aurores visibles à basse latitude.</li>
+      <li><strong>Densité élevée du vent solaire</strong> → Accentuation de l’effet (plus de particules injectées dans la magnétosphère).</li>
+      <li><strong>Combo V élevée + n élevée + BT fort + BZ négatif</strong> → conditions maximales.</li>
+    </ul>
+
+    <h2>Lien avec indice Kp</h2>
+    <p>Le Kp est la réponse observée de la Terre (réseau de magnétomètres au sol).</p>
+    <ul>
+      <li><strong>BZ négatif</strong> → perturbations rapides → hausse du Kp.</li>
+      <li><strong>BT fort</strong> → amplifie les perturbations → hausse du Kp.</li>
+      <li><strong>Vent rapide/dense</strong> (trou coronal ou CME) → compresse la magnétosphère → hausse du Kp.</li>
+      <li><strong>CME + BZ négatif</strong> → Kp peut atteindre 7–9 (tempêtes majeures).</li>
+    </ul>
+
+    <h2>Seuils</h2>
+    <div class="table-wrap"><table>
+      <thead>
+        <tr>
+          <th>Paramètre</th>
+          <th>Valeur typique</th>
+          <th>Seuil favorable</th>
+          <th>Valeur forte</th>
+          <th>Effet attendu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>BZ</strong> (orientation nord/sud)</td>
+          <td>± 0 nT</td>
+          <td>&lt; –5 nT (sud)</td>
+          <td>&lt; –10 nT (sud)</td>
+          <td>Reconnexion magnétique → aurores</td>
+        </tr>
+        <tr>
+          <td><strong>BT</strong> (champ magnétique total)</td>
+          <td>5 nT</td>
+          <td>&gt; 10 nT</td>
+          <td>&gt; 20 nT</td>
+          <td>Plus d’énergie disponible</td>
+        </tr>
+        <tr>
+          <td><strong>Vitesse du vent solaire (V)</strong></td>
+          <td>350–450 km/s</td>
+          <td>&gt; 500 km/s</td>
+          <td>&gt; 700 km/s</td>
+          <td>Compression + Apport d’énergie</td>
+        </tr>
+        <tr>
+          <td><strong>Densité du vent solaire (n)</strong></td>
+          <td>5–10 cm⁻³</td>
+          <td>&gt; 10 cm⁻³</td>
+          <td>&gt; 20 cm⁻³</td>
+          <td>Plus de particules → interactions plus fortes</td>
+        </tr>
+        <tr>
+          <td><strong>Pression dynamique (Pdyn)</strong></td>
+          <td>1–2 nPa</td>
+          <td>&gt; 5 nPa</td>
+          <td>&gt; 10 nPa</td>
+          <td>Forte compression de la magnétosphère</td>
+        </tr>
+        <tr>
+          <td><strong>Champ électrique (Ey ≈ V·BZ)</strong></td>
+          <td>≈ 0 mV/m</td>
+          <td>&gt; 2 mV/m</td>
+          <td>&gt; 5 mV/m</td>
+          <td>Injection d’énergie accrue</td>
+        </tr>
+        <tr>
+          <td><strong>Trou coronal</strong></td>
+          <td>—</td>
+          <td>Vent rapide 600–700 km/s</td>
+          <td>&gt; 750 km/s</td>
+          <td>Aurores récurrentes pendant plusieurs jours</td>
+        </tr>
+        <tr>
+          <td><strong>CME</strong></td>
+          <td>—</td>
+          <td>BT &gt; 15 nT + BZ &lt; –5 nT</td>
+          <td>BT &gt; 20 nT + BZ &lt; –10 nT</td>
+          <td>Tempêtes géomagnétiques majeures</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+  </main>
+</body>
+</html>
