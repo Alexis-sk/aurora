@@ -1,12 +1,12 @@
 {
- "generated_utc": "2026-10-17T05:36:05.465531+00:00",
- "noaa_issued": "2026-10-17T00:30:00+00:00",
+ "generated_utc": "2026-10-17T16:24:42.588022+00:00",
+ "noaa_issued": "2026-10-17T12:30:00+00:00",
  "saturday": {
   "date": "2026-10-17",
-  "kp_max": 2.0,
+  "kp_max": 2.67,
   "site_scores": {
-   "tromso": 0.36013333333333336,
-   "grindavik": 0.40013333333333334
+   "tromso": 0.3494666666666667,
+   "grindavik": 0.35586666666666666
   },
   "noaa_slots": 6,
   "slots": [
@@ -14,22 +14,22 @@
     "start": "2026-10-17T15:00:00+00:00",
     "kp": 1.33,
     "gfz": {
-     "median": 1.333333,
+     "median": 1.666666,
      "q25": 1.333333,
-     "q75": 2.666666,
+     "q75": 3.666666,
      "min": 1.333333,
-     "max": 3.666666
+     "max": 4.0
     },
     "moon_illum": 41.0,
     "sites": {
      "tromso": {
-      "clouds_min": 95,
-      "clouds_max": 100,
-      "clouds_mean": 97.0,
+      "clouds_min": 89,
+      "clouds_max": 94,
+      "clouds_mean": 91.33333333333333,
       "moon_alt": -7.004493036310538,
       "moon_up_frac": 0.0,
       "dark": true,
-      "score": 0.2652
+      "score": 0.2878666666666667
      },
      "grindavik": {
       "clouds_min": 100,
@@ -46,22 +46,22 @@
     "start": "2026-10-17T18:00:00+00:00",
     "kp": 2.0,
     "gfz": {
-     "median": 1.333333,
-     "q25": 1.333333,
-     "q75": 2.666666,
+     "median": 1.666666,
+     "q25": 1.666666,
+     "q75": 3.0,
      "min": 1.333333,
      "max": 3.666666
     },
     "moon_illum": 42.1,
     "sites": {
      "tromso": {
-      "clouds_min": 81,
-      "clouds_max": 87,
-      "clouds_mean": 83.33333333333333,
+      "clouds_min": 74,
+      "clouds_max": 94,
+      "clouds_mean": 84.0,
       "moon_alt": -13.297509172442942,
       "moon_up_frac": 0.0,
       "dark": true,
-      "score": 0.34666666666666673
+      "score": 0.34400000000000003
      },
      "grindavik": {
       "clouds_min": 100,
@@ -76,24 +76,24 @@
    },
    {
     "start": "2026-10-17T21:00:00+00:00",
-    "kp": 1.67,
+    "kp": 2.67,
     "gfz": {
      "median": 1.666666,
      "q25": 1.666666,
-     "q75": 2.666666,
+     "q75": 3.0,
      "min": 1.0,
-     "max": 3.666666
+     "max": 4.0
     },
     "moon_illum": 43.3,
     "sites": {
      "tromso": {
-      "clouds_min": 71,
-      "clouds_max": 85,
-      "clouds_mean": 76.66666666666667,
+      "clouds_min": 85,
+      "clouds_max": 97,
+      "clouds_mean": 89.33333333333333,
       "moon_alt": -26.4173087755132,
       "moon_up_frac": 0.0,
       "dark": true,
-      "score": 0.36013333333333336
+      "score": 0.3494666666666667
      },
      "grindavik": {
       "clouds_min": 100,
@@ -102,7 +102,7 @@
       "moon_alt": -9.631262555239674,
       "moon_up_frac": 0.0,
       "dark": true,
-      "score": 0.26680000000000004
+      "score": 0.3068
      }
     }
    },
@@ -119,13 +119,13 @@
     "moon_illum": 44.5,
     "sites": {
      "tromso": {
-      "clouds_min": 99,
+      "clouds_min": 98,
       "clouds_max": 100,
-      "clouds_mean": 99.66666666666667,
+      "clouds_mean": 98.66666666666667,
       "moon_alt": -40.23447240038905,
       "moon_up_frac": 0.0,
       "dark": true,
-      "score": 0.26813333333333333
+      "score": 0.27213333333333334
      },
      "grindavik": {
       "clouds_min": 100,
@@ -151,22 +151,22 @@
     "moon_illum": 45.6,
     "sites": {
      "tromso": {
-      "clouds_min": 100,
+      "clouds_min": 99,
       "clouds_max": 100,
-      "clouds_mean": 100.0,
+      "clouds_mean": 99.33333333333333,
       "moon_alt": -46.138467428380565,
       "moon_up_frac": 0.0,
       "dark": true,
-      "score": 0.26680000000000004
+      "score": 0.2694666666666667
      },
      "grindavik": {
-      "clouds_min": 3,
+      "clouds_min": 98,
       "clouds_max": 100,
-      "clouds_mean": 66.66666666666667,
+      "clouds_mean": 99.33333333333333,
       "moon_alt": -44.12055975508658,
       "moon_up_frac": 0.0,
       "dark": true,
-      "score": 0.40013333333333334
+      "score": 0.2694666666666667
      }
     }
    },
@@ -192,13 +192,13 @@
       "score": null
      },
      "grindavik": {
-      "clouds_min": 89,
+      "clouds_min": 23,
       "clouds_max": 100,
-      "clouds_mean": 96.33333333333333,
+      "clouds_mean": 74.33333333333333,
       "moon_alt": -51.4886126618595,
       "moon_up_frac": 0.0,
       "dark": true,
-      "score": 0.2678666666666667
+      "score": 0.35586666666666666
      }
     }
    }
@@ -206,15 +206,15 @@
  },
  "recommendation": {
   "key": "grindavik",
-  "score": 0.40013333333333334
+  "score": 0.35586666666666666
  },
  "nights": [
   {
    "date": "2026-10-17",
-   "kp_max": 2.0,
+   "kp_max": 2.67,
    "site_scores": {
-    "tromso": 0.36013333333333336,
-    "grindavik": 0.40013333333333334
+    "tromso": 0.3494666666666667,
+    "grindavik": 0.35586666666666666
    },
    "noaa_slots": 6,
    "slots": [
@@ -222,22 +222,22 @@
      "start": "2026-10-17T15:00:00+00:00",
      "kp": 1.33,
      "gfz": {
-      "median": 1.333333,
+      "median": 1.666666,
       "q25": 1.333333,
-      "q75": 2.666666,
+      "q75": 3.666666,
       "min": 1.333333,
-      "max": 3.666666
+      "max": 4.0
      },
      "moon_illum": 41.0,
      "sites": {
       "tromso": {
-       "clouds_min": 95,
-       "clouds_max": 100,
-       "clouds_mean": 97.0,
+       "clouds_min": 89,
+       "clouds_max": 94,
+       "clouds_mean": 91.33333333333333,
        "moon_alt": -7.004493036310538,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.2652
+       "score": 0.2878666666666667
       },
       "grindavik": {
        "clouds_min": 100,
@@ -254,22 +254,22 @@
      "start": "2026-10-17T18:00:00+00:00",
      "kp": 2.0,
      "gfz": {
-      "median": 1.333333,
-      "q25": 1.333333,
-      "q75": 2.666666,
+      "median": 1.666666,
+      "q25": 1.666666,
+      "q75": 3.0,
       "min": 1.333333,
       "max": 3.666666
      },
      "moon_illum": 42.1,
      "sites": {
       "tromso": {
-       "clouds_min": 81,
-       "clouds_max": 87,
-       "clouds_mean": 83.33333333333333,
+       "clouds_min": 74,
+       "clouds_max": 94,
+       "clouds_mean": 84.0,
        "moon_alt": -13.297509172442942,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.34666666666666673
+       "score": 0.34400000000000003
       },
       "grindavik": {
        "clouds_min": 100,
@@ -284,24 +284,24 @@
     },
     {
      "start": "2026-10-17T21:00:00+00:00",
-     "kp": 1.67,
+     "kp": 2.67,
      "gfz": {
       "median": 1.666666,
       "q25": 1.666666,
-      "q75": 2.666666,
+      "q75": 3.0,
       "min": 1.0,
-      "max": 3.666666
+      "max": 4.0
      },
      "moon_illum": 43.3,
      "sites": {
       "tromso": {
-       "clouds_min": 71,
-       "clouds_max": 85,
-       "clouds_mean": 76.66666666666667,
+       "clouds_min": 85,
+       "clouds_max": 97,
+       "clouds_mean": 89.33333333333333,
        "moon_alt": -26.4173087755132,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.36013333333333336
+       "score": 0.3494666666666667
       },
       "grindavik": {
        "clouds_min": 100,
@@ -310,7 +310,7 @@
        "moon_alt": -9.631262555239674,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.26680000000000004
+       "score": 0.3068
       }
      }
     },
@@ -327,13 +327,13 @@
      "moon_illum": 44.5,
      "sites": {
       "tromso": {
-       "clouds_min": 99,
+       "clouds_min": 98,
        "clouds_max": 100,
-       "clouds_mean": 99.66666666666667,
+       "clouds_mean": 98.66666666666667,
        "moon_alt": -40.23447240038905,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.26813333333333333
+       "score": 0.27213333333333334
       },
       "grindavik": {
        "clouds_min": 100,
@@ -359,22 +359,22 @@
      "moon_illum": 45.6,
      "sites": {
       "tromso": {
-       "clouds_min": 100,
+       "clouds_min": 99,
        "clouds_max": 100,
-       "clouds_mean": 100.0,
+       "clouds_mean": 99.33333333333333,
        "moon_alt": -46.138467428380565,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.26680000000000004
+       "score": 0.2694666666666667
       },
       "grindavik": {
-       "clouds_min": 3,
+       "clouds_min": 98,
        "clouds_max": 100,
-       "clouds_mean": 66.66666666666667,
+       "clouds_mean": 99.33333333333333,
        "moon_alt": -44.12055975508658,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.40013333333333334
+       "score": 0.2694666666666667
       }
      }
     },
@@ -400,13 +400,13 @@
        "score": null
       },
       "grindavik": {
-       "clouds_min": 89,
+       "clouds_min": 23,
        "clouds_max": 100,
-       "clouds_mean": 96.33333333333333,
+       "clouds_mean": 74.33333333333333,
        "moon_alt": -51.4886126618595,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.2678666666666667
+       "score": 0.35586666666666666
       }
      }
     }
@@ -416,8 +416,8 @@
    "date": "2026-10-18",
    "kp_max": 1.67,
    "site_scores": {
-    "tromso": 0.2772,
-    "grindavik": 0.39080000000000004
+    "tromso": 0.31853333333333333,
+    "grindavik": 0.26680000000000004
    },
    "noaa_slots": 6,
    "slots": [
@@ -434,13 +434,13 @@
      "moon_illum": 50.4,
      "sites": {
       "tromso": {
-       "clouds_min": 95,
-       "clouds_max": 99,
-       "clouds_mean": 96.66666666666667,
+       "clouds_min": 89,
+       "clouds_max": 100,
+       "clouds_mean": 95.33333333333333,
        "moon_alt": -4.361617931318511,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.26653333333333334
+       "score": 0.2718666666666667
       },
       "grindavik": {
        "clouds_min": 100,
@@ -466,13 +466,13 @@
      "moon_illum": 51.5,
      "sites": {
       "tromso": {
-       "clouds_min": 91,
-       "clouds_max": 99,
-       "clouds_mean": 94.0,
+       "clouds_min": 79,
+       "clouds_max": 88,
+       "clouds_mean": 83.66666666666667,
        "moon_alt": -8.047277653690248,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.2772
+       "score": 0.31853333333333333
       },
       "grindavik": {
        "clouds_min": 100,
@@ -498,22 +498,22 @@
      "moon_illum": 52.7,
      "sites": {
       "tromso": {
-       "clouds_min": 95,
+       "clouds_min": 98,
        "clouds_max": 100,
-       "clouds_mean": 98.33333333333333,
+       "clouds_mean": 99.33333333333333,
        "moon_alt": -19.84171319926538,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.2734666666666667
+       "score": 0.2694666666666667
       },
       "grindavik": {
-       "clouds_min": 97,
+       "clouds_min": 100,
        "clouds_max": 100,
-       "clouds_mean": 99.0,
+       "clouds_mean": 100.0,
        "moon_alt": -3.512020518857557,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.27080000000000004
+       "score": 0.26680000000000004
       }
      }
     },
@@ -539,13 +539,13 @@
        "score": 0.26680000000000004
       },
       "grindavik": {
-       "clouds_min": 7,
+       "clouds_min": 100,
        "clouds_max": 100,
-       "clouds_mean": 69.0,
+       "clouds_mean": 100.0,
        "moon_alt": -18.80356884165305,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.39080000000000004
+       "score": 0.26680000000000004
       }
      }
     },
@@ -620,7 +620,7 @@
    "kp_max": 1.67,
    "site_scores": {
     "tromso": 0.26680000000000004,
-    "grindavik": 0.37012361511204006
+    "grindavik": 0.29589598651601706
    },
    "noaa_slots": 3,
    "slots": [
@@ -646,9 +646,9 @@
        "score": 0.25320000000000004
       },
       "grindavik": {
-       "clouds_min": 96,
-       "clouds_max": 98,
-       "clouds_mean": 97.33333333333333,
+       "clouds_min": 89,
+       "clouds_max": 100,
+       "clouds_mean": 96.33333333333333,
        "moon_alt": -5.750143309389682,
        "moon_up_frac": 0.0,
        "dark": false,
@@ -678,13 +678,13 @@
        "score": 0.26680000000000004
       },
       "grindavik": {
-       "clouds_min": 11,
-       "clouds_max": 67,
-       "clouds_mean": 43.666666666666664,
+       "clouds_min": 3,
+       "clouds_max": 100,
+       "clouds_mean": 67.66666666666667,
        "moon_alt": 4.949109395701165,
        "moon_up_frac": 1.0,
        "dark": true,
-       "score": 0.37012361511204006
+       "score": 0.2741236151120401
       }
      }
     },
@@ -710,13 +710,13 @@
        "score": 0.26680000000000004
       },
       "grindavik": {
-       "clouds_min": 100,
-       "clouds_max": 100,
-       "clouds_mean": 100.0,
+       "clouds_min": 33,
+       "clouds_max": 94,
+       "clouds_mean": 72.0,
        "moon_alt": 2.8925816984058152,
        "moon_up_frac": 0.6666666666666666,
        "dark": true,
-       "score": 0.18389598651601705
+       "score": 0.29589598651601706
       }
      }
     },
@@ -742,9 +742,9 @@
        "score": null
       },
       "grindavik": {
-       "clouds_min": 100,
-       "clouds_max": 100,
-       "clouds_mean": 100.0,
+       "clouds_min": 90,
+       "clouds_max": 99,
+       "clouds_mean": 93.66666666666667,
        "moon_alt": -10.626603824870829,
        "moon_up_frac": 0.0,
        "dark": true,
@@ -774,9 +774,9 @@
        "score": null
       },
       "grindavik": {
-       "clouds_min": 55,
-       "clouds_max": 100,
-       "clouds_mean": 75.0,
+       "clouds_min": 33,
+       "clouds_max": 85,
+       "clouds_mean": 60.333333333333336,
        "moon_alt": -28.86207082853442,
        "moon_up_frac": 0.0,
        "dark": true,
@@ -787,7 +787,13 @@
     {
      "start": "2026-10-20T06:00:00+00:00",
      "kp": null,
-     "gfz": null,
+     "gfz": {
+      "median": 2.0,
+      "q25": 2.0,
+      "q75": 2.666666,
+      "min": 0.666666,
+      "max": 5.0
+     },
      "moon_illum": 65.7,
      "sites": {
       "tromso": {
@@ -800,9 +806,9 @@
        "score": null
       },
       "grindavik": {
-       "clouds_min": 23,
-       "clouds_max": 41,
-       "clouds_mean": 31.333333333333332,
+       "clouds_min": 28,
+       "clouds_max": 55,
+       "clouds_mean": 38.0,
        "moon_alt": -42.490080902083236,
        "moon_up_frac": 0.0,
        "dark": true,
