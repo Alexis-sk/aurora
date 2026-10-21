@@ -3,9 +3,9 @@ name: Aurora forecast
 on:
   schedule:
     # Tout en UTC. NOAA publie vers 00:30 et 12:30 UTC.
-    - cron: "15 1 * * *"
-    - cron: "15 13 * * *"
-    - cron: "15 17 * * *"
+    - cron: "17 1 * * *"
+    - cron: "17 13 * * *"
+    - cron: "17 17 * * *"
   workflow_dispatch:
     inputs:
       test_alert:
