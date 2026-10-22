@@ -32,10 +32,23 @@ ROOT = Path(__file__).resolve().parent
 
 NOAA_URL = "https://services.swpc.noaa.gov/text/3-day-forecast.txt"
 GFZ_URL = "https://spaceweather.gfz.de/fileadmin/Kp-Forecast/CSV/kp_product_file_FORECAST_PAGER_SWIFT_LAST.json"
+OPEN_METEO_VARS = ["cloud_cover", "cloud_cover_low", "cloud_cover_mid", "cloud_cover_high",
+                   "precipitation", "wind_speed_10m", "wind_gusts_10m", "temperature_2m"]
 OPEN_METEO_URL = (
     "https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}"
-    "&hourly=cloud_cover&forecast_days=5&timezone=GMT"
+    "&hourly=" + ",".join(OPEN_METEO_VARS) + "&forecast_days=5&timezone=GMT"
 )
+# Modèles complémentaires (nuages seulement) pour mesurer l'accord entre modèles.
+# Identifiants confirmés dans la doc Open-Meteo : ecmwf_ifs, metno_seamless, dmi_seamless ; icon_seamless non confirmé.
+OPEN_METEO_MODEL_URL = (
+    "https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}"
+    "&hourly=cloud_cover&forecast_days=5&timezone=GMT&models={model}"
+)
+SITE_MODELS = {
+    "tromso": ["metno_seamless", "ecmwf_ifs", "icon_seamless"],
+    "grindavik": ["dmi_seamless", "ecmwf_ifs", "icon_seamless"],
+}
+AGREEMENT = [(20, "bon"), (40, "moyen")]  # écart max entre modèles (points de %) -> libellé, sinon "faible"
 USER_AGENT = "aurora-forecast/1.0 (+https://github.com/alexis-sk/aurora)"
 
 SITES = {
@@ -128,13 +141,30 @@ def parse_gfz(raw: str) -> dict[datetime, dict[str, float]]:
     return out
 
 
-def parse_open_meteo(raw: str) -> dict[datetime, float]:
+def parse_open_meteo(raw: str) -> dict[str, dict[datetime, float]]:
+    """Retourne {variable: {heure UTC: valeur}} pour les variables présentes."""
     data = json.loads(raw)
     if data.get("error"):
         raise ValueError(f"Open-Meteo : {data.get('reason')}")
     h = data["hourly"]
-    return {datetime.fromisoformat(t).replace(tzinfo=UTC): c
-            for t, c in zip(h["time"], h["cloud_cover"]) if c is not None}
+    times = [datetime.fromisoformat(x).replace(tzinfo=UTC) for x in h["time"]]
+    return {var: {t: v for t, v in zip(times, vals) if v is not None}
+            for var, vals in h.items() if var != "time" and isinstance(vals, list)}
+
+
+def parse_model_clouds(raw: str) -> dict[datetime, float]:
+    """Couverture nuageuse d'un modèle unique (clé `cloud_cover`, éventuellement suffixée du nom du modèle)."""
+    series = parse_open_meteo(raw)
+    key = next((k for k in series if k.startswith("cloud_cover")), None)
+    if key is None or not series[key]:
+        raise ValueError("pas de cloud_cover dans la réponse")
+    return series[key]
+
+
+def agreement_label(spread: float | None) -> str | None:
+    if spread is None:
+        return None
+    return next((lbl for lim, lbl in AGREEMENT if spread <= lim), "faible")
 
 
 # --------------------------------------------------------------------------- astro
@@ -181,6 +211,16 @@ class SiteSlot:
     clouds_min: float | None = None
     clouds_max: float | None = None
     clouds_mean: float | None = None
+    clouds_low: float | None = None
+    clouds_mid: float | None = None
+    clouds_high: float | None = None
+    precip_mm: float | None = None
+    wind_kmh: float | None = None
+    gust_kmh: float | None = None
+    temp_c: float | None = None
+    models: dict = field(default_factory=dict)   # {modèle: nuages moyens %}
+    model_spread: float | None = None
+    agreement: str | None = None
     moon_alt: float = 0.0
     moon_up_frac: float = 0.0
     dark: bool = False
@@ -200,7 +240,16 @@ class Slot:
         return f"{self.start:%H}h-{(self.start + timedelta(hours=3)):%H}h"
 
 
-def build_slot(start: datetime, noaa: dict, gfz: dict | None, clouds: dict) -> Slot:
+def _vals(series: dict | None, start: datetime) -> list[float]:
+    return [v for v in ((series or {}).get(start + timedelta(hours=h)) for h in range(3)) if v is not None]
+
+
+def _mean(vals: list[float]) -> float | None:
+    return round(sum(vals) / len(vals), 1) if vals else None
+
+
+def build_slot(start: datetime, noaa: dict, gfz: dict | None, clouds: dict, wx: dict | None = None,
+               models: dict | None = None) -> Slot:
     samples = [start + timedelta(minutes=m) for m in (30, 90, 150)]
     mid = samples[1]
     slot = Slot(start=start, kp=noaa.get(start), gfz=(gfz or {}).get(start), illum=moon_illum(mid))
@@ -211,6 +260,23 @@ def build_slot(start: datetime, noaa: dict, gfz: dict | None, clouds: dict) -> S
         if hours:
             s.clouds_min, s.clouds_max = min(hours), max(hours)
             s.clouds_mean = sum(hours) / len(hours)
+        site_wx = (wx or {}).get(key, {})
+        s.clouds_low = _mean(_vals(site_wx.get("cloud_cover_low"), start))
+        s.clouds_mid = _mean(_vals(site_wx.get("cloud_cover_mid"), start))
+        s.clouds_high = _mean(_vals(site_wx.get("cloud_cover_high"), start))
+        pr = _vals(site_wx.get("precipitation"), start)
+        s.precip_mm = round(sum(pr), 1) if pr else None
+        s.wind_kmh = _mean(_vals(site_wx.get("wind_speed_10m"), start))
+        gu = _vals(site_wx.get("wind_gusts_10m"), start)
+        s.gust_kmh = max(gu) if gu else None
+        s.temp_c = _mean(_vals(site_wx.get("temperature_2m"), start))
+        for model, series in (models or {}).get(key, {}).items():
+            m = _mean(_vals(series, start))
+            if m is not None:
+                s.models[model] = m
+        if len(s.models) >= 2:
+            s.model_spread = round(max(s.models.values()) - min(s.models.values()), 1)
+            s.agreement = agreement_label(s.model_spread)
         alts = [body_alt(site, t, ephem.Moon) for t in samples]
         s.moon_alt = alts[1]
         s.moon_up_frac = sum(a > 0 for a in alts) / len(alts)
@@ -224,9 +290,10 @@ def build_slot(start: datetime, noaa: dict, gfz: dict | None, clouds: dict) -> S
     return slot
 
 
-def build_night(d: date, noaa: dict, gfz: dict | None, clouds: dict) -> dict:
+def build_night(d: date, noaa: dict, gfz: dict | None, clouds: dict, wx: dict | None = None,
+                models: dict | None = None) -> dict:
     slots = [build_slot(datetime(d.year, d.month, d.day, tzinfo=UTC) + timedelta(days=off, hours=h),
-                        noaa, gfz, clouds) for off, h in NIGHT_SLOTS]
+                        noaa, gfz, clouds, wx, models) for off, h in NIGHT_SLOTS]
     with_kp = [s for s in slots if s.kp is not None]
     best = max(with_kp, key=lambda s: s.kp) if with_kp else None
     site_scores = {}
@@ -268,26 +335,31 @@ def alert_markdown(alerts: list[Slot], noaa_issued: datetime | None, page_url: s
 
 # --------------------------------------------------------------------------- main
 def load_sources(fixtures: Path | None):
-    """Retourne (noaa_text, gfz_raw, {site: open_meteo_raw}, erreurs)."""
-    errors = []
+    """Retourne (noaa_text, gfz_raw, {site: open_meteo_raw}, {site: {modèle: raw}}, erreurs, erreurs_modèles)."""
+    errors, model_errors = [], []
 
-    def get(name, url):
+    def get(name, url, sink=errors, optional=False):
         try:
             if fixtures:
-                return (fixtures / name).read_text(encoding="utf-8")
+                f = fixtures / name
+                if optional and not f.exists():
+                    return None
+                return f.read_text(encoding="utf-8")
             return fetch(url)
         except Exception as e:  # noqa: BLE001 - on veut continuer avec les autres sources
-            errors.append(f"{name} : {e}")
+            sink.append(f"{name} : {e}")
             return None
 
     noaa = get("noaa.txt", NOAA_URL)
     gfz = get("gfz.json", GFZ_URL)
     meteo = {k: get(f"open_meteo_{k}.json", OPEN_METEO_URL.format(**s)) for k, s in SITES.items()}
-    return noaa, gfz, meteo, errors
+    models = {k: {m: get(f"open_meteo_{k}_{m}.json", OPEN_METEO_MODEL_URL.format(model=m, **s), model_errors, True)
+                  for m in SITE_MODELS[k]} for k, s in SITES.items()}
+    return noaa, gfz, meteo, models, errors, model_errors
 
 
 def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_file: Path | None = None) -> int:
-    noaa_raw, gfz_raw, meteo_raw, errors = load_sources(fixtures)
+    noaa_raw, gfz_raw, meteo_raw, models_raw, errors, model_errors = load_sources(fixtures)
     warnings: list[str] = []
 
     noaa_issued, noaa = None, {}
@@ -311,19 +383,29 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
         except (ValueError, KeyError) as e:
             errors.append(f"GFZ : {e}")
 
-    clouds = {}
+    clouds, wx = {}, {}
     for key, raw in meteo_raw.items():
         if raw:
             try:
-                clouds[key] = parse_open_meteo(raw)
+                wx[key] = parse_open_meteo(raw)
+                clouds[key] = wx[key]["cloud_cover"]
             except (ValueError, KeyError) as e:
                 errors.append(f"Open-Meteo {SITES[key]['name']} : {e}")
 
+    models: dict = {k: {} for k in SITES}
+    for key, per_model in models_raw.items():
+        for model, raw in per_model.items():
+            if raw:
+                try:
+                    models[key][model] = parse_model_clouds(raw)
+                except (ValueError, KeyError) as e:
+                    model_errors.append(f"{SITES[key]['name']} / {model} : {e}")
+
     noaa_days = sorted({t.date() for t in noaa})
-    nights = [build_night(d, noaa, gfz, clouds) for d in noaa_days]
+    nights = [build_night(d, noaa, gfz, clouds, wx, models) for d in noaa_days]
 
     sat_date = next_saturday(now.date())
-    sat = build_night(sat_date, noaa, gfz, clouds)
+    sat = build_night(sat_date, noaa, gfz, clouds, wx, models)
     reco = None
     if sat["has_noaa"]:
         scored = {k: v for k, v in sat["site_scores"].items() if v is not None}
@@ -354,6 +436,8 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
                     **{s["name"]: utc_offset_label(s["tz"], now) for s in SITES.values()}},
         "alerts": alerts, "alert_kp": ALERT_KP,
         "errors": errors, "warnings": warnings,
+        "model_errors": model_errors,
+        "models_used": {k: sorted(v) for k, v in models.items()},
     }
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
     env.filters["kp"] = lambda v: "—" if v is None else f"{v:g}"
@@ -387,7 +471,9 @@ def to_json(ctx: dict, now: datetime) -> dict:
     return {"generated_utc": now.isoformat(), "noaa_issued": ctx["noaa_issued"].isoformat() if ctx["noaa_issued"] else None,
             "saturday": night(ctx["sat"]), "recommendation": ctx["reco"] and {k: ctx["reco"][k] for k in ("key", "score")},
             "nights": [night(n) for n in ctx["nights"]], "alerts": [{"start": s.start.isoformat(), "kp": s.kp} for s in ctx["alerts"]],
-            "warnings": ctx["warnings"], "errors": ctx["errors"]}
+            "warnings": ctx["warnings"], "errors": ctx["errors"],
+            "models_used": ctx["models_used"], "model_errors": ctx["model_errors"],
+            "agreement_thresholds": {"bon": "écart ≤ 20 pts", "moyen": "écart ≤ 40 pts", "faible": "écart > 40 pts"}}
 
 
 def main() -> int:

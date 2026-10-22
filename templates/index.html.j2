@@ -21,6 +21,10 @@
   .highlight strong { color: #000; }
   .highlight .city { color: #c40000; font-weight: 800; }
   .empty { color: var(--muted); font-style: italic; }
+  .agr { font-size: .8em; padding: 1px 6px; border-radius: 10px; margin-left: 4px; }
+  .agr-bon { background: #e3f6e8; color: #1d6b34; }
+  .agr-moyen { background: #fff2d6; color: #8a5a00; }
+  .agr-faible { background: #fde8e8; color: #9b1c1c; }
   .moon-title { margin-bottom: 2px; }
   .moon-lines { margin: 0 0 8px; padding-left: 20px; }
   .partial { color: var(--warn); background: var(--warn-bg); padding: 6px 10px; border-radius: 6px; }
@@ -62,6 +66,7 @@
 {%- endmacro -%}
 {%- macro clouds(s) -%}
   {%- if s.clouds_min is none -%}—{%- else -%}{{ "%.0f"|format(s.clouds_min) }}% - {{ "%.0f"|format(s.clouds_max) }}%{%- endif -%}
+  {%- if s.agreement %} <span class="agr agr-{{ s.agreement }}" title="{% for m, v in s.models.items() %}{{ m }} : {{ '%.0f'|format(v) }} %{% if not loop.last %} · {% endif %}{% endfor %}">accord {{ s.agreement }}</span>{% endif -%}
   {%- if not s.dark %} <span class="day">(jour)</span>{% endif -%}
 {%- endmacro -%}
 {%- macro moon(slot) -%}
@@ -158,6 +163,8 @@
 
 <footer>
   Nuit = 15h UTC jour J → 09h UTC J+1. « (jour) » : soleil au-dessus de −6°, tranche exclue du score.
+  Nuages : modèle « best match » (utilisé pour le score) ; « accord » = écart entre modèles
+  (Tromsø : MET Nordic / ECMWF / ICON ; Grindavík : DMI / ECMWF / ICON) — bon ≤ 20 pts, moyen ≤ 40, faible au-delà.
   Lune : illumination · T/G = levée (↑ hauteur) ou couchée (↓) à Tromsø / Grindavík.
   Sources : <a href="https://services.swpc.noaa.gov/text/3-day-forecast.txt">NOAA SWPC</a>,
   <a href="https://spaceweather.gfz.de/">GFZ</a>, <a href="https://open-meteo.com/">Open-Meteo</a>, lune calculée avec PyEphem.

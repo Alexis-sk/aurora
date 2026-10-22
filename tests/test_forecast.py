@@ -91,6 +91,21 @@ class Samedi(unittest.TestCase):
             f.run(Path(d) / "b", datetime(2026, 10, 14, 13, 15, tzinfo=UTC), FIX / "real_2026-10-14", "", alert)
             self.assertFalse(alert.exists())  # plus d'alerte -> fichier supprimé
 
+    def test_meteo_et_accord_modeles(self):
+        code, data, html = self.run_scenario("storm_synthetic", "2026-10-16T17:15")
+        slot = data["saturday"]["slots"][2]  # 21h-00h UTC
+        g, t = slot["sites"]["grindavik"], slot["sites"]["tromso"]
+        self.assertEqual(g["models"], {"dmi_seamless": 15.0, "ecmwf_ifs": 5.0})
+        self.assertEqual(g["agreement"], "bon")
+        self.assertEqual(t["agreement"], "faible")            # 95 vs 30
+        self.assertEqual(g["precip_mm"], 0.3)                 # 3 h x 0,1 mm
+        self.assertEqual((g["clouds_low"], g["gust_kmh"], g["temp_c"]), (5.0, 35.0, 1.5))
+        self.assertIsNone(t["clouds_low"])                    # variable absente du fixture
+        self.assertTrue(any("icon_seamless" in e for e in data["model_errors"]))
+        self.assertEqual(data["errors"], [])                  # un modèle en échec n'est pas une erreur bloquante
+        self.assertIn("accord bon", html)
+        self.assertEqual(data["recommendation"]["key"], "grindavik")
+
     def test_samedi_partiel_jeudi(self):
         # bulletin couvrant 15-17/10 : nuit de samedi 17 couverte jusqu'à 00h UTC seulement
         text = (FIX / "storm_synthetic" / "noaa.txt").read_text().replace("Oct 16 1230", "Oct 15 1230") \
