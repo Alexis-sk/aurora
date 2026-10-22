@@ -21,6 +21,8 @@
   .highlight strong { color: #000; }
   .highlight .city { color: #c40000; font-weight: 800; }
   .empty { color: var(--muted); font-style: italic; }
+  .moon-title { margin-bottom: 2px; }
+  .moon-lines { margin: 0 0 8px; padding-left: 20px; }
   .partial { color: var(--warn); background: var(--warn-bg); padding: 6px 10px; border-radius: 6px; }
   .meta-line { margin: 4px 0; line-height: 1.25; }
   .meta-line strong { color: var(--blue-dark); }
@@ -128,7 +130,12 @@
   {%- if sat.noaa_slots < sat.total_slots %}
   <p class="partial">⚠ Nuit partielle : {{ sat.noaa_slots }}/{{ sat.total_slots }} tranches couvertes par NOAA — score calculé sur ces tranches seulement (la nuit complète arrive avec le bulletin de la veille).</p>
   {%- endif %}
-  <p><strong>Lune</strong> <em>(heure locale {{ reco.name }})</em> : lever {{ reco.moon.rise }}, coucher {{ reco.moon.set }}, illumination {{ "%.0f"|format(reco.illum) }}%</p>
+  <p class="moon-title"><strong>Lune</strong> <em>(heures locales)</em> — illumination {{ "%.0f"|format(reco.illum) }}%</p>
+  <ul class="moon-lines">
+  {%- for key in ["grindavik", "tromso"] %}
+    <li><strong>{{ sites[key].name }}</strong> : lever {{ reco.moons[key].rise }}, coucher {{ reco.moons[key].set }}</li>
+  {%- endfor %}
+  </ul>
   {{ table(sat, with_scores=true) }}
 {%- else %}
   <p><strong>Destination recommandée</strong> : <span class="empty">pas encore de données NOAA pour la nuit du samedi {{ sat.date.isoformat() }} (le bulletin NOAA couvre J à J+2).</span></p>

@@ -330,7 +330,8 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
         if scored:
             best = max(scored, key=scored.get)
             reco = {"key": best, "name": SITES[best]["name"], "score": scored[best],
-                    "moon": moon_events(SITES[best], datetime(sat_date.year, sat_date.month, sat_date.day, 12, tzinfo=UTC)),
+                    "moons": {k: moon_events(s, datetime(sat_date.year, sat_date.month, sat_date.day, 12, tzinfo=UTC))
+                              for k, s in SITES.items()},
                     "illum": moon_illum(datetime(sat_date.year, sat_date.month, sat_date.day, 22, tzinfo=UTC))}
 
     alerts = [Slot(t, k, None, 0) for t, k in sorted(noaa.items()) if k >= ALERT_KP]
