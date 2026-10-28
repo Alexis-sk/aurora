@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-10-28T09:44:13.786217+00:00",
+ "generated_utc": "2026-10-28T10:06:55.845412+00:00",
  "noaa_issued": "2026-10-28T00:30:00+00:00",
  "saturday": {
   "date": "2026-10-31",
@@ -30,9 +30,9 @@
       "models": {
        "metno_seamless": 100.0,
        "ecmwf_ifs": 100.0,
-       "icon_seamless": 100.0
+       "icon_seamless": 86.3
       },
-      "model_spread": 0.0,
+      "model_spread": 13.7,
       "agreement": "bon",
       "moon_alt": 3.2547516253720947,
       "moon_up_frac": 1.0,
@@ -53,10 +53,10 @@
       "models": {
        "dmi_seamless": 49.7,
        "ecmwf_ifs": 49.7,
-       "icon_seamless": 82.7
+       "icon_seamless": 69.7
       },
-      "model_spread": 33.0,
-      "agreement": "moyen",
+      "model_spread": 20.0,
+      "agreement": "bon",
       "moon_alt": 0.2612762401767027,
       "moon_up_frac": 0.6666666666666666,
       "dark": false,
@@ -84,9 +84,9 @@
       "models": {
        "metno_seamless": 94.0,
        "ecmwf_ifs": 94.0,
-       "icon_seamless": 100.0
+       "icon_seamless": 95.3
       },
-      "model_spread": 6.0,
+      "model_spread": 1.3,
       "agreement": "bon",
       "moon_alt": 10.147086125321854,
       "moon_up_frac": 1.0,
@@ -107,9 +107,9 @@
       "models": {
        "dmi_seamless": 38.3,
        "ecmwf_ifs": 38.3,
-       "icon_seamless": 64.0
+       "icon_seamless": 70.3
       },
-      "model_spread": 25.7,
+      "model_spread": 32.0,
       "agreement": "moyen",
       "moon_alt": -2.7477550075750994,
       "moon_up_frac": 0.0,
@@ -138,9 +138,9 @@
       "models": {
        "metno_seamless": 61.7,
        "ecmwf_ifs": 61.7,
-       "icon_seamless": 88.7
+       "icon_seamless": 100.0
       },
-      "model_spread": 27.0,
+      "model_spread": 38.3,
       "agreement": "moyen",
       "moon_alt": 23.522316020330372,
       "moon_up_frac": 1.0,
@@ -161,9 +161,9 @@
       "models": {
        "dmi_seamless": 44.0,
        "ecmwf_ifs": 44.0,
-       "icon_seamless": 77.3
+       "icon_seamless": 71.3
       },
-      "model_spread": 33.3,
+      "model_spread": 27.3,
       "agreement": "moyen",
       "moon_alt": 6.508863774283148,
       "moon_up_frac": 1.0,
@@ -192,10 +192,10 @@
       "models": {
        "metno_seamless": 59.0,
        "ecmwf_ifs": 59.0,
-       "icon_seamless": 68.3
+       "icon_seamless": 94.3
       },
-      "model_spread": 9.3,
-      "agreement": "bon",
+      "model_spread": 35.3,
+      "agreement": "moyen",
       "moon_alt": 36.99764575272001,
       "moon_up_frac": 1.0,
       "dark": true,
@@ -215,9 +215,9 @@
       "models": {
        "dmi_seamless": 77.0,
        "ecmwf_ifs": 77.0,
-       "icon_seamless": 90.0
+       "icon_seamless": 83.3
       },
-      "model_spread": 13.0,
+      "model_spread": 6.3,
       "agreement": "bon",
       "moon_alt": 23.63632212286164,
       "moon_up_frac": 1.0,
@@ -246,9 +246,9 @@
       "models": {
        "metno_seamless": 98.0,
        "ecmwf_ifs": 98.0,
-       "icon_seamless": 81.0
+       "icon_seamless": 83.0
       },
-      "model_spread": 17.0,
+      "model_spread": 15.0,
       "agreement": "bon",
       "moon_alt": 41.91275233229874,
       "moon_up_frac": 1.0,
@@ -269,9 +269,9 @@
       "models": {
        "dmi_seamless": 100.0,
        "ecmwf_ifs": 100.0,
-       "icon_seamless": 95.3
+       "icon_seamless": 98.7
       },
-      "model_spread": 4.7,
+      "model_spread": 1.3,
       "agreement": "bon",
       "moon_alt": 41.00546415390009,
       "moon_up_frac": 1.0,
@@ -300,9 +300,9 @@
       "models": {
        "metno_seamless": 92.7,
        "ecmwf_ifs": 92.7,
-       "icon_seamless": 88.7
+       "icon_seamless": 85.0
       },
-      "model_spread": 4.0,
+      "model_spread": 7.7,
       "agreement": "bon",
       "moon_alt": 33.73242942376581,
       "moon_up_frac": 1.0,
@@ -323,9 +323,9 @@
       "models": {
        "dmi_seamless": 99.7,
        "ecmwf_ifs": 99.7,
-       "icon_seamless": 97.3
+       "icon_seamless": 100.0
       },
-      "model_spread": 2.4,
+      "model_spread": 0.3,
       "agreement": "bon",
       "moon_alt": 47.129766933570366,
       "moon_up_frac": 1.0,
@@ -367,10 +367,10 @@
        "models": {
         "metno_seamless": 49.0,
         "ecmwf_ifs": 69.0,
-        "icon_seamless": 67.3
+        "icon_seamless": 70.7
        },
-       "model_spread": 20.0,
-       "agreement": "bon",
+       "model_spread": 21.7,
+       "agreement": "moyen",
        "moon_alt": 13.530661094855912,
        "moon_up_frac": 1.0,
        "dark": true,
@@ -390,9 +390,9 @@
        "models": {
         "dmi_seamless": 29.3,
         "ecmwf_ifs": 12.3,
-        "icon_seamless": 56.3
+        "icon_seamless": 72.0
        },
-       "model_spread": 44.0,
+       "model_spread": 59.7,
        "agreement": "faible",
        "moon_alt": 0.3612265871284512,
        "moon_up_frac": 0.6666666666666666,
@@ -421,10 +421,10 @@
        "models": {
         "metno_seamless": 31.7,
         "ecmwf_ifs": 53.3,
-        "icon_seamless": 73.3
+        "icon_seamless": 68.0
        },
-       "model_spread": 41.6,
-       "agreement": "faible",
+       "model_spread": 36.3,
+       "agreement": "moyen",
        "moon_alt": 27.599544511403415,
        "moon_up_frac": 1.0,
        "dark": true,
@@ -475,10 +475,10 @@
        "models": {
         "metno_seamless": 43.0,
         "ecmwf_ifs": 33.3,
-        "icon_seamless": 70.3
+        "icon_seamless": 76.7
        },
-       "model_spread": 37.0,
-       "agreement": "moyen",
+       "model_spread": 43.4,
+       "agreement": "faible",
        "moon_alt": 41.655165408130046,
        "moon_up_frac": 1.0,
        "dark": true,
@@ -529,9 +529,9 @@
        "models": {
         "metno_seamless": 69.7,
         "ecmwf_ifs": 65.7,
-        "icon_seamless": 96.7
+        "icon_seamless": 96.0
        },
-       "model_spread": 31.0,
+       "model_spread": 30.3,
        "agreement": "moyen",
        "moon_alt": 46.90005401140449,
        "moon_up_frac": 1.0,
@@ -606,9 +606,9 @@
        "models": {
         "dmi_seamless": 100.0,
         "ecmwf_ifs": 100.0,
-        "icon_seamless": 99.7
+        "icon_seamless": 98.7
        },
-       "model_spread": 0.3,
+       "model_spread": 1.3,
        "agreement": "bon",
        "moon_alt": 52.74970805435939,
        "moon_up_frac": 1.0,
@@ -637,9 +637,9 @@
        "models": {
         "metno_seamless": 99.3,
         "ecmwf_ifs": 98.7,
-        "icon_seamless": 91.0
+        "icon_seamless": 93.0
        },
-       "model_spread": 8.3,
+       "model_spread": 6.3,
        "agreement": "bon",
        "moon_alt": 24.221522485664575,
        "moon_up_frac": 1.0,
@@ -660,9 +660,9 @@
        "models": {
         "dmi_seamless": 100.0,
         "ecmwf_ifs": 100.0,
-        "icon_seamless": 95.0
+        "icon_seamless": 96.3
        },
-       "model_spread": 5.0,
+       "model_spread": 3.7,
        "agreement": "bon",
        "moon_alt": 40.90963318475023,
        "moon_up_frac": 1.0,
@@ -702,9 +702,9 @@
        "models": {
         "metno_seamless": 94.3,
         "ecmwf_ifs": 98.7,
-        "icon_seamless": 86.0
+        "icon_seamless": 91.3
        },
-       "model_spread": 12.7,
+       "model_spread": 7.4,
        "agreement": "bon",
        "moon_alt": 10.86345258717207,
        "moon_up_frac": 1.0,
@@ -725,9 +725,9 @@
        "models": {
         "dmi_seamless": 44.3,
         "ecmwf_ifs": 55.7,
-        "icon_seamless": 42.7
+        "icon_seamless": 40.3
        },
-       "model_spread": 13.0,
+       "model_spread": 15.4,
        "agreement": "bon",
        "moon_alt": 0.6417081719928925,
        "moon_up_frac": 1.0,
@@ -756,10 +756,10 @@
        "models": {
         "metno_seamless": 91.7,
         "ecmwf_ifs": 100.0,
-        "icon_seamless": 88.3
+        "icon_seamless": 78.3
        },
-       "model_spread": 11.7,
-       "agreement": "bon",
+       "model_spread": 21.7,
+       "agreement": "moyen",
        "moon_alt": 23.01154935155494,
        "moon_up_frac": 1.0,
        "dark": true,
@@ -779,7 +779,7 @@
        "models": {
         "dmi_seamless": 36.7,
         "ecmwf_ifs": 50.0,
-        "icon_seamless": 39.7
+        "icon_seamless": 49.0
        },
        "model_spread": 13.3,
        "agreement": "bon",
@@ -810,9 +810,9 @@
        "models": {
         "metno_seamless": 93.3,
         "ecmwf_ifs": 99.7,
-        "icon_seamless": 90.3
+        "icon_seamless": 82.0
        },
-       "model_spread": 9.4,
+       "model_spread": 17.7,
        "agreement": "bon",
        "moon_alt": 37.72031050275862,
        "moon_up_frac": 1.0,
@@ -833,9 +833,9 @@
        "models": {
         "dmi_seamless": 0.0,
         "ecmwf_ifs": 39.3,
-        "icon_seamless": 57.3
+        "icon_seamless": 53.3
        },
-       "model_spread": 57.3,
+       "model_spread": 53.3,
        "agreement": "faible",
        "moon_alt": 21.991405957500174,
        "moon_up_frac": 1.0,
@@ -864,9 +864,9 @@
        "models": {
         "metno_seamless": 91.0,
         "ecmwf_ifs": 98.0,
-        "icon_seamless": 88.0
+        "icon_seamless": 80.7
        },
-       "model_spread": 10.0,
+       "model_spread": 17.3,
        "agreement": "bon",
        "moon_alt": 46.98357356457541,
        "moon_up_frac": 1.0,
@@ -887,10 +887,10 @@
        "models": {
         "dmi_seamless": 59.3,
         "ecmwf_ifs": 26.7,
-        "icon_seamless": 61.7
+        "icon_seamless": 69.0
        },
-       "model_spread": 35.0,
-       "agreement": "moyen",
+       "model_spread": 42.3,
+       "agreement": "faible",
        "moon_alt": 40.69933166020554,
        "moon_up_frac": 1.0,
        "dark": true,
@@ -918,7 +918,7 @@
        "models": {
         "metno_seamless": 98.0,
         "ecmwf_ifs": 72.7,
-        "icon_seamless": 93.0
+        "icon_seamless": 86.0
        },
        "model_spread": 25.3,
        "agreement": "moyen",
@@ -941,9 +941,9 @@
        "models": {
         "dmi_seamless": 67.3,
         "ecmwf_ifs": 15.3,
-        "icon_seamless": 61.3
+        "icon_seamless": 75.7
        },
-       "model_spread": 52.0,
+       "model_spread": 60.4,
        "agreement": "faible",
        "moon_alt": 52.779122264020046,
        "moon_up_frac": 1.0,
@@ -972,9 +972,9 @@
        "models": {
         "metno_seamless": 96.7,
         "ecmwf_ifs": 100.0,
-        "icon_seamless": 89.7
+        "icon_seamless": 93.3
        },
-       "model_spread": 10.3,
+       "model_spread": 6.7,
        "agreement": "bon",
        "moon_alt": 29.464527664275398,
        "moon_up_frac": 1.0,
@@ -995,10 +995,10 @@
        "models": {
         "dmi_seamless": 84.0,
         "ecmwf_ifs": 50.0,
-        "icon_seamless": 56.3
+        "icon_seamless": 98.3
        },
-       "model_spread": 34.0,
-       "agreement": "moyen",
+       "model_spread": 48.3,
+       "agreement": "faible",
        "moon_alt": 46.57032321412755,
        "moon_up_frac": 1.0,
        "dark": true,
@@ -1037,9 +1037,9 @@
        "models": {
         "metno_seamless": 91.3,
         "ecmwf_ifs": 100.0,
-        "icon_seamless": 90.7
+        "icon_seamless": 94.7
        },
-       "model_spread": 9.3,
+       "model_spread": 8.7,
        "agreement": "bon",
        "moon_alt": 7.352537278299585,
        "moon_up_frac": 1.0,
@@ -1060,9 +1060,9 @@
        "models": {
         "dmi_seamless": 67.0,
         "ecmwf_ifs": 65.7,
-        "icon_seamless": 100.0
+        "icon_seamless": 99.7
        },
-       "model_spread": 34.3,
+       "model_spread": 34.0,
        "agreement": "moyen",
        "moon_alt": 0.6033003107426184,
        "moon_up_frac": 0.6666666666666666,
@@ -1091,9 +1091,9 @@
        "models": {
         "metno_seamless": 97.7,
         "ecmwf_ifs": 98.7,
-        "icon_seamless": 83.7
+        "icon_seamless": 99.7
        },
-       "model_spread": 15.0,
+       "model_spread": 2.0,
        "agreement": "bon",
        "moon_alt": 17.028329251833156,
        "moon_up_frac": 1.0,
@@ -1114,9 +1114,9 @@
        "models": {
         "dmi_seamless": 86.7,
         "ecmwf_ifs": 86.7,
-        "icon_seamless": 93.3
+        "icon_seamless": 90.7
        },
-       "model_spread": 6.6,
+       "model_spread": 4.0,
        "agreement": "bon",
        "moon_alt": 2.0644490091852723,
        "moon_up_frac": 1.0,
@@ -1145,9 +1145,9 @@
        "models": {
         "metno_seamless": 100.0,
         "ecmwf_ifs": 100.0,
-        "icon_seamless": 96.0
+        "icon_seamless": 100.0
        },
-       "model_spread": 4.0,
+       "model_spread": 0.0,
        "agreement": "bon",
        "moon_alt": 31.39151185933817,
        "moon_up_frac": 1.0,
@@ -1168,9 +1168,9 @@
        "models": {
         "dmi_seamless": 81.7,
         "ecmwf_ifs": 81.7,
-        "icon_seamless": 98.7
+        "icon_seamless": 100.0
        },
-       "model_spread": 17.0,
+       "model_spread": 18.3,
        "agreement": "bon",
        "moon_alt": 14.574110801906054,
        "moon_up_frac": 1.0,
@@ -1222,9 +1222,9 @@
        "models": {
         "dmi_seamless": 62.3,
         "ecmwf_ifs": 62.3,
-        "icon_seamless": 96.3
+        "icon_seamless": 91.7
        },
-       "model_spread": 34.0,
+       "model_spread": 29.4,
        "agreement": "moyen",
        "moon_alt": 32.82498415101625,
        "moon_up_frac": 1.0,
@@ -1276,9 +1276,9 @@
        "models": {
         "dmi_seamless": 87.0,
         "ecmwf_ifs": 87.0,
-        "icon_seamless": 80.0
+        "icon_seamless": 85.3
        },
-       "model_spread": 7.0,
+       "model_spread": 1.7,
        "agreement": "bon",
        "moon_alt": 48.41663262980871,
        "moon_up_frac": 1.0,
@@ -1307,9 +1307,9 @@
        "models": {
         "metno_seamless": 100.0,
         "ecmwf_ifs": 100.0,
-        "icon_seamless": 99.7
+        "icon_seamless": 100.0
        },
-       "model_spread": 0.3,
+       "model_spread": 0.0,
        "agreement": "bon",
        "moon_alt": 32.73528669174106,
        "moon_up_frac": 1.0,
@@ -1330,9 +1330,9 @@
        "models": {
         "dmi_seamless": 49.3,
         "ecmwf_ifs": 49.3,
-        "icon_seamless": 80.0
+        "icon_seamless": 75.0
        },
-       "model_spread": 30.7,
+       "model_spread": 25.7,
        "agreement": "moyen",
        "moon_alt": 48.774633580060346,
        "moon_up_frac": 1.0,

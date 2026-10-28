@@ -21,10 +21,14 @@
   .highlight strong { color: #000; }
   .highlight .city { color: #c40000; font-weight: 800; }
   .empty { color: var(--muted); font-style: italic; }
-  .agr { font-size: .8em; padding: 1px 6px; border-radius: 10px; margin-left: 4px; }
-  .agr-bon { background: #e3f6e8; color: #1d6b34; }
-  .agr-moyen { background: #fff2d6; color: #8a5a00; }
-  .agr-faible { background: #fde8e8; color: #9b1c1c; }
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; vertical-align: middle; cursor: pointer; }
+  .agr-bon { background: #2e9d4f; } .agr-moyen { background: #e8a317; } .agr-faible { background: #d64545; }
+  .tip { display: none; font-size: .78em; color: #555; background: #f3f6fb; border-radius: 4px; padding: 1px 5px; margin-right: 5px; }
+  .dot:hover + .tip, .dot:focus + .tip { display: inline; }
+  .dot:focus { outline: 2px solid #9db8e0; outline-offset: 1px; }
+  .legend { font-size: .82rem; color: #555; margin: 6px 0 2px; }
+  .legend .dot { cursor: default; margin-left: 6px; }
+  .moon-line { color: var(--blue-dark); margin: 4px 0 0; }
   .moon-title { margin-bottom: 2px; }
   .moon-lines { margin: 0 0 8px; padding-left: 20px; }
   .partial { color: var(--warn); background: var(--warn-bg); padding: 6px 10px; border-radius: 6px; }
@@ -61,7 +65,7 @@
 </style>
 </head>
 <body><h1>Aurores — Destination pour le samedi 2026-10-31</h1>
-<em>Généré le 28/10/2026 10:44:13 - Heure de Paris (28/10/2026 09:44 UTC)</em><br>
+<em>Généré le 28/10/2026 11:06:55 - Heure de Paris (28/10/2026 10:06 UTC)</em><br>
 <em>Pondération : KP 40% • Nuages 40% • Lune 20%</em><br>
 <em>Bulletin NOAA émis le 28/10/2026 00:30 UTC</em><div class="banner err">Source indisponible — gfz.json : <urlopen error timed out></div>
 
@@ -90,7 +94,7 @@
   <div class="table-wrap"><table>
     <thead><tr>
       <th>Tranche (UTC)</th><th>NOAA Kp</th><th>GFZ median</th><th>GFZ q25</th><th>GFZ q75</th><th>GFZ min</th><th>GFZ max</th>
-      <th>Nuages Tromsø</th><th>Nuages Grindavík</th><th>Lune</th>
+      <th>Nuages Tromsø</th><th>Nuages Grindavík</th>
     </tr></thead>
     <tbody>
       <tr>
@@ -101,10 +105,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">29% - 79% <span class="agr agr-bon" title="metno_seamless : 49 % · ecmwf_ifs : 69 % · icon_seamless : 67 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">3% - 76% <span class="agr agr-faible" title="dmi_seamless : 29 % · ecmwf_ifs : 12 % · icon_seamless : 56 %">accord faible</span> <span class="day">(jour)</span></td>
-        <td data-label="Lune">91% ·
-  T ↑14° / G ↑0°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">MET Nordic 49 % · ECMWF 69 % · ICON 71 %</span>29% - 79%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-faible" tabindex="0" role="button" aria-label="accord faible"></span><span class="tip">DMI 29 % · ECMWF 12 % · ICON 72 %</span>3% - 76% <span class="day">(jour)</span></td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">18h-21h</td>
@@ -114,10 +116,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">9% - 50% <span class="agr agr-faible" title="metno_seamless : 32 % · ecmwf_ifs : 53 % · icon_seamless : 73 %">accord faible</span></td>
-        <td data-label="Nuages Grindavík">31% - 100% <span class="agr agr-moyen" title="dmi_seamless : 77 % · ecmwf_ifs : 90 % · icon_seamless : 100 %">accord moyen</span></td>
-        <td data-label="Lune">90% ·
-  T ↑28° / G ↑11°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">MET Nordic 32 % · ECMWF 53 % · ICON 68 %</span>9% - 50%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">DMI 77 % · ECMWF 90 % · ICON 100 %</span>31% - 100%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">21h-00h</td>
@@ -127,10 +127,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">24% - 55% <span class="agr agr-moyen" title="metno_seamless : 43 % · ecmwf_ifs : 33 % · icon_seamless : 70 %">accord moyen</span></td>
-        <td data-label="Nuages Grindavík">100% - 100% <span class="agr agr-bon" title="dmi_seamless : 100 % · ecmwf_ifs : 100 % · icon_seamless : 100 %">accord bon</span></td>
-        <td data-label="Lune">90% ·
-  T ↑42° / G ↑28°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-faible" tabindex="0" role="button" aria-label="accord faible"></span><span class="tip">MET Nordic 43 % · ECMWF 33 % · ICON 77 %</span>24% - 55%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">DMI 100 % · ECMWF 100 % · ICON 100 %</span>100% - 100%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">00h-03h</td>
@@ -140,10 +138,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">36% - 96% <span class="agr agr-moyen" title="metno_seamless : 70 % · ecmwf_ifs : 66 % · icon_seamless : 97 %">accord moyen</span></td>
-        <td data-label="Nuages Grindavík">100% - 100% <span class="agr agr-bon" title="dmi_seamless : 100 % · ecmwf_ifs : 100 % · icon_seamless : 100 %">accord bon</span></td>
-        <td data-label="Lune">89% ·
-  T ↑47° / G ↑46°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">MET Nordic 70 % · ECMWF 66 % · ICON 96 %</span>36% - 96%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">DMI 100 % · ECMWF 100 % · ICON 100 %</span>100% - 100%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">03h-06h</td>
@@ -153,10 +149,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">80% - 93% <span class="agr agr-moyen" title="metno_seamless : 88 % · ecmwf_ifs : 70 % · icon_seamless : 96 %">accord moyen</span></td>
-        <td data-label="Nuages Grindavík">100% - 100% <span class="agr agr-bon" title="dmi_seamless : 100 % · ecmwf_ifs : 100 % · icon_seamless : 100 %">accord bon</span></td>
-        <td data-label="Lune">88% ·
-  T ↑39° / G ↑53°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">MET Nordic 88 % · ECMWF 70 % · ICON 96 %</span>80% - 93%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">DMI 100 % · ECMWF 100 % · ICON 99 %</span>100% - 100%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">06h-09h</td>
@@ -166,13 +160,16 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">98% - 100% <span class="agr agr-bon" title="metno_seamless : 99 % · ecmwf_ifs : 99 % · icon_seamless : 91 %">accord bon</span> <span class="day">(jour)</span></td>
-        <td data-label="Nuages Grindavík">100% - 100% <span class="agr agr-bon" title="dmi_seamless : 100 % · ecmwf_ifs : 100 % · icon_seamless : 95 %">accord bon</span></td>
-        <td data-label="Lune">87% ·
-  T ↑24° / G ↑41°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 99 % · ECMWF 99 % · ICON 93 %</span>98% - 100% <span class="day">(jour)</span></td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">DMI 100 % · ECMWF 100 % · ICON 96 %</span>100% - 100%</td>
       </tr>
     </tbody>
   </table></div>
+  <p class="legend">Accord des modèles météo : <span class="dot agr-bon"></span> accord (écart ≤ 20 pts)
+    <span class="dot agr-moyen"></span> écart 20-40 pts <span class="dot agr-faible"></span> désaccord (&gt; 40 pts)
+    — toucher une pastille pour voir chaque modèle</p>
+  <p class="moon-line">🌙 <strong>Lune 90 %</strong> — <strong>Tromsø</strong> : levée toute la nuit ·
+    <strong>Grindavík</strong> : lever mer. 15:58 UTC, puis levée toute la nuit</p>
 <h2>2026-10-29 - Jeudi</h2>
 <p class="meta-line"><strong>NOAA Kp nuit :</strong> 2.33</p>
 <p class="meta-line"><strong>Meilleure fenêtre NOAA :</strong> 00h (UTC) → 03h (UTC)</p>
@@ -180,7 +177,7 @@
   <div class="table-wrap"><table>
     <thead><tr>
       <th>Tranche (UTC)</th><th>NOAA Kp</th><th>GFZ median</th><th>GFZ q25</th><th>GFZ q75</th><th>GFZ min</th><th>GFZ max</th>
-      <th>Nuages Tromsø</th><th>Nuages Grindavík</th><th>Lune</th>
+      <th>Nuages Tromsø</th><th>Nuages Grindavík</th>
     </tr></thead>
     <tbody>
       <tr>
@@ -191,10 +188,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">92% - 97% <span class="agr agr-bon" title="metno_seamless : 94 % · ecmwf_ifs : 99 % · icon_seamless : 86 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">22% - 84% <span class="agr agr-bon" title="dmi_seamless : 44 % · ecmwf_ifs : 56 % · icon_seamless : 43 %">accord bon</span> <span class="day">(jour)</span></td>
-        <td data-label="Lune">84% ·
-  T ↑11° / G ↑1°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 94 % · ECMWF 99 % · ICON 91 %</span>92% - 97%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">DMI 44 % · ECMWF 56 % · ICON 40 %</span>22% - 84% <span class="day">(jour)</span></td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">18h-21h</td>
@@ -204,10 +199,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">88% - 95% <span class="agr agr-bon" title="metno_seamless : 92 % · ecmwf_ifs : 100 % · icon_seamless : 88 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">2% - 100% <span class="agr agr-bon" title="dmi_seamless : 37 % · ecmwf_ifs : 50 % · icon_seamless : 40 %">accord bon</span></td>
-        <td data-label="Lune">82% ·
-  T ↑23° / G ↑7°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">MET Nordic 92 % · ECMWF 100 % · ICON 78 %</span>88% - 95%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">DMI 37 % · ECMWF 50 % · ICON 49 %</span>2% - 100%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">21h-00h</td>
@@ -217,10 +210,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">88% - 100% <span class="agr agr-bon" title="metno_seamless : 93 % · ecmwf_ifs : 100 % · icon_seamless : 90 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">0% - 0% <span class="agr agr-faible" title="dmi_seamless : 0 % · ecmwf_ifs : 39 % · icon_seamless : 57 %">accord faible</span></td>
-        <td data-label="Lune">81% ·
-  T ↑38° / G ↑22°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 93 % · ECMWF 100 % · ICON 82 %</span>88% - 100%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-faible" tabindex="0" role="button" aria-label="accord faible"></span><span class="tip">DMI 0 % · ECMWF 39 % · ICON 53 %</span>0% - 0%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">00h-03h</td>
@@ -230,10 +221,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">76% - 99% <span class="agr agr-bon" title="metno_seamless : 91 % · ecmwf_ifs : 98 % · icon_seamless : 88 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">35% - 97% <span class="agr agr-moyen" title="dmi_seamless : 59 % · ecmwf_ifs : 27 % · icon_seamless : 62 %">accord moyen</span></td>
-        <td data-label="Lune">80% ·
-  T ↑47° / G ↑41°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 91 % · ECMWF 98 % · ICON 81 %</span>76% - 99%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-faible" tabindex="0" role="button" aria-label="accord faible"></span><span class="tip">DMI 59 % · ECMWF 27 % · ICON 69 %</span>35% - 97%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">03h-06h</td>
@@ -243,10 +232,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">98% - 98% <span class="agr agr-moyen" title="metno_seamless : 98 % · ecmwf_ifs : 73 % · icon_seamless : 93 %">accord moyen</span></td>
-        <td data-label="Nuages Grindavík">2% - 100% <span class="agr agr-faible" title="dmi_seamless : 67 % · ecmwf_ifs : 15 % · icon_seamless : 61 %">accord faible</span></td>
-        <td data-label="Lune">79% ·
-  T ↑43° / G ↑53°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">MET Nordic 98 % · ECMWF 73 % · ICON 86 %</span>98% - 98%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-faible" tabindex="0" role="button" aria-label="accord faible"></span><span class="tip">DMI 67 % · ECMWF 15 % · ICON 76 %</span>2% - 100%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">06h-09h</td>
@@ -256,13 +243,16 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">93% - 100% <span class="agr agr-bon" title="metno_seamless : 97 % · ecmwf_ifs : 100 % · icon_seamless : 90 %">accord bon</span> <span class="day">(jour)</span></td>
-        <td data-label="Nuages Grindavík">68% - 100% <span class="agr agr-moyen" title="dmi_seamless : 84 % · ecmwf_ifs : 50 % · icon_seamless : 56 %">accord moyen</span></td>
-        <td data-label="Lune">78% ·
-  T ↑29° / G ↑47°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 97 % · ECMWF 100 % · ICON 93 %</span>93% - 100% <span class="day">(jour)</span></td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-faible" tabindex="0" role="button" aria-label="accord faible"></span><span class="tip">DMI 84 % · ECMWF 50 % · ICON 98 %</span>68% - 100%</td>
       </tr>
     </tbody>
   </table></div>
+  <p class="legend">Accord des modèles météo : <span class="dot agr-bon"></span> accord (écart ≤ 20 pts)
+    <span class="dot agr-moyen"></span> écart 20-40 pts <span class="dot agr-faible"></span> désaccord (&gt; 40 pts)
+    — toucher une pastille pour voir chaque modèle</p>
+  <p class="moon-line">🌙 <strong>Lune 81 %</strong> — <strong>Tromsø</strong> : levée toute la nuit ·
+    <strong>Grindavík</strong> : levée toute la nuit</p>
 <h2>2026-10-30 - Vendredi</h2>
 <p class="meta-line"><strong>NOAA Kp nuit :</strong> 2</p>
 <p class="meta-line"><strong>Meilleure fenêtre NOAA :</strong> 15h (UTC) → 18h (UTC)</p>
@@ -270,7 +260,7 @@
   <div class="table-wrap"><table>
     <thead><tr>
       <th>Tranche (UTC)</th><th>NOAA Kp</th><th>GFZ median</th><th>GFZ q25</th><th>GFZ q75</th><th>GFZ min</th><th>GFZ max</th>
-      <th>Nuages Tromsø</th><th>Nuages Grindavík</th><th>Lune</th>
+      <th>Nuages Tromsø</th><th>Nuages Grindavík</th>
     </tr></thead>
     <tbody>
       <tr>
@@ -281,10 +271,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">86% - 95% <span class="agr agr-bon" title="metno_seamless : 91 % · ecmwf_ifs : 100 % · icon_seamless : 91 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">49% - 87% <span class="agr agr-moyen" title="dmi_seamless : 67 % · ecmwf_ifs : 66 % · icon_seamless : 100 %">accord moyen</span> <span class="day">(jour)</span></td>
-        <td data-label="Lune">74% ·
-  T ↑7° / G ↑1°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 91 % · ECMWF 100 % · ICON 95 %</span>86% - 95%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">DMI 67 % · ECMWF 66 % · ICON 100 %</span>49% - 87% <span class="day">(jour)</span></td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">18h-21h</td>
@@ -294,10 +282,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">96% - 100% <span class="agr agr-bon" title="metno_seamless : 98 % · ecmwf_ifs : 99 % · icon_seamless : 84 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">77% - 98% <span class="agr agr-bon" title="dmi_seamless : 87 % · ecmwf_ifs : 87 % · icon_seamless : 93 %">accord bon</span></td>
-        <td data-label="Lune">73% ·
-  T ↑17° / G ↑2°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 98 % · ECMWF 99 % · ICON 100 %</span>96% - 100%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">DMI 87 % · ECMWF 87 % · ICON 91 %</span>77% - 98%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">21h-00h</td>
@@ -307,10 +293,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">100% - 100% <span class="agr agr-bon" title="metno_seamless : 100 % · ecmwf_ifs : 100 % · icon_seamless : 96 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">81% - 82% <span class="agr agr-bon" title="dmi_seamless : 82 % · ecmwf_ifs : 82 % · icon_seamless : 99 %">accord bon</span></td>
-        <td data-label="Lune">71% ·
-  T ↑31° / G ↑15°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 100 % · ECMWF 100 % · ICON 100 %</span>100% - 100%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">DMI 82 % · ECMWF 82 % · ICON 100 %</span>81% - 82%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">00h-03h</td>
@@ -320,10 +304,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">99% - 100% <span class="agr agr-bon" title="metno_seamless : 100 % · ecmwf_ifs : 100 % · icon_seamless : 100 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">42% - 91% <span class="agr agr-moyen" title="dmi_seamless : 62 % · ecmwf_ifs : 62 % · icon_seamless : 96 %">accord moyen</span></td>
-        <td data-label="Lune">70% ·
-  T ↑43° / G ↑33°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 100 % · ECMWF 100 % · ICON 100 %</span>99% - 100%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">DMI 62 % · ECMWF 62 % · ICON 92 %</span>42% - 91%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">03h-06h</td>
@@ -333,10 +315,8 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">100% - 100% <span class="agr agr-bon" title="metno_seamless : 100 % · ecmwf_ifs : 100 % · icon_seamless : 100 %">accord bon</span></td>
-        <td data-label="Nuages Grindavík">73% - 97% <span class="agr agr-bon" title="dmi_seamless : 87 % · ecmwf_ifs : 87 % · icon_seamless : 80 %">accord bon</span></td>
-        <td data-label="Lune">69% ·
-  T ↑44° / G ↑48°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 100 % · ECMWF 100 % · ICON 100 %</span>100% - 100%</td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">DMI 87 % · ECMWF 87 % · ICON 85 %</span>73% - 97%</td>
       </tr>
       <tr>
         <td data-label="Tranche (UTC)">06h-09h</td>
@@ -346,19 +326,22 @@
         <td data-label="GFZ q75">—</td>
         <td data-label="GFZ min">—</td>
         <td data-label="GFZ max">—</td>
-        <td data-label="Nuages Tromsø">100% - 100% <span class="agr agr-bon" title="metno_seamless : 100 % · ecmwf_ifs : 100 % · icon_seamless : 100 %">accord bon</span> <span class="day">(jour)</span></td>
-        <td data-label="Nuages Grindavík">27% - 64% <span class="agr agr-moyen" title="dmi_seamless : 49 % · ecmwf_ifs : 49 % · icon_seamless : 80 %">accord moyen</span></td>
-        <td data-label="Lune">67% ·
-  T ↑33° / G ↑49°</td>
+        <td data-label="Nuages Tromsø"><span class="dot agr-bon" tabindex="0" role="button" aria-label="accord bon"></span><span class="tip">MET Nordic 100 % · ECMWF 100 % · ICON 100 %</span>100% - 100% <span class="day">(jour)</span></td>
+        <td data-label="Nuages Grindavík"><span class="dot agr-moyen" tabindex="0" role="button" aria-label="accord moyen"></span><span class="tip">DMI 49 % · ECMWF 49 % · ICON 75 %</span>27% - 64%</td>
       </tr>
     </tbody>
   </table></div>
+  <p class="legend">Accord des modèles météo : <span class="dot agr-bon"></span> accord (écart ≤ 20 pts)
+    <span class="dot agr-moyen"></span> écart 20-40 pts <span class="dot agr-faible"></span> désaccord (&gt; 40 pts)
+    — toucher une pastille pour voir chaque modèle</p>
+  <p class="moon-line">🌙 <strong>Lune 71 %</strong> — <strong>Tromsø</strong> : levée toute la nuit ·
+    <strong>Grindavík</strong> : lever ven. 17:54 → coucher sam. 16:40 UTC</p>
 
 <footer>
   Nuit = 15h UTC jour J → 09h UTC J+1. « (jour) » : soleil au-dessus de −6°, tranche exclue du score.
-  Nuages : modèle « best match » (utilisé pour le score) ; « accord » = écart entre modèles
-  (Tromsø : MET Nordic / ECMWF / ICON ; Grindavík : DMI / ECMWF / ICON) — bon ≤ 20 pts, moyen ≤ 40, faible au-delà.
-  Lune : illumination · T/G = levée (↑ hauteur) ou couchée (↓) à Tromsø / Grindavík.
+  Nuages : modèle « best match » (utilisé pour le score) ; pastille = accord entre modèles
+  (Tromsø : MET Nordic / ECMWF / ICON ; Grindavík : DMI / ECMWF / ICON).
+  Lune : lever et coucher en UTC ; l'impact de la lune reste pris en compte dans le score.
   Sources : <a href="https://services.swpc.noaa.gov/text/3-day-forecast.txt">NOAA SWPC</a>,
   <a href="https://spaceweather.gfz.de/">GFZ</a>, <a href="https://open-meteo.com/">Open-Meteo</a>, lune calculée avec PyEphem.
 </footer>
