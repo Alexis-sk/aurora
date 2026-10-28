@@ -140,10 +140,10 @@
   {%- if sat.noaa_slots < sat.total_slots %}
   <p class="partial">⚠ Nuit partielle : {{ sat.noaa_slots }}/{{ sat.total_slots }} tranches couvertes par NOAA — score calculé sur ces tranches seulement (la nuit complète arrive avec le bulletin de la veille).</p>
   {%- endif %}
-  <p class="moon-title"><strong>Lune</strong> <em>(heures locales)</em> — illumination {{ "%.0f"|format(reco.illum) }}%</p>
+  <p class="moon-title"><strong>Lune</strong> — illumination {{ "%.0f"|format(sat.moon_illum) }} %</p>
   <ul class="moon-lines">
   {%- for key in ["grindavik", "tromso"] %}
-    <li><strong>{{ sites[key].name }}</strong> : lever {{ reco.moons[key].rise }}, coucher {{ reco.moons[key].set }}</li>
+    <li><strong>{{ sites[key].name }}</strong> : {{ sat.moon[key] }}</li>
   {%- endfor %}
   </ul>
   {{ table(sat, with_scores=true, show_moon=false) }}

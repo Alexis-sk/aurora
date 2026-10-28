@@ -107,6 +107,7 @@ class Samedi(unittest.TestCase):
         self.assertIn("DMI 15 % · ECMWF 5 %", html)                # détail des modèles au toucher
         self.assertIn("Accord des modèles météo", html)
         self.assertNotIn("<th>Lune</th>", html)
+        self.assertNotIn("heures locales", html)                   # tout en UTC
         self.assertRegex(html, r"Lune \d+ %</strong> — <strong>Tromsø</strong> : (lever .* UTC|levée|sous)")
         self.assertEqual(data["recommendation"]["key"], "grindavik")
 
