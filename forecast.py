@@ -365,7 +365,7 @@ def booking_links(sat: date) -> dict:
         flights = [
             {"label": f"Marseille → {s['name']}", "url": skyscanner_url("mrs", code, sat, sun)},
             {"label": "Marseille → Paris CDG", "url": skyscanner_url("mrs", "cdg", sat, sun)},
-            {"label": f"Paris CDG → {s['name']} (pré-acheminement à prévoir)", "url": skyscanner_url("cdg", code, sat, sun)},
+            {"label": f"Paris CDG → {s['name']}", "url": skyscanner_url("cdg", code, sat, sun)},
         ]
         hotel = "https://www.booking.com/searchresults.fr.html?" + urlencode({
             "ss": s["booking_ss"], "lang": "fr", "sb": 1, "src_elem": "sb", "src": "index",
