@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-10-28T10:33:59.549579+00:00",
+ "generated_utc": "2026-10-28T10:37:49.371592+00:00",
  "noaa_issued": "2026-10-28T00:30:00+00:00",
  "saturday": {
   "date": "2026-10-31",
@@ -363,7 +363,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 26.8,
        "gust_kmh": 46.1,
-       "temp_c": 9.2,
+       "temp_c": 8.7,
        "models": {
         "metno_seamless": 49.0,
         "ecmwf_ifs": 69.0,
@@ -417,7 +417,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 27.6,
        "gust_kmh": 48.6,
-       "temp_c": 8.6,
+       "temp_c": 8.3,
        "models": {
         "metno_seamless": 31.7,
         "ecmwf_ifs": 53.3,
@@ -471,7 +471,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 31.1,
        "gust_kmh": 52.2,
-       "temp_c": 8.5,
+       "temp_c": 8.1,
        "models": {
         "metno_seamless": 43.0,
         "ecmwf_ifs": 33.3,
@@ -525,7 +525,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 30.2,
        "gust_kmh": 51.8,
-       "temp_c": 8.6,
+       "temp_c": 8.3,
        "models": {
         "metno_seamless": 69.7,
         "ecmwf_ifs": 65.7,
@@ -579,7 +579,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 29.1,
        "gust_kmh": 50.0,
-       "temp_c": 8.5,
+       "temp_c": 8.2,
        "models": {
         "metno_seamless": 88.0,
         "ecmwf_ifs": 70.3,
@@ -633,7 +633,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 30.5,
        "gust_kmh": 51.1,
-       "temp_c": 8.6,
+       "temp_c": 8.3,
        "models": {
         "metno_seamless": 99.3,
         "ecmwf_ifs": 98.7,
@@ -698,7 +698,7 @@
        "precip_mm": 0.1,
        "wind_kmh": 14.3,
        "gust_kmh": 37.1,
-       "temp_c": 7.6,
+       "temp_c": 7.4,
        "models": {
         "metno_seamless": 94.3,
         "ecmwf_ifs": 98.7,
@@ -752,7 +752,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 2.9,
        "gust_kmh": 12.2,
-       "temp_c": 6.4,
+       "temp_c": 6.3,
        "models": {
         "metno_seamless": 91.7,
         "ecmwf_ifs": 100.0,
@@ -806,7 +806,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 4.4,
        "gust_kmh": 7.2,
-       "temp_c": 6.3,
+       "temp_c": 6.1,
        "models": {
         "metno_seamless": 93.3,
         "ecmwf_ifs": 99.7,
@@ -860,7 +860,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 7.6,
        "gust_kmh": 12.2,
-       "temp_c": 6.6,
+       "temp_c": 6.2,
        "models": {
         "metno_seamless": 91.0,
         "ecmwf_ifs": 98.0,
@@ -914,7 +914,7 @@
        "precip_mm": 0.1,
        "wind_kmh": 12.7,
        "gust_kmh": 22.3,
-       "temp_c": 7.5,
+       "temp_c": 7.2,
        "models": {
         "metno_seamless": 98.0,
         "ecmwf_ifs": 72.7,
@@ -968,7 +968,7 @@
        "precip_mm": 0.7,
        "wind_kmh": 11.5,
        "gust_kmh": 22.3,
-       "temp_c": 7.7,
+       "temp_c": 7.5,
        "models": {
         "metno_seamless": 96.7,
         "ecmwf_ifs": 100.0,
@@ -1033,7 +1033,7 @@
        "precip_mm": 0.1,
        "wind_kmh": 11.2,
        "gust_kmh": 21.7,
-       "temp_c": 7.2,
+       "temp_c": 7.0,
        "models": {
         "metno_seamless": 91.3,
         "ecmwf_ifs": 100.0,
