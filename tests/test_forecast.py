@@ -111,9 +111,9 @@ class Samedi(unittest.TestCase):
         self.assertEqual(list(links), ["tromso", "keflavik"])          # Tromsø en premier
         t, k = links["tromso"], links["keflavik"]
         self.assertIn("/transport/vols/mrs/tos/261031/261101/", t["flights"][0]["url"])
-        self.assertIn("/transport/vols/cdg/kef/261031/261101/", k["flights"][1]["url"])
-        self.assertEqual(len(k["flights"]), 2)                          # plus de lien Marseille → CDG
-        self.assertIn("pré-acheminement à prévoir", k["flights"][1]["label"])
+        self.assertEqual([f["url"].split("/vols/")[1][:7] for f in k["flights"]], ["mrs/kef", "mrs/cdg", "cdg/kef"])
+        self.assertIn("/transport/vols/cdg/kef/261031/261101/", k["flights"][2]["url"])
+        self.assertIn("pré-acheminement à prévoir", k["flights"][2]["label"])
         cars = {c["label"]: c["url"] for c in t["cars"]}
         self.assertIn("hire-location=TOS&return-location=TOS&date-from=31%2F10%2F2026&time-from=1500"
                       "&date-to=01%2F11%2F2026&time-to=1300", cars["Avis"])
