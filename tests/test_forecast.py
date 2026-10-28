@@ -142,6 +142,8 @@ class Samedi(unittest.TestCase):
         self.assertIn('href="https://www.windy.com/?2026-10-31-21,69.642,18.839,11" target="_blank"', index)
         self.assertIn('href="https://www.windy.com/?2026-10-31-21,63.926,-22.491,11" target="_blank"', index)
         self.assertLess(index.index("Prévisions :"), index.index("Pratique :"))
+        self.assertEqual(index.count(">NOAA Forecast</a>"), 1)              # une seule série de liens
+        self.assertEqual(index.count('href="reservation.html"'), 1)
 
     def test_samedi_partiel_jeudi(self):
         # bulletin couvrant 15-17/10 : nuit de samedi 17 couverte jusqu'à 00h UTC seulement
