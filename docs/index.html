@@ -39,8 +39,9 @@
   .banner.alert { background:#ffe9d6; border:2px solid #e46b00; color:#7a3300; font-weight:700; }
   .banner.warn { background: var(--warn-bg); color: var(--warn); }
   .banner.err { background: var(--err-bg); color: var(--err); }
-  .links-inline { display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; margin: 10px 0 8px; }
-  .links-inline .title { color: var(--blue-dark); font-weight:700; font-size:1.5rem; }
+  .links-block { margin: 10px 0 8px; }
+  .links-inline { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; margin: 4px 0; }
+  .links-inline .title { color: var(--blue-dark); font-weight:700; font-size:1.2rem; min-width: 7.5rem; }
   .links-inline a { color: var(--blue-dark); font-weight:700; text-decoration: underline; }
   .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 10px; border: 1px solid var(--border); border-radius: 8px; }
   table { width: 100%; border-collapse: collapse; }
@@ -65,12 +66,26 @@
 </style>
 </head>
 <body><h1>Aurores — Destination pour le samedi 2026-10-31</h1>
-<em>Généré le 28/10/2026 11:15:59 - Heure de Paris (28/10/2026 10:15 UTC)</em><br>
+<em>Généré le 28/10/2026 11:33:59 - Heure de Paris (28/10/2026 10:33 UTC)</em><br>
 <em>Pondération : KP 40% • Nuages 40% • Lune 20%</em><br>
 <em>Bulletin NOAA émis le 28/10/2026 00:30 UTC</em><div class="banner err">Source indisponible — gfz.json : <urlopen error timed out></div>
 
-<div class="links-inline">
-  <div class="title">Liens utiles :</div>
+<div class="links-block">
+  <div class="links-inline">
+    <div class="title">Prévisions :</div>
+    <a href="https://www.swpc.noaa.gov/communities/aurora-dashboard-experimental" target="_blank" rel="noopener">NOAA Forecast</a>
+    <a href="https://www.spaceweatherlive.com/en/auroral-activity/aurora-forecast.html" target="_blank" rel="noopener">Space Weather</a>
+    <a href="https://www.yr.no/en/forecast/daily-table/1-305409/Norway/Troms/Troms%C3%B8/Troms%C3%B8" target="_blank" rel="noopener">Météo Tromsø</a>
+    <a href="https://en.vedur.is/weather/forecasts/aurora/" target="_blank" rel="noopener">Météo Islande</a>
+    <a href="https://www.windy.com/?2026-10-31-21,69.642,18.839,11" target="_blank" rel="noopener">Windy Tromsø</a>
+    <a href="https://www.windy.com/?2026-10-31-21,63.926,-22.491,11" target="_blank" rel="noopener">Windy Keflavík</a>
+  </div>
+  <div class="links-inline">
+    <div class="title">Pratique :</div>
+    <a href="info.html">Info Aurore</a>
+    <a href="reservation.html">Organisation voyage</a>
+  </div>
+</div>
   <a href="https://www.swpc.noaa.gov/communities/aurora-dashboard-experimental" target="_blank" rel="noopener">NOAA Forecast</a>
   <a href="https://www.spaceweatherlive.com/en/auroral-activity/aurora-forecast.html" target="_blank" rel="noopener">Space Weather</a>
   <a href="https://www.yr.no/en/forecast/daily-table/1-305409/Norway/Troms/Troms%C3%B8/Troms%C3%B8" target="_blank" rel="noopener">Météo Tromsø</a>
