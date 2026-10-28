@@ -528,7 +528,7 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
         "model_errors": model_errors,
         "models_used": {k: sorted(v) for k, v in models.items()},
     }
-    env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
+    env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html", "j2"]))
     env.filters["kp"] = lambda v: "—" if v is None else f"{v:g}"
     env.filters["num"] = lambda v: "—" if v is None else f"{v:.2f}".replace(".", ",")
     env.filters["model"] = lambda m: MODEL_LABELS.get(m, m)
