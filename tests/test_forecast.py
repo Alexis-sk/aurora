@@ -139,6 +139,9 @@ class Samedi(unittest.TestCase):
         self.assertIn("Organisation voyage — week-end du 31/10/2026", html)
         self.assertIn("maps/d/viewer?mid=1RMZHua_485EpJi3OGaLJ4qXm_fTGVc4", html)
         self.assertNotIn("maps/d/edit", html)
+        self.assertIn('href="https://www.windy.com/?2026-10-31-21,69.642,18.839,11" target="_blank"', index)
+        self.assertIn('href="https://www.windy.com/?2026-10-31-21,63.926,-22.491,11" target="_blank"', index)
+        self.assertLess(index.index("Prévisions :"), index.index("Pratique :"))
 
     def test_samedi_partiel_jeudi(self):
         # bulletin couvrant 15-17/10 : nuit de samedi 17 couverte jusqu'à 00h UTC seulement

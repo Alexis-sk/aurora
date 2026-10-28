@@ -367,6 +367,15 @@ TRAVEL_SITES = {  # ordre d'affichage : Tromsø puis Keflavík
 SIXT_VISA_URL = "https://www.sixt.fr/partners/visainfiniteweb-fr/"
 BLUE_CAR_URL = "https://www.bluecarrental.is"
 MRS_PARKING_URL = "https://www.marseille.aeroport.fr/parkings-et-acces/parkings/tarifs-plans"
+# Windy : carte centrée sur chaque site, à 21h UTC le samedi suivant (format ?AAAA-MM-JJ-HH,lat,lon,zoom)
+WINDY_SITES = [("Windy Tromsø", 69.642, 18.839), ("Windy Keflavík", 63.926, -22.491)]
+
+
+def windy_links(sat: date, hour: int = 21) -> list[dict]:
+    return [{"label": label, "url": f"https://www.windy.com/?{sat:%Y-%m-%d}-{hour:02d},{lat},{lon},11"}
+            for label, lat, lon in WINDY_SITES]
+
+
 # Carte Google My Maps des spots (lien en lecture seule « viewer », pas le lien d'édition)
 SPOTS_MAP_URL = "https://www.google.com/maps/d/viewer?mid=1RMZHua_485EpJi3OGaLJ4qXm_fTGVc4"
 
@@ -511,6 +520,7 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
         "nights": nights,
         "noaa_issued": noaa_issued,
         "gfz_ok": gfz is not None,
+        "windy": windy_links(sat_date),
         "offsets": {"Paris": utc_offset_label("Europe/Paris", now),
                     **{s["name"]: utc_offset_label(s["tz"], now) for s in SITES.values()}},
         "alerts": alerts, "alert_kp": ALERT_KP,
