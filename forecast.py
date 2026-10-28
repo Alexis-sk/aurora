@@ -438,7 +438,7 @@ def load_sources(fixtures: Path | None):
                 return f.read_text(encoding="utf-8")
             return fetch(url)
         except Exception as e:  # noqa: BLE001 - on veut continuer avec les autres sources
-            sink.append(f"{name} : {e or type(e).__name__}")  # certaines erreurs (timeout) ont un message vide
+            sink.append(f"{name} : {str(e) or type(e).__name__}")  # certaines erreurs (timeout) ont un message vide
             return None
 
     noaa = get("noaa.txt", NOAA_URL)
