@@ -364,8 +364,7 @@ def booking_links(sat: date) -> dict:
         code = s["iata"]
         flights = [
             {"label": f"Marseille → {s['name']}", "url": skyscanner_url("mrs", code, sat, sun)},
-            {"label": f"Paris CDG → {s['name']}", "url": skyscanner_url("cdg", code, sat, sun)},
-            {"label": "Marseille → Paris CDG (pré-acheminement)", "url": skyscanner_url("mrs", "cdg", sat, sun)},
+            {"label": f"Paris CDG → {s['name']} (pré-acheminement à prévoir)", "url": skyscanner_url("cdg", code, sat, sun)},
         ]
         hotel = "https://www.booking.com/searchresults.fr.html?" + urlencode({
             "ss": s["booking_ss"], "lang": "fr", "sb": 1, "src_elem": "sb", "src": "index",
@@ -381,7 +380,7 @@ def booking_links(sat: date) -> dict:
         cars = [{"label": "Hertz", "url": hertz}, {"label": "Avis", "url": avis},
                 {"label": "Sixt (via Visa Infinite)", "url": SIXT_VISA_URL, "static": True}]
         if s["carrental_is"]:
-            cars.append({"label": "carrental.is (comparateur islandais)",
+            cars.append({"label": "carrental.is",
                          "url": "https://carrental.is/results?" + urlencode({
                              "origin": s["carrental_is"], "destination": s["carrental_is"],
                              "pickupDate": sat.isoformat(), "pickupTime": f"T{CAR_PICKUP}:00.000Z",

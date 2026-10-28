@@ -112,6 +112,8 @@ class Samedi(unittest.TestCase):
         t, k = links["tromso"], links["keflavik"]
         self.assertIn("/transport/vols/mrs/tos/261031/261101/", t["flights"][0]["url"])
         self.assertIn("/transport/vols/cdg/kef/261031/261101/", k["flights"][1]["url"])
+        self.assertEqual(len(k["flights"]), 2)                          # plus de lien Marseille → CDG
+        self.assertIn("pré-acheminement à prévoir", k["flights"][1]["label"])
         cars = {c["label"]: c["url"] for c in t["cars"]}
         self.assertIn("hire-location=TOS&return-location=TOS&date-from=31%2F10%2F2026&time-from=1500"
                       "&date-to=01%2F11%2F2026&time-to=1300", cars["Avis"])
@@ -119,8 +121,8 @@ class Samedi(unittest.TestCase):
         self.assertIn("checkin=2026-10-31&checkout=2026-11-01", k["hotel"])
         self.assertIn("dest_id=338", k["hotel"])
         kcars = {c["label"]: c["url"] for c in k["cars"]}
-        self.assertIn("pickupTime=T15%3A00%3A00.000Z", kcars["carrental.is (comparateur islandais)"])
-        self.assertNotIn("carrental.is (comparateur islandais)", cars)  # pas pour Tromsø
+        self.assertIn("pickupTime=T15%3A00%3A00.000Z", kcars["carrental.is"])
+        self.assertNotIn("carrental.is", cars)  # pas pour Tromsø
 
     def test_page_reservation(self):
         with tempfile.TemporaryDirectory() as d:
