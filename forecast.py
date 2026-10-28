@@ -333,6 +333,64 @@ def alert_markdown(alerts: list[Slot], noaa_issued: datetime | None, page_url: s
             + (f"\n\nPage : {page_url}" if page_url else "") + "\n")
 
 
+# --------------------------------------------------------------------------- réservation
+CAR_PICKUP, CAR_RETURN = "15:00", "13:00"  # prise en charge samedi 15h, retour dimanche 13h (heure locale)
+TRAVEL_SITES = {  # ordre d'affichage : Tromsø puis Keflavík
+    "tromso": {"name": "Tromsø", "iata": "tos", "hertz": "TOST50", "booking_ss": "Aéroport de Tromsø Langnes",
+               "booking_dest_id": "313", "carrental_is": None},
+    "keflavik": {"name": "Keflavík (Reykjavík)", "iata": "kef", "hertz": "KEFT50",
+                 "booking_ss": "Aéroport de Reykjavík - Keflavík, Reykjavik, Grand Reykjavik, Islande",
+                 "booking_dest_id": "338", "carrental_is": "734"},
+}
+SIXT_VISA_URL = "https://www.sixt.fr/partners/visainfiniteweb-fr/"
+BLUE_CAR_URL = "https://www.bluecarrental.is"
+MRS_PARKING_URL = "https://www.marseille.aeroport.fr/parkings-et-acces/parkings/tarifs-plans"
+
+
+def skyscanner_url(dep: str, arr: str, out_d: date, ret_d: date) -> str:
+    return (f"https://www.skyscanner.fr/transport/vols/{dep}/{arr}/{out_d:%y%m%d}/{ret_d:%y%m%d}/"
+            "?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&preferdirects=false"
+            "&outboundaltsenabled=false&inboundaltsenabled=false")
+
+
+def booking_links(sat: date) -> dict:
+    """Liens de réservation pour le week-end (aller samedi, retour dimanche)."""
+    from urllib.parse import quote, urlencode
+    sun = sat + timedelta(days=1)
+    hp, mp = CAR_PICKUP.split(":")
+    hr, mr = CAR_RETURN.split(":")
+    out = {}
+    for key, s in TRAVEL_SITES.items():
+        code = s["iata"]
+        flights = [
+            {"label": f"Marseille → {s['name']}", "url": skyscanner_url("mrs", code, sat, sun)},
+            {"label": f"Paris CDG → {s['name']}", "url": skyscanner_url("cdg", code, sat, sun)},
+            {"label": "Marseille → Paris CDG (pré-acheminement)", "url": skyscanner_url("mrs", "cdg", sat, sun)},
+        ]
+        hotel = "https://www.booking.com/searchresults.fr.html?" + urlencode({
+            "ss": s["booking_ss"], "lang": "fr", "sb": 1, "src_elem": "sb", "src": "index",
+            "dest_id": s["booking_dest_id"], "dest_type": "airport", "checkin": sat.isoformat(),
+            "checkout": sun.isoformat(), "group_adults": 1, "no_rooms": 1, "group_children": 0})
+        avis = ("https://secure.avis.fr/r%C3%A9sultats-recherche-v%C3%A9hicules?" + urlencode({
+            "hire-location": code.upper(), "return-location": code.upper(),
+            "date-from": f"{sat:%d/%m/%Y}", "time-from": f"{hp}{mp}",
+            "date-to": f"{sun:%d/%m/%Y}", "time-to": f"{hr}{mr}"}))
+        hertz = ("https://www.hertz.fr/fr/fr/book/vehicles?" + urlencode({
+            "pid": s["hertz"], "did": s["hertz"], "pdate": f"{sat:%Y-%m-%d}T{CAR_PICKUP}:00",
+            "ddate": f"{sun:%Y-%m-%d}T{CAR_RETURN}:00", "age": 25, "pCountryCode": "FR"}))
+        cars = [{"label": "Hertz", "url": hertz}, {"label": "Avis", "url": avis},
+                {"label": "Sixt (via Visa Infinite)", "url": SIXT_VISA_URL, "static": True}]
+        if s["carrental_is"]:
+            cars.append({"label": "carrental.is (comparateur islandais)",
+                         "url": "https://carrental.is/results?" + urlencode({
+                             "origin": s["carrental_is"], "destination": s["carrental_is"],
+                             "pickupDate": sat.isoformat(), "pickupTime": f"T{CAR_PICKUP}:00.000Z",
+                             "returnDate": sun.isoformat(), "returnTime": f"T{CAR_RETURN}:00.000Z"})})
+            cars.append({"label": "Blue Car Rental", "url": BLUE_CAR_URL, "static": True})
+        out[key] = {"name": s["name"], "flights": flights, "hotel": hotel, "cars": cars}
+    return out
+
+
 # --------------------------------------------------------------------------- main
 def load_sources(fixtures: Path | None):
     """Retourne (noaa_text, gfz_raw, {site: open_meteo_raw}, {site: {modèle: raw}}, erreurs, erreurs_modèles)."""
@@ -449,6 +507,10 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
     for asset in (ROOT / "static").glob("*"):  # favicons et fichiers statiques
         shutil.copy2(asset, out / asset.name)
     (out / "index.html").write_text(env.get_template("index.html.j2").render(**ctx), encoding="utf-8")
+    (out / "reservation.html").write_text(env.get_template("reservation.html.j2").render(
+        sat=sat_date, sun=sat_date + timedelta(days=1), now_paris=ctx["now_paris"],
+        sites=booking_links(sat_date), parking=MRS_PARKING_URL, car_pickup=CAR_PICKUP, car_return=CAR_RETURN),
+        encoding="utf-8")
     (out / "data.json").write_text(json.dumps(to_json(ctx, now), indent=1, ensure_ascii=False), encoding="utf-8")
 
     reco_txt = f"{reco['name']} ({reco['score']:.0%})" if reco else "pas de données"

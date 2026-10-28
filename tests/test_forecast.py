@@ -106,6 +106,31 @@ class Samedi(unittest.TestCase):
         self.assertIn("accord bon", html)
         self.assertEqual(data["recommendation"]["key"], "grindavik")
 
+    def test_liens_reservation(self):
+        links = f.booking_links(date(2026, 10, 31))
+        self.assertEqual(list(links), ["tromso", "keflavik"])          # Tromsø en premier
+        t, k = links["tromso"], links["keflavik"]
+        self.assertIn("/transport/vols/mrs/tos/261031/261101/", t["flights"][0]["url"])
+        self.assertIn("/transport/vols/cdg/kef/261031/261101/", k["flights"][1]["url"])
+        cars = {c["label"]: c["url"] for c in t["cars"]}
+        self.assertIn("hire-location=TOS&return-location=TOS&date-from=31%2F10%2F2026&time-from=1500"
+                      "&date-to=01%2F11%2F2026&time-to=1300", cars["Avis"])
+        self.assertIn("pid=TOST50&did=TOST50&pdate=2026-10-31T15%3A00%3A00&ddate=2026-11-01T13%3A00%3A00", cars["Hertz"])
+        self.assertIn("checkin=2026-10-31&checkout=2026-11-01", k["hotel"])
+        self.assertIn("dest_id=338", k["hotel"])
+        kcars = {c["label"]: c["url"] for c in k["cars"]}
+        self.assertIn("pickupTime=T15%3A00%3A00.000Z", kcars["carrental.is (comparateur islandais)"])
+        self.assertNotIn("carrental.is (comparateur islandais)", cars)  # pas pour Tromsø
+
+    def test_page_reservation(self):
+        with tempfile.TemporaryDirectory() as d:
+            f.run(Path(d), datetime(2026, 10, 28, 9, 0, tzinfo=UTC), FIX / "storm_synthetic", "")
+            html = (Path(d) / "reservation.html").read_text()
+            index = (Path(d) / "index.html").read_text()
+        self.assertIn("week-end du 31/10/2026", html)
+        self.assertLess(html.index('id="tromso"'), html.index('id="keflavik"'))
+        self.assertIn('href="reservation.html"', index)
+
     def test_samedi_partiel_jeudi(self):
         # bulletin couvrant 15-17/10 : nuit de samedi 17 couverte jusqu'à 00h UTC seulement
         text = (FIX / "storm_synthetic" / "noaa.txt").read_text().replace("Oct 16 1230", "Oct 15 1230") \

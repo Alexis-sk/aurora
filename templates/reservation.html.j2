@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Réservation — week-end aurores</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    :root { --fg:#111; --bg:#fff; --muted:#555; --table-border:#e5e7eb; --blue-dark:#003366; --blue-soft:#e6f0ff; --blue:#0066cc; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; line-height:1.6; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    h1 { color: var(--blue-dark); font-size: clamp(1.8rem, 2.4vw, 2.4rem); margin: 0 0 .25rem; }
+    h2 { color: var(--blue-dark); font-size: clamp(1.25rem, 1.8vw, 1.5rem); margin: 0 0 .5rem; }
+    h3 { color: var(--blue-dark); font-size: 1.05rem; margin: 1.1rem 0 .3rem; }
+    .lead { color: var(--muted); margin: 0 0 1.5rem; }
+    .back { display:inline-block; margin-bottom:1rem; color:var(--blue-dark); font-weight:700; }
+    .bloc { border: 2px solid var(--blue); background: var(--blue-soft); border-radius: 10px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    ul { margin: .2rem 0; padding-left: 1.2rem; }
+    li { margin: .25rem 0; }
+    a { color: var(--blue-dark); font-weight: 600; word-break: break-word; }
+    .note { color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a class="back" href="./">← Retour aux prévisions</a>
+    <h1>Réservation — week-end du {{ sat.strftime("%d/%m/%Y") }}</h1>
+    <p class="lead">Aller samedi {{ sat.strftime("%d/%m") }}, retour dimanche {{ sun.strftime("%d/%m") }} · 1 adulte, classe économique.
+      Voiture : prise en charge samedi {{ car_pickup.replace(":", "h") }}, retour dimanche {{ car_return.replace(":", "h") }} (heure locale).<br>
+      <span class="note">Page régénérée automatiquement pour le prochain samedi (mise à jour : {{ now_paris }}, heure de Paris).</span></p>
+
+    {%- for key, s in sites.items() %}
+    <section class="bloc" id="{{ key }}">
+      <h2>{{ s.name }}</h2>
+
+      <h3>✈️ Vols (Skyscanner, aller-retour)</h3>
+      <ul>
+      {%- for f in s.flights %}
+        <li><a href="{{ f.url }}" target="_blank" rel="noopener">{{ f.label }}</a></li>
+      {%- endfor %}
+      </ul>
+
+      <h3>🅿️ Parking</h3>
+      <ul><li><a href="{{ parking }}" target="_blank" rel="noopener">Parkings de l'aéroport Marseille Provence (tarifs et plans)</a></li></ul>
+
+      <h3>🚗 Location de voiture</h3>
+      <ul>
+      {%- for c in s.cars %}
+        <li><a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% if c.static %} <span class="note">(recherche à saisir sur le site)</span>{% endif %}</li>
+      {%- endfor %}
+      </ul>
+
+      <h3>🏨 Hébergement (Booking, près de l'aéroport)</h3>
+      <ul><li><a href="{{ s.hotel }}" target="_blank" rel="noopener">Hôtels du {{ sat.strftime("%d/%m") }} au {{ sun.strftime("%d/%m") }}</a></li></ul>
+    </section>
+    {%- endfor %}
+
+    <p class="note">Liens préremplis : vérifier les dates, les horaires et le nombre de voyageurs sur chaque site avant de réserver.</p>
+  </main>
+</body>
+</html>
