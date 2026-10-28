@@ -48,7 +48,7 @@
       <h3>🚗 Location de voiture</h3>
       <ul>
       {%- for c in s.cars %}
-        <li><a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% if c.static %} <span class="note">(recherche à saisir sur le site)</span>{% endif %}</li>
+        <li><a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.label }}</a>{% if c.note %} <span class="note">({{ c.note }})</span>{% endif %}</li>
       {%- endfor %}
       </ul>
 

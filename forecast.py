@@ -379,14 +379,14 @@ def booking_links(sat: date) -> dict:
             "pid": s["hertz"], "did": s["hertz"], "pdate": f"{sat:%Y-%m-%d}T{CAR_PICKUP}:00",
             "ddate": f"{sun:%Y-%m-%d}T{CAR_RETURN}:00", "age": 25, "pCountryCode": "FR"}))
         cars = [{"label": "Hertz", "url": hertz}, {"label": "Avis", "url": avis},
-                {"label": "Sixt (via Visa Infinite)", "url": SIXT_VISA_URL, "static": True}]
+                {"label": "Sixt", "url": SIXT_VISA_URL, "note": "recherche à saisir sur le site - visa"}]
         if s["carrental_is"]:
             cars.append({"label": "carrental.is",
                          "url": "https://carrental.is/results?" + urlencode({
                              "origin": s["carrental_is"], "destination": s["carrental_is"],
                              "pickupDate": sat.isoformat(), "pickupTime": f"T{CAR_PICKUP}:00.000Z",
                              "returnDate": sun.isoformat(), "returnTime": f"T{CAR_RETURN}:00.000Z"})})
-            cars.append({"label": "Blue Car Rental", "url": BLUE_CAR_URL, "static": True})
+            cars.append({"label": "Blue Car Rental", "url": BLUE_CAR_URL, "note": "recherche à saisir sur le site"})
         out[key] = {"name": s["name"], "flights": flights, "hotel": hotel, "cars": cars}
     return out
 
