@@ -135,7 +135,10 @@ class Samedi(unittest.TestCase):
             index = (Path(d) / "index.html").read_text()
         self.assertIn("week-end du 31/10/2026", html)
         self.assertLess(html.index('id="tromso"'), html.index('id="keflavik"'))
-        self.assertIn('href="reservation.html"', index)
+        self.assertIn('href="reservation.html">Organisation voyage</a>', index)
+        self.assertIn("Organisation voyage — week-end du 31/10/2026", html)
+        self.assertIn("maps/d/viewer?mid=1RMZHua_485EpJi3OGaLJ4qXm_fTGVc4", html)
+        self.assertNotIn("maps/d/edit", html)
 
     def test_samedi_partiel_jeudi(self):
         # bulletin couvrant 15-17/10 : nuit de samedi 17 couverte jusqu'à 00h UTC seulement

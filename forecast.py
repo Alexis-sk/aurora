@@ -367,6 +367,8 @@ TRAVEL_SITES = {  # ordre d'affichage : Tromsø puis Keflavík
 SIXT_VISA_URL = "https://www.sixt.fr/partners/visainfiniteweb-fr/"
 BLUE_CAR_URL = "https://www.bluecarrental.is"
 MRS_PARKING_URL = "https://www.marseille.aeroport.fr/parkings-et-acces/parkings/tarifs-plans"
+# Carte Google My Maps des spots (lien en lecture seule « viewer », pas le lien d'édition)
+SPOTS_MAP_URL = "https://www.google.com/maps/d/viewer?mid=1RMZHua_485EpJi3OGaLJ4qXm_fTGVc4"
 
 
 def skyscanner_url(dep: str, arr: str, out_d: date, ret_d: date) -> str:
@@ -529,7 +531,7 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
     (out / "index.html").write_text(env.get_template("index.html.j2").render(**ctx), encoding="utf-8")
     (out / "reservation.html").write_text(env.get_template("reservation.html.j2").render(
         sat=sat_date, sun=sat_date + timedelta(days=1), now_paris=ctx["now_paris"],
-        sites=booking_links(sat_date), parking=MRS_PARKING_URL, car_pickup=CAR_PICKUP, car_return=CAR_RETURN),
+        sites=booking_links(sat_date), parking=MRS_PARKING_URL, spots_map=SPOTS_MAP_URL, car_pickup=CAR_PICKUP, car_return=CAR_RETURN),
         encoding="utf-8")
     (out / "data.json").write_text(json.dumps(to_json(ctx, now), indent=1, ensure_ascii=False), encoding="utf-8")
 
