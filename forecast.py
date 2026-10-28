@@ -205,6 +205,26 @@ def moon_events(site: dict, start: datetime) -> dict:
     return res
 
 
+MODEL_LABELS = {"metno_seamless": "MET Nordic", "dmi_seamless": "DMI", "ecmwf_ifs": "ECMWF", "icon_seamless": "ICON"}
+
+
+def moon_night(site: dict, d: date) -> str:
+    """Lever puis coucher de la lune pour la nuit commençant le jour d (heures UTC)."""
+    start = datetime(d.year, d.month, d.day, 12, tzinfo=UTC)
+    fmt = lambda x: f"{JOURS_COURTS[x.weekday()]} {x:%H:%M}"  # noqa: E731
+    try:
+        rise = ephem.Date(_observer(site, start).next_rising(ephem.Moon())).datetime().replace(tzinfo=UTC)
+    except ephem.AlwaysUpError:
+        return "levée toute la nuit"
+    except ephem.NeverUpError:
+        return "sous l'horizon toute la nuit"
+    try:
+        setting = ephem.Date(_observer(site, rise).next_setting(ephem.Moon())).datetime().replace(tzinfo=UTC)
+        return f"lever {fmt(rise)} → coucher {fmt(setting)} UTC"
+    except (ephem.AlwaysUpError, ephem.NeverUpError):
+        return f"lever {fmt(rise)} UTC, puis levée toute la nuit"
+
+
 # --------------------------------------------------------------------------- model
 @dataclass
 class SiteSlot:
@@ -308,6 +328,8 @@ def build_night(d: date, noaa: dict, gfz: dict | None, clouds: dict, wx: dict | 
         "best_window": (best.start, best.start + timedelta(hours=3)) if best else None,
         "site_scores": site_scores,
         "has_noaa": bool(with_kp),
+        "moon": {k: moon_night(s, d) for k, s in SITES.items()},
+        "moon_illum": slots[2].illum,
         "noaa_slots": len(with_kp),
         "total_slots": len(slots),
     }
@@ -500,6 +522,7 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
     env.filters["kp"] = lambda v: "—" if v is None else f"{v:g}"
     env.filters["num"] = lambda v: "—" if v is None else f"{v:.2f}".replace(".", ",")
+    env.filters["model"] = lambda m: MODEL_LABELS.get(m, m)
     env.filters["jour"] = lambda d: JOURS_COURTS[d.weekday()]
     env.filters["pct"] = lambda v: "—" if v is None else f"{v * 100:.0f} %"
 

@@ -103,7 +103,11 @@ class Samedi(unittest.TestCase):
         self.assertIsNone(t["clouds_low"])                    # variable absente du fixture
         self.assertTrue(any("icon_seamless" in e for e in data["model_errors"]))
         self.assertEqual(data["errors"], [])                  # un modèle en échec n'est pas une erreur bloquante
-        self.assertIn("accord bon", html)
+        self.assertIn('class="dot agr-bon"', html)
+        self.assertIn("DMI 15 % · ECMWF 5 %", html)                # détail des modèles au toucher
+        self.assertIn("Accord des modèles météo", html)
+        self.assertNotIn("<th>Lune</th>", html)
+        self.assertRegex(html, r"Lune \d+ %</strong> — <strong>Tromsø</strong> : (lever .* UTC|levée|sous)")
         self.assertEqual(data["recommendation"]["key"], "grindavik")
 
     def test_liens_reservation(self):

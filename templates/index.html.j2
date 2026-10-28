@@ -21,10 +21,14 @@
   .highlight strong { color: #000; }
   .highlight .city { color: #c40000; font-weight: 800; }
   .empty { color: var(--muted); font-style: italic; }
-  .agr { font-size: .8em; padding: 1px 6px; border-radius: 10px; margin-left: 4px; }
-  .agr-bon { background: #e3f6e8; color: #1d6b34; }
-  .agr-moyen { background: #fff2d6; color: #8a5a00; }
-  .agr-faible { background: #fde8e8; color: #9b1c1c; }
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; vertical-align: middle; cursor: pointer; }
+  .agr-bon { background: #2e9d4f; } .agr-moyen { background: #e8a317; } .agr-faible { background: #d64545; }
+  .tip { display: none; font-size: .78em; color: #555; background: #f3f6fb; border-radius: 4px; padding: 1px 5px; margin-right: 5px; }
+  .dot:hover + .tip, .dot:focus + .tip { display: inline; }
+  .dot:focus { outline: 2px solid #9db8e0; outline-offset: 1px; }
+  .legend { font-size: .82rem; color: #555; margin: 6px 0 2px; }
+  .legend .dot { cursor: default; margin-left: 6px; }
+  .moon-line { color: var(--blue-dark); margin: 4px 0 0; }
   .moon-title { margin-bottom: 2px; }
   .moon-lines { margin: 0 0 8px; padding-left: 20px; }
   .partial { color: var(--warn); background: var(--warn-bg); padding: 6px 10px; border-radius: 6px; }
@@ -65,22 +69,16 @@
   {%- if v is none -%}—{%- elif v >= 5 -%}<span class="kp5">{{ v|kp }}</span>{%- elif v >= 4 -%}<span class="kp4">{{ v|kp }}</span>{%- else -%}{{ v|kp }}{%- endif -%}
 {%- endmacro -%}
 {%- macro clouds(s) -%}
+  {%- if s.agreement -%}<span class="dot agr-{{ s.agreement }}" tabindex="0" role="button" aria-label="accord {{ s.agreement }}"></span><span class="tip">{% for m, v in s.models.items() %}{{ m|model }} {{ '%.0f'|format(v) }} %{% if not loop.last %} · {% endif %}{% endfor %}</span>{% endif -%}
   {%- if s.clouds_min is none -%}—{%- else -%}{{ "%.0f"|format(s.clouds_min) }}% - {{ "%.0f"|format(s.clouds_max) }}%{%- endif -%}
-  {%- if s.agreement %} <span class="agr agr-{{ s.agreement }}" title="{% for m, v in s.models.items() %}{{ m }} : {{ '%.0f'|format(v) }} %{% if not loop.last %} · {% endif %}{% endfor %}">accord {{ s.agreement }}</span>{% endif -%}
   {%- if not s.dark %} <span class="day">(jour)</span>{% endif -%}
 {%- endmacro -%}
-{%- macro moon(slot) -%}
-  {{ "%.0f"|format(slot.illum) }}% ·
-  {% for key, s in slot.sites.items() -%}
-    {{ sites[key].name[0] }} {% if s.moon_alt > 0 %}↑{{ "%.0f"|format(s.moon_alt) }}°{% else %}↓{% endif %}{% if not loop.last %} / {% endif %}
-  {%- endfor %}
-{%- endmacro -%}
-{%- macro table(night, with_scores=false) -%}
+{%- macro table(night, with_scores=false, show_moon=true) -%}
   <p class="scroll-hint">↔ faire défiler le tableau horizontalement</p>
   <div class="table-wrap"><table>
     <thead><tr>
       <th>Tranche (UTC)</th><th>NOAA Kp</th><th>GFZ median</th><th>GFZ q25</th><th>GFZ q75</th><th>GFZ min</th><th>GFZ max</th>
-      <th>Nuages Tromsø</th><th>Nuages Grindavík</th><th>Lune</th>
+      <th>Nuages Tromsø</th><th>Nuages Grindavík</th>
       {%- if with_scores %}<th>Score Tromsø</th><th>Score Grindavík</th>{% endif %}
     </tr></thead>
     <tbody>
@@ -95,7 +93,6 @@
         <td data-label="GFZ max">{{ s.gfz.max|num if s.gfz else "—" }}</td>
         <td data-label="Nuages Tromsø">{{ clouds(s.sites.tromso) }}</td>
         <td data-label="Nuages Grindavík">{{ clouds(s.sites.grindavik) }}</td>
-        <td data-label="Lune">{{ moon(s) }}</td>
         {%- if with_scores %}
         <td data-label="Score Tromsø">{{ s.sites.tromso.score|pct }}</td>
         <td data-label="Score Grindavík">{{ s.sites.grindavik.score|pct }}</td>
@@ -104,6 +101,13 @@
     {%- endfor %}
     </tbody>
   </table></div>
+  <p class="legend">Accord des modèles météo : <span class="dot agr-bon"></span> accord (écart ≤ 20 pts)
+    <span class="dot agr-moyen"></span> écart 20-40 pts <span class="dot agr-faible"></span> désaccord (&gt; 40 pts)
+    — toucher une pastille pour voir chaque modèle</p>
+  {%- if show_moon %}
+  <p class="moon-line">🌙 <strong>Lune {{ "%.0f"|format(night.moon_illum) }} %</strong> — <strong>Tromsø</strong> : {{ night.moon.tromso }} ·
+    <strong>Grindavík</strong> : {{ night.moon.grindavik }}</p>
+  {%- endif %}
 {%- endmacro -%}
 
 <h1>Aurores — Destination pour le samedi {{ sat.date.isoformat() }}</h1>
@@ -142,7 +146,7 @@
     <li><strong>{{ sites[key].name }}</strong> : lever {{ reco.moons[key].rise }}, coucher {{ reco.moons[key].set }}</li>
   {%- endfor %}
   </ul>
-  {{ table(sat, with_scores=true) }}
+  {{ table(sat, with_scores=true, show_moon=false) }}
 {%- else %}
   <p><strong>Destination recommandée</strong> : <span class="empty">pas encore de données NOAA pour la nuit du samedi {{ sat.date.isoformat() }} (le bulletin NOAA couvre J à J+2).</span></p>
 {%- endif %}
@@ -164,9 +168,9 @@
 
 <footer>
   Nuit = 15h UTC jour J → 09h UTC J+1. « (jour) » : soleil au-dessus de −6°, tranche exclue du score.
-  Nuages : modèle « best match » (utilisé pour le score) ; « accord » = écart entre modèles
-  (Tromsø : MET Nordic / ECMWF / ICON ; Grindavík : DMI / ECMWF / ICON) — bon ≤ 20 pts, moyen ≤ 40, faible au-delà.
-  Lune : illumination · T/G = levée (↑ hauteur) ou couchée (↓) à Tromsø / Grindavík.
+  Nuages : modèle « best match » (utilisé pour le score) ; pastille = accord entre modèles
+  (Tromsø : MET Nordic / ECMWF / ICON ; Grindavík : DMI / ECMWF / ICON).
+  Lune : lever et coucher en UTC ; l'impact de la lune reste pris en compte dans le score.
   Sources : <a href="https://services.swpc.noaa.gov/text/3-day-forecast.txt">NOAA SWPC</a>,
   <a href="https://spaceweather.gfz.de/">GFZ</a>, <a href="https://open-meteo.com/">Open-Meteo</a>, lune calculée avec PyEphem.
 </footer>
