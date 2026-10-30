@@ -22,6 +22,10 @@
     a { color: var(--blue-dark); font-weight: 600; word-break: break-word; }
     .note { color: var(--muted); font-size: .9rem; }
     .notes { margin-top: 1rem; color: var(--muted); font-size: .95rem; }
+    .voyage-type { margin-top: 2.5rem; color: var(--muted); font-size: .85rem; font-style: italic; }
+    .voyage-type h2 { color: var(--muted); font-size: 1.05rem; margin: 0 0 .25rem; }
+    .voyage-type h3 { color: var(--muted); font-size: .95rem; margin: .9rem 0 .2rem; }
+    .voyage-type p { margin: .1rem 0; }
   </style>
 </head>
 <body>
@@ -66,6 +70,19 @@
       {%- endif %}
     </section>
     {%- endfor %}
+
+    <section class="voyage-type" id="voyage-type">
+      <h2>Voyage type</h2>
+      <p>Note : simulation un vendredi (30/10/2026)</p>
+
+      <h3>TOS</h3>
+      <p>Avion : 420 €<br>Voiture : 130 € en 4x4<br>Hôtel : 100 €<br>Parking : 34 €</p>
+      <p>TOTAL : 684 € - 752 € (10 %)</p>
+
+      <h3>KEF</h3>
+      <p>Avion : 720 €<br>Voiture : 160 € en 4x4, sinon 120 €<br>Hôtel : 130 €<br>Parking : 34 €</p>
+      <p>TOTAL : 1044 € - 1148 € (10 %)</p>
+    </section>
 
   </main>
 </body>

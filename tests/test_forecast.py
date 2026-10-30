@@ -147,6 +147,8 @@ class Samedi(unittest.TestCase):
         # note Lufthansa : uniquement dans l'encart Keflavík, en italique
         self.assertEqual(html.count("Lufthansa MRS → KEF le week-end"), 1)
         self.assertGreater(html.index("Lufthansa"), html.index('id="keflavik"'))
+        # « Voyage type » : note informative en fin de page, après les deux encarts
+        self.assertGreater(html.index('id="voyage-type"'), html.index('id="keflavik"'))
         self.assertIn('href="https://www.windy.com/?2026-10-31-21,69.642,18.839,11" target="_blank"', index)
         self.assertIn('href="https://www.windy.com/?2026-10-31-21,63.926,-22.491,11" target="_blank"', index)
         self.assertLess(index.index("Prévisions :"), index.index("Pratique :"))
