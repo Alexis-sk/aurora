@@ -1,0 +1,54 @@
+{
+ "generated_utc": "2026-10-30T07:49:26+00:00",
+ "status": "analyse",
+ "test": true,
+ "saturday": "2026-10-31",
+ "kp_max": 4.67,
+ "recommendation": {
+  "site": "Tromsø",
+  "score": 0.5092674003189507
+ },
+ "data_generated_utc": "2026-10-30T07:47:31.158247+00:00",
+ "title": "[TEST] KP max > 4 — nuit du sam. 31/10 : Kp 4.67 (NOAA) — recommandation : Tromsø (51 %)",
+ "summary": "Kp NOAA max 4.67 pour la nuit du 31/10 au 01/11, atteint sur la tranche 03h-06h UTC ; NOAA attribue l'activité à un flux de vent rapide d'un trou coronal (G1 probable les 31/10 et 01/11).\nTromsø est recommandé (score 51 %, contre 37 % pour Grindavík), mais le ciel reste chargé partout : nuages moyens best match entre 63.7 % et 100 % sur les tranches de nuit noire, sauf Tromsø 00h UTC (44.7 %, modèles en désaccord).\nMeilleure fenêtre : Tromsø 00h-06h UTC (01h-07h locale), avec la percée la plus nette (Kp 4.67, nuages 64 %, modèles en bon accord) sur 03h-06h UTC. Lune à ~58-59 % et haute.\nConfiance faible à moyenne : couverture nuageuse dominée par des nuages bas, et désaccord des modèles sur 00h-03h UTC.",
+ "sections": [
+  {
+   "title": "Activité solaire",
+   "text": "Faits (NOAA SWPC, Forecast Discussion émise le 2026 Oct 30 0030 UTC, copie rafraîchie pendant ce run à 07:47 UTC) :\n- Activité solaire très faible ; légère possibilité d'éruptions isolées de classe C jusqu'au 31/10. Régions 4563 (sur le point de passer le limbe ouest) et 4564 (nouvelle, N05E68), toutes deux Axx/alpha.\n- Une éruption de filament (SW, vers 29/0830 UTC) a produit une CME ; une composante lente vers la Terre avait été envisagée, mais la modélisation indique que sa trajectoire manque la Terre. Aucune CME dirigée vers la Terre observée.\n- Un flux de vent rapide (CH HSS) d'un trou coronal équatorial récurrent, de polarité positive, devrait devenir géoeffectif fin 30/10 et perturber le vent solaire du 31/10 au 01/11.\n- Niveau prévu : instable à actif dès fin 30/10, tempête G1 (mineure) « probable » les 31/10 et 01/11.\n- data.json : Kp par tranche pour la nuit de samedi 3.0 / 3.67 / 4.0 / 3.67 / 4.67 / 3.33 (15h à 06h UTC), max 4.67 sur 03h-06h UTC. Une alerte Kp 5.0 figure pour la tranche du 31/10 00h UTC, c'est-à-dire la nuit de vendredi à samedi, pas celle de samedi. Le Kp GFZ est indisponible (erreur de téléchargement gfz.json : timeout).\n\nInterprétation : aucune CME en jeu, l'activité attendue dépend uniquement du flux de vent rapide. Ce type d'événement donne un Kp plutôt modéré et irrégulier, très dépendant de l'orientation du Bz, que NOAA ne prévoit pas. Un Kp 4-5 reste largement suffisant à Tromsø (sous l'ovale) et en Islande ; c'est la météo qui sera limitante."
+  },
+  {
+   "title": "Météo Grindavík",
+   "text": "Faits (best match + modèles dmi_seamless, ecmwf_ifs, icon_seamless) :\n- 15h UTC : nuages 76.7 % (39-100), bas 61.3 %, pluie 0.6 mm, rafales 70.2 km/h, pas encore nuit noire.\n- 18h UTC : 100 %, bas 100 %, accord faible (DMI 100, ECMWF 44.3, ICON 69.7).\n- 21h UTC : 100 %, bas 58.3 %, hauts 99.3 %, accord faible (DMI 100, ECMWF 56.7, ICON 71.3).\n- 00h UTC : 63.7 % (25-100), bas 54 %, moyens 47.3 %, hauts 1 %, accord bon (63.7 / 62.0 / 67.7), sec, vent 27.6 km/h (rafales 42.8), 7.1 °C. Meilleure tranche (score 0.37).\n- 03h UTC : couvert 100 % (bas 100 %), pluie 2.2 mm, vent 35.1 km/h, rafales 63 km/h.\n- 06h UTC : couvert 100 %, pluie 0.9 mm.\n\nInterprétation : une seule fenêtre exploitable, 00h-03h UTC (00h-03h heure locale), avec des trouées possibles dans une couche basse et moyenne à ~50 %, mais au moment où le Kp prévu n'est que de 3.67. La pluie arrive ensuite. Vent soutenu toute la nuit."
+  },
+  {
+   "title": "Météo Tromsø",
+   "text": "Faits (best match + modèles metno_seamless, ecmwf_ifs, icon_seamless) :\n- 15h UTC : 88.7 % (73-98), bas 100 %, rafales 47.2 km/h.\n- 18h UTC : 94.3 % (92-96), accord bon, sec.\n- 21h UTC : 77.7 % (60-90), bas 87 %, hauts 67.3 %, accord moyen (MET Norway 77.7, ECMWF 94.3, ICON 100).\n- 00h UTC : 44.7 % (28-57), bas 63.3 %, moyens 34.7 %, hauts 0 %, mais accord faible (MET Norway 44.7, ECMWF 73.7, ICON 100) ; sec, vent 28.3 km/h, 6.6 °C ; score 0.45.\n- 03h UTC : 64 % (57-73), bas 76.7 %, moyens 12 %, hauts 0 %, accord bon (64 / 78 / 71), sec, vent 29.2 km/h (rafales 50) ; Kp 4.67 ; meilleur score de la nuit (0.51).\n- 06h UTC : 97.3 %, pluie 1.6 mm, plus nuit noire.\n\nInterprétation : la fenêtre se situe sur 00h-06h UTC, soit 01h-07h heure locale (UTC+1). MET Norway, modèle local le plus fin, est le plus optimiste sur 00h-03h ; ICON voit du couvert total. 03h-06h UTC est plus fiable côté modèles mais nuageux aux 2/3, essentiellement par des nuages bas, qui sont les plus gênants. Il faudra probablement chercher des trouées, éventuellement en se déplaçant (vers l'intérieur des terres, par exemple, à vérifier sur les prévisions locales)."
+  },
+  {
+   "title": "Lune",
+   "text": "Faits : illumination de 63.3 % (15h UTC) à 56.2 % (06h UTC).\n- Tromsø : lune levée toute la nuit, hauteur 3.3° à 15h UTC, 23.5° à 21h, 37° à 00h, 41.9° à 03h UTC.\n- Grindavík : sous l'horizon à 18h UTC (-2.7°), puis 6.5° à 21h, 23.6° à 00h, 41° à 03h UTC.\n\nInterprétation : une lune gibbeuse haute éclaircit le ciel et masque les aurores faibles pendant les meilleures fenêtres des deux sites ; pour un Kp 4-5, les aurores restent visibles mais avec moins de contraste. Le seul créneau sans lune (Grindavík 18h UTC) est entièrement couvert."
+  },
+  {
+   "title": "Décision",
+   "text": "Score de la page : Tromsø 0.51 (51 %), Grindavík 0.37 (37 %). Nuit complète (noaa_slots = 6).\n\nRecommandation (interprétation) : Tromsø, fenêtre 00h-06h UTC = 01h-07h heure locale, avec un pic attendu sur 03h-06h UTC (04h-07h locale), quand le Kp prévu est maximal (4.67). En repli, Grindavík 00h-03h UTC (même heure locale), avant l'arrivée de la pluie.\nConfiance : faible à moyenne. L'activité géomagnétique est raisonnablement soutenue par NOAA (G1 probable), mais la couverture nuageuse reste élevée et dominée par des nuages bas, et les modèles divergent fortement sur la tranche 00h-03h à Tromsø.\n\nCe qui pourrait faire changer d'avis :\n- Une convergence d'ECMWF/ICON vers MET Norway (ciel plus dégagé) à Tromsø renforcerait la recommandation ; l'inverse la ferait tomber.\n- Un HSS arrivé plus tôt ou plus faible que prévu : la prochaine discussion NOAA dira si le G1 tient pour le 31/10.\n- Le Kp GFZ (absent dans ce run) pour recouper la prévision NOAA.\n- Ce rapport est un test : les prévisions nuageuses à J+1/J+2 évolueront ; la vérification du vendredi/samedi fera foi."
+  }
+ ],
+ "sources": [
+  {
+   "label": "NOAA SWPC — Forecast Discussion (copie du dépôt, émise le 30/10/2026 00:30 UTC)",
+   "url": "https://github.com/Alexis-sk/aurora/blob/main/docs/sources/discussion.txt"
+  },
+  {
+   "label": "NOAA SWPC — Forecast Discussion (original)",
+   "url": "https://services.swpc.noaa.gov/text/discussion.txt"
+  },
+  {
+   "label": "data.json (Kp NOAA, nuages multi-modèles Open-Meteo, lune), généré le 30/10/2026 07:47 UTC",
+   "url": "https://github.com/Alexis-sk/aurora/blob/main/docs/data.json"
+  },
+  {
+   "label": "Page de prévision aurores",
+   "url": "https://alexis-sk.github.io/aurora/"
+  }
+ ]
+}
