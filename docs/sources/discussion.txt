@@ -1,27 +1,21 @@
 :Product: Forecast Discussion
-:Issued: 2026 Oct 30 0030 UTC
+:Issued: 2026 Oct 30 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity continued at very low levels. Region 4563 (S18W81,
-Axx/alpha) decayed as rotates off the west solar limb. A new active
-region rotated into the visible disk and was numbered during the period:
-Region 4564 (N05E68, Axx/alpha).
-
-A filament eruption at the SW quadrant was first observed by GOES/SUVI
-304A around 29/0830 UTC, and later was visible in LASCO/C2 imagery after
-29/1036 UTC. Preliminary analysis indicated a slow Earth-directed
-component but further modeling suggested its trajectory is missing
-Earth.
+Solar activity continued at very low levels. Region 4564 (N04E65,
+Bxo/beta) developed trailer spots this period. A new region began
+rotating onto the disk; the region will be evaluated for numbering once
+it has rotated past the worst of the limb foreshortening effects.
 
 No Earth-directed CMEs were observed at the available coronagraph
 imagery.
 
 .Forecast...
 Solar activity is expected to be at very low levels with a slight chance
-for isolated C-class flares through 31 Oct.
+for isolated C-class flares through 01 Nov.
 
 Energetic Particle
 
@@ -32,25 +26,29 @@ proton flux remained steady at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to decrease to normal
-to moderate levels on 30 Oct Oct and remaining there through 01 Nov. The
+to moderate levels on 30 Oct Oct and remain there through 01 Nov. The
 greater than 10 MeV proton flux is anticipated to persist at background
 levels through 01 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected undisturbed conditions near Earth, with
-the speeds decreasing from 375 km/s to 325 km/s levels during the
-period. Total magnetic field (Bt) remained below 5 nT in the past 24h
-with a Bz (north-south) component mostly near neutral or northward. A
-sharp decrease of density at 29/1624 UTC was due to a data processing
-isolated correction, and does not reflect any solar wind physical
-transient. The phi angle was largely negative (towards the Sun).
+Solar wind parameters reflected generally undisturbed conditions near
+Earth in the first half of the period, with the wind speeds less than
+350 km/s, a total magnetic field (Bt) averaging 4 nT, and a largely
+neutral or north Bz (north-south) component. After approximately 30/0500
+UTC, a magnetic structure began moving through: Bt reached a max of 9 nT
+at 30/0700 UTC while Bz reached a max southward deflection of -6 nT at
+30/0615 UTC. Solar wind speeds had a very slight increase but remained
+below 350 km/s. The phi angle was largely negative (towards the Sun),
+except for a 5hr interval after 30/0500 UTC which crossed into the
+positive sector, potentially indicated a sector boundary crossing ahead
+of the anticipated CH HSS.
 
 .Forecast...
 Solar wind disturbances are likely to occur late on 30 Oct, continuing
-into 31 Oct - 01 Nov, due to a recurrent, equatorial positive polarity
-CH HSS that is anticipated to become geoeffective.
+into 31 Oct - 01 Nov, due to the anticipated arrival of a recurrent,
+equatorial positive polarity CH HSS.
 
 Geospace
 
@@ -58,6 +56,6 @@ Geospace
 The geomagnetic field was quiet during the period.
 
 .Forecast...
-Unsettled to active geomagnetic levels are expected by late on 30 Oct as
+Unsettled to active geomagnetic levels are expected late on 30 Oct as
 the positive polarity CH HSS effects begin, with G1 (Minor) geomagnetic
 storming becoming likely on 31 Oct and 01 Nov.
