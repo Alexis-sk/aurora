@@ -137,8 +137,16 @@ class Samedi(unittest.TestCase):
         self.assertLess(html.index('id="tromso"'), html.index('id="keflavik"'))
         self.assertIn('href="reservation.html">Organisation voyage</a>', index)
         self.assertIn("Organisation voyage — week-end du 31/10/2026", html)
-        self.assertIn("maps/d/viewer?mid=1RMZHua_485EpJi3OGaLJ4qXm_fTGVc4", html)
-        self.assertNotIn("maps/d/edit", html)
+        # carte des spots : déplacée sur la page principale (fin de « Pratique »), lecture seule
+        self.assertNotIn("Carte des spots", html)
+        self.assertIn("maps/d/viewer?mid=1RMZHua_485EpJi3OGaLJ4qXm_fTGVc4", index)
+        self.assertNotIn("maps/d/edit", index)
+        self.assertLess(index.index("Pratique :"), index.index("Carte des spots"))
+        self.assertLess(index.index("Carte des spots"), index.index("Analyse :"))
+        self.assertLess(index.index("Analyse :"), index.index('href="rapport.html"'))
+        # note Lufthansa : uniquement dans l'encart Keflavík, en italique
+        self.assertEqual(html.count("Lufthansa MRS → KEF le week-end"), 1)
+        self.assertGreater(html.index("Lufthansa"), html.index('id="keflavik"'))
         self.assertIn('href="https://www.windy.com/?2026-10-31-21,69.642,18.839,11" target="_blank"', index)
         self.assertIn('href="https://www.windy.com/?2026-10-31-21,63.926,-22.491,11" target="_blank"', index)
         self.assertLess(index.index("Prévisions :"), index.index("Pratique :"))

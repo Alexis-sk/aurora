@@ -368,7 +368,8 @@ TRAVEL_SITES = {  # ordre d'affichage : Tromsø puis Keflavík
                "booking_dest_id": "313", "carrental_is": None},
     "keflavik": {"name": "Keflavík (Reykjavík)", "iata": "kef", "hertz": "KEFT50",
                  "booking_ss": "Aéroport de Reykjavík - Keflavík, Reykjavik, Grand Reykjavik, Islande",
-                 "booking_dest_id": "338", "carrental_is": "734"},
+                 "booking_dest_id": "338", "carrental_is": "734",
+                 "notes": ["Les liaisons Lufthansa MRS → KEF le week-end ne sont disponibles qu'en période d'été"]},
 }
 SIXT_VISA_URL = "https://www.sixt.fr/partners/visainfiniteweb-fr/"
 BLUE_CAR_URL = "https://www.bluecarrental.is"
@@ -426,7 +427,7 @@ def booking_links(sat: date) -> dict:
                              "pickupDate": sat.isoformat(), "pickupTime": f"T{CAR_PICKUP}:00.000Z",
                              "returnDate": sun.isoformat(), "returnTime": f"T{CAR_RETURN}:00.000Z"})})
             cars.append({"label": "Blue Car Rental", "url": BLUE_CAR_URL, "note": "recherche à saisir sur le site"})
-        out[key] = {"name": s["name"], "flights": flights, "hotel": hotel, "cars": cars}
+        out[key] = {"name": s["name"], "flights": flights, "hotel": hotel, "cars": cars, "notes": s.get("notes", [])}
     return out
 
 
@@ -528,6 +529,7 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
         "noaa_issued": noaa_issued,
         "gfz_ok": gfz is not None,
         "windy": windy_links(sat_date),
+        "spots_map": SPOTS_MAP_URL,
         "offsets": {"Paris": utc_offset_label("Europe/Paris", now),
                     **{s["name"]: utc_offset_label(s["tz"], now) for s in SITES.values()}},
         "alerts": alerts, "alert_kp": ALERT_KP,
@@ -562,7 +564,7 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
     (out / "index.html").write_text(env.get_template("index.html.j2").render(**ctx), encoding="utf-8")
     (out / "reservation.html").write_text(env.get_template("reservation.html.j2").render(
         sat=sat_date, sun=sat_date + timedelta(days=1), now_paris=ctx["now_paris"],
-        sites=booking_links(sat_date), parking=MRS_PARKING_URL, spots_map=SPOTS_MAP_URL, car_pickup=CAR_PICKUP, car_return=CAR_RETURN),
+        sites=booking_links(sat_date), parking=MRS_PARKING_URL, car_pickup=CAR_PICKUP, car_return=CAR_RETURN),
         encoding="utf-8")
     (out / "data.json").write_text(json.dumps(to_json(ctx, now), indent=1, ensure_ascii=False), encoding="utf-8")
 

@@ -20,15 +20,14 @@
     ul { margin: .2rem 0; padding-left: 1.2rem; }
     li { margin: .25rem 0; }
     a { color: var(--blue-dark); font-weight: 600; word-break: break-word; }
-    .map { margin: .25rem 0 1rem; font-size: 1.1rem; }
     .note { color: var(--muted); font-size: .9rem; }
+    .notes { margin-top: 1rem; color: var(--muted); font-size: .95rem; }
   </style>
 </head>
 <body>
   <main class="container">
     <a class="back" href="./">← Retour aux prévisions</a>
     <h1>Organisation voyage — week-end du {{ sat.strftime("%d/%m/%Y") }}</h1>
-    <p class="map"><a href="{{ spots_map }}" target="_blank" rel="noopener">🗺️ Carte des spots</a></p>
     <p class="lead">Aller samedi {{ sat.strftime("%d/%m") }}, retour dimanche {{ sun.strftime("%d/%m") }} · 1 adulte, classe économique.<br>
       Voiture : prise en charge samedi {{ car_pickup.replace(":", "h") }}, retour dimanche {{ car_return.replace(":", "h") }} (heure locale).<br>
       <span class="note">Page régénérée automatiquement pour le prochain samedi (mise à jour : {{ now_paris }}, heure de Paris).</span></p>
@@ -56,6 +55,15 @@
 
       <h3>🏨 Hébergement</h3>
       <ul><li><a href="{{ s.hotel }}" target="_blank" rel="noopener">Hôtels du {{ sat.strftime("%d/%m") }} au {{ sun.strftime("%d/%m") }}</a></li></ul>
+      {%- if s.notes %}
+      <div class="notes"><em>Notes :</em>
+        <ul>
+        {%- for n in s.notes %}
+          <li><em>{{ n }}</em></li>
+        {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
     </section>
     {%- endfor %}
 
