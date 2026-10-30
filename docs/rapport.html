@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rapport d'analyse — aurores</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    :root { --fg:#111; --bg:#fff; --muted:#555; --table-border:#e5e7eb; --blue-dark:#003366; --blue-soft:#e6f0ff; --blue:#0066cc;
+            --warn-bg:#fff7e6; --warn:#b45309; --ok:#15803d; --ko:#b91c1c; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; line-height:1.6; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    h1 { color: var(--blue-dark); font-size: clamp(1.8rem, 2.4vw, 2.4rem); margin: 0 0 .25rem; }
+    h2 { color: var(--blue-dark); font-size: clamp(1.15rem, 1.6vw, 1.35rem); margin: 1.6rem 0 .4rem; }
+    p { margin: .45rem 0; }
+    ul { margin: .3rem 0; padding-left: 1.2rem; }
+    li { margin: .2rem 0; }
+    a { color: var(--blue-dark); font-weight: 600; word-break: break-word; }
+    .back { display:inline-block; margin-bottom:1rem; color:var(--blue-dark); font-weight:700; }
+    .meta { color: var(--muted); margin: 0 0 1rem; }
+    .banner { border-left: 4px solid var(--warn); background: var(--warn-bg); padding: .6rem .9rem; border-radius: 6px; margin: .6rem 0; }
+    .box { border: 2px solid var(--blue); background: var(--blue-soft); border-radius: 10px; padding: .9rem 1.2rem; margin: 1rem 0 1.5rem; }
+    .box .title { font-weight: 700; font-size: 1.1rem; margin-bottom: .3rem; }
+    .kv { display:flex; flex-wrap:wrap; gap:.3rem 1.5rem; }
+    .badge { display:inline-block; padding:.05rem .55rem; border-radius:999px; font-size:.85rem; font-weight:700; color:#fff; vertical-align: middle; }
+    .st-analyse { background: var(--blue); } .st-ras { background: var(--ok); } .st-echec { background: var(--ko); }
+    .muted { color: var(--muted); font-size: .9rem; }
+    #empty { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a class="back" href="./">← Retour aux prévisions</a>
+    <h1>Rapport d'analyse</h1>
+    <p class="meta" id="meta">Chargement…</p>
+    <div id="banners"></div>
+    <div id="report"></div>
+    <p id="empty" hidden></p>
+    <p class="muted">Rapport rédigé par une tâche planifiée Claude à partir de <a href="data.json">data.json</a> et de la discussion NOAA. Le Kp NOAA fait référence.</p>
+  </main>
+
+  <script>
+  // Le rapport est lu directement dans le dépôt : il s'affiche sans republier le site.
+  // API GitHub d'abord (cache 1 min, 60 requêtes/h par IP), puis raw.githubusercontent (cache 5 min) en secours.
+  const SOURCES = [
+    ["https://api.github.com/repos/Alexis-sk/aurora/contents/docs/rapport.json", {headers: {Accept: "application/vnd.github.raw"}}],
+    ["https://raw.githubusercontent.com/Alexis-sk/aurora/main/docs/rapport.json", {}],
+  ];
+  const STATUS = {analyse: "Analyse", ras: "RAS", echec: "Échec"};
+  const STALE_HOURS = 24;
+  const $ = (id) => document.getElementById(id);
+
+  function el(tag, text, cls) {           // textContent uniquement : aucun HTML injecté depuis le rapport
+    const e = document.createElement(tag);
+    if (text !== undefined && text !== null) e.textContent = String(text);
+    if (cls) e.className = cls;
+    return e;
+  }
+  function fmt(iso, tz) {
+    const d = new Date(iso);
+    if (isNaN(d)) return "?";
+    return d.toLocaleString("fr-FR", {timeZone: tz, weekday: "short", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"});
+  }
+  function nextSaturday() {                // même règle que forecast.py : le samedi même compte encore
+    const d = new Date();
+    d.setUTCDate(d.getUTCDate() + (6 - d.getUTCDay() + 7) % 7);
+    return d.toISOString().slice(0, 10);
+  }
+  function banner(text) { $("banners").appendChild(el("div", text, "banner")); }
+
+  // Texte simple : paragraphes séparés par une ligne vide, lignes « - » regroupées en liste à puces.
+  function renderText(parent, text) {
+    for (const block of String(text || "").split(/\n\s*\n/)) {
+      let p = null, ul = null;
+      for (const line of block.split("\n")) {
+        if (!line.trim()) continue;
+        const bullet = line.match(/^\s*[-•]\s+(.*)/);
+        if (bullet) {
+          p = null;
+          if (!ul) ul = parent.appendChild(el("ul"));
+          ul.appendChild(el("li", bullet[1]));
+        } else {
+          ul = null;
+          if (p) p.appendChild(el("br")); else p = parent.appendChild(el("p"));
+          p.appendChild(document.createTextNode(line));
+        }
+      }
+    }
+  }
+
+  function render(r) {
+    const gen = new Date(r.generated_utc);
+    $("meta").textContent = `Généré le ${fmt(r.generated_utc, "UTC")} UTC (${fmt(r.generated_utc, "Europe/Paris")} à Paris)`;
+    const ageH = (Date.now() - gen) / 3.6e6;
+    if (!(ageH < STALE_HOURS)) banner(`⚠️ Rapport ancien : généré il y a ${Math.round(ageH)} h. Les prévisions ont pu changer depuis.`);
+    if (r.saturday && r.saturday !== nextSaturday())
+      banner(`⚠️ Ce rapport porte sur la nuit du samedi ${r.saturday.split("-").reverse().join("/")}, pas sur le prochain samedi.`);
+    if (r.test) banner("🧪 Rapport de test (MODE TEST) : analyse forcée quel que soit le Kp.");
+
+    const root = $("report");
+    const box = el("div", null, "box");
+    const t = el("div", null, "title");      // le champ "title" sert au mail, pas répété ici
+    t.append(el("span", STATUS[r.status] || r.status || "?", "badge st-" + (r.status || "")), " ",
+             r.saturday ? `Nuit du sam. ${r.saturday.split("-").reverse().slice(0, 2).join("/")}` : "Nuit de samedi");
+    box.appendChild(t);
+    const kv = el("div", null, "kv");
+    kv.appendChild(el("span", `Kp max NOAA : ${r.kp_max ?? "—"}`));
+    if (r.recommendation) kv.appendChild(el("span",
+      `Recommandation : ${r.recommendation.site}` + (r.recommendation.score != null ? ` (${Math.round(r.recommendation.score * 100)} %)` : "")));
+    box.appendChild(kv);
+    if (r.summary) renderText(box, r.summary);
+    root.appendChild(box);
+
+    for (const s of r.sections || []) {
+      root.appendChild(el("h2", s.title));
+      renderText(root, s.text);
+    }
+    if ((r.sources || []).length) {
+      root.appendChild(el("h2", "Sources"));
+      const ul = el("ul");
+      for (const s of r.sources) {
+        const li = el("li");
+        if (/^https?:\/\//.test(s.url || "")) {
+          const a = el("a", s.label || s.url); a.href = s.url; a.target = "_blank"; a.rel = "noopener";
+          li.appendChild(a);
+        } else li.textContent = s.label || "";
+        ul.appendChild(li);
+      }
+      root.appendChild(ul);
+    }
+  }
+
+  async function load() {
+    let lastErr = "";
+    for (const [url, opts] of SOURCES) {
+      try {
+        const resp = await fetch(url, {cache: "no-store", ...opts});
+        if (resp.status === 404) { lastErr = "absent"; continue; }
+        if (!resp.ok) { lastErr = `HTTP ${resp.status}`; continue; }
+        return render(await resp.json());
+      } catch (e) { lastErr = e.message || String(e); }
+    }
+    $("meta").textContent = "";
+    $("empty").hidden = false;
+    $("empty").textContent = lastErr === "absent" ? "Aucun rapport pour l'instant."
+      : `Rapport indisponible (${lastErr}). Réessaie dans quelques minutes.`;
+  }
+  load();
+  </script>
+</body>
+</html>

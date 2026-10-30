@@ -1,0 +1,63 @@
+:Product: Forecast Discussion
+:Issued: 2026 Oct 30 0030 UTC
+# Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
+#
+Solar Activity
+
+.24 hr Summary...
+Solar activity continued at very low levels. Region 4563 (S18W81,
+Axx/alpha) decayed as rotates off the west solar limb. A new active
+region rotated into the visible disk and was numbered during the period:
+Region 4564 (N05E68, Axx/alpha).
+
+A filament eruption at the SW quadrant was first observed by GOES/SUVI
+304A around 29/0830 UTC, and later was visible in LASCO/C2 imagery after
+29/1036 UTC. Preliminary analysis indicated a slow Earth-directed
+component but further modeling suggested its trajectory is missing
+Earth.
+
+No Earth-directed CMEs were observed at the available coronagraph
+imagery.
+
+.Forecast...
+Solar activity is expected to be at very low levels with a slight chance
+for isolated C-class flares through 31 Oct.
+
+Energetic Particle
+
+.24 hr Summary...
+The greater than 2 MeV electron flux reached high levels, with a peak
+flux of 1,228 pfu observed at 29/1630 UTC. The greater than 10 MeV
+proton flux remained steady at background levels.
+
+.Forecast...
+The greater than 2 MeV electron flux is expected to decrease to normal
+to moderate levels on 30 Oct Oct and remaining there through 01 Nov. The
+greater than 10 MeV proton flux is anticipated to persist at background
+levels through 01 Nov.
+
+Solar Wind
+
+.24 hr Summary...
+Solar wind parameters reflected undisturbed conditions near Earth, with
+the speeds decreasing from 375 km/s to 325 km/s levels during the
+period. Total magnetic field (Bt) remained below 5 nT in the past 24h
+with a Bz (north-south) component mostly near neutral or northward. A
+sharp decrease of density at 29/1624 UTC was due to a data processing
+isolated correction, and does not reflect any solar wind physical
+transient. The phi angle was largely negative (towards the Sun).
+
+.Forecast...
+Solar wind disturbances are likely to occur late on 30 Oct, continuing
+into 31 Oct - 01 Nov, due to a recurrent, equatorial positive polarity
+CH HSS that is anticipated to become geoeffective.
+
+Geospace
+
+.24 hr Summary...
+The geomagnetic field was quiet during the period.
+
+.Forecast...
+Unsettled to active geomagnetic levels are expected by late on 30 Oct as
+the positive polarity CH HSS effects begin, with G1 (Minor) geomagnetic
+storming becoming likely on 31 Oct and 01 Nov.

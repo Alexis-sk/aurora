@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-10-30T07:07:05.134511+00:00",
+ "generated_utc": "2026-10-30T07:42:13.920959+00:00",
  "noaa_issued": "2026-10-30T00:30:00+00:00",
  "saturday": {
   "date": "2026-10-31",
@@ -80,7 +80,7 @@
       "precip_mm": 0.0,
       "wind_kmh": 16.6,
       "gust_kmh": 29.2,
-      "temp_c": 6.7,
+      "temp_c": 6.8,
       "models": {
        "metno_seamless": 94.3,
        "ecmwf_ifs": 95.7,
@@ -134,7 +134,7 @@
       "precip_mm": 0.0,
       "wind_kmh": 24.1,
       "gust_kmh": 42.5,
-      "temp_c": 6.5,
+      "temp_c": 6.6,
       "models": {
        "metno_seamless": 77.7,
        "ecmwf_ifs": 94.3,
@@ -296,7 +296,7 @@
       "precip_mm": 1.6,
       "wind_kmh": 28.6,
       "gust_kmh": 49.7,
-      "temp_c": 6.5,
+      "temp_c": 6.4,
       "models": {
        "metno_seamless": 97.3,
        "ecmwf_ifs": 98.7,
@@ -636,7 +636,7 @@
        "precip_mm": 0.3,
        "wind_kmh": 35.5,
        "gust_kmh": 60.5,
-       "temp_c": 9.4,
+       "temp_c": 9.3,
        "models": {
         "metno_seamless": 100.0,
         "ecmwf_ifs": 100.0,
@@ -755,7 +755,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 16.6,
        "gust_kmh": 29.2,
-       "temp_c": 6.7,
+       "temp_c": 6.8,
        "models": {
         "metno_seamless": 94.3,
         "ecmwf_ifs": 95.7,
@@ -809,7 +809,7 @@
        "precip_mm": 0.0,
        "wind_kmh": 24.1,
        "gust_kmh": 42.5,
-       "temp_c": 6.5,
+       "temp_c": 6.6,
        "models": {
         "metno_seamless": 77.7,
         "ecmwf_ifs": 94.3,
@@ -971,7 +971,7 @@
        "precip_mm": 1.6,
        "wind_kmh": 28.6,
        "gust_kmh": 49.7,
-       "temp_c": 6.5,
+       "temp_c": 6.4,
        "models": {
         "metno_seamless": 97.3,
         "ecmwf_ifs": 98.7,
@@ -1370,6 +1370,11 @@
   ]
  },
  "model_errors": [],
+ "discussion": {
+  "file": "sources/discussion.txt",
+  "issued": "2026-10-30T00:30:00+00:00",
+  "fetched_utc": "2026-10-30T07:42:13.920959+00:00"
+ },
  "agreement_thresholds": {
   "bon": "écart ≤ 20 pts",
   "moyen": "écart ≤ 40 pts",
