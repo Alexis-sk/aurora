@@ -3,9 +3,9 @@ name: Aurora forecast
 on:
   schedule:
     # Tout en UTC. NOAA publie vers 00:30 et 12:30 UTC.
-    - cron: "12 1 * * *"
-    - cron: "12 13 * * *"
-    - cron: "12 17 * * *"
+    # Du dimanche au mercredi seulement : du jeudi au samedi, c'est la tâche
+    # planifiée Claude (02:00 et 14:00 UTC) qui lance ce workflow et rédige le rapport.
+    - cron: "17 2,13 * * 0-3"
   workflow_dispatch:
     inputs:
       test_alert:
