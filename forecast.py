@@ -31,6 +31,7 @@ UTC = timezone.utc
 ROOT = Path(__file__).resolve().parent
 
 NOAA_URL = "https://services.swpc.noaa.gov/text/3-day-forecast.txt"
+DISCUSSION_URL = "https://services.swpc.noaa.gov/text/discussion.txt"  # discussion des prévisionnistes (lue par les tâches Claude)
 GFZ_URL = "https://spaceweather.gfz.de/fileadmin/Kp-Forecast/CSV/kp_product_file_FORECAST_PAGER_SWIFT_LAST.json"
 OPEN_METEO_VARS = ["cloud_cover", "cloud_cover_low", "cloud_cover_mid", "cloud_cover_high",
                    "precipitation", "wind_speed_10m", "wind_gusts_10m", "temperature_2m"]
@@ -93,12 +94,17 @@ MONTHS = {m: i for i, m in enumerate(
     ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
 
 
-def parse_noaa(text: str) -> tuple[datetime, dict[datetime, float]]:
-    """Retourne (date d'émission, {début de tranche UTC: Kp})."""
+def parse_issued(text: str, name: str = "NOAA") -> datetime:
+    """Date de la ligne « :Issued: 2026 Oct 14 1230 UTC » des produits texte NOAA."""
     m = re.search(r":Issued:\s+(\d{4}) (\w{3}) (\d{1,2}) (\d{2})(\d{2}) UTC", text)
     if not m:
-        raise ValueError("NOAA : ligne :Issued: introuvable")
-    issued = datetime(int(m[1]), MONTHS[m[2]], int(m[3]), int(m[4]), int(m[5]), tzinfo=UTC)
+        raise ValueError(f"{name} : ligne :Issued: introuvable")
+    return datetime(int(m[1]), MONTHS[m[2]], int(m[3]), int(m[4]), int(m[5]), tzinfo=UTC)
+
+
+def parse_noaa(text: str) -> tuple[datetime, dict[datetime, float]]:
+    """Retourne (date d'émission, {début de tranche UTC: Kp})."""
+    issued = parse_issued(text)
 
     lines = text.splitlines()
     idx = next((i for i, l in enumerate(lines) if l.startswith("NOAA Kp index breakdown")), None)
@@ -426,7 +432,7 @@ def booking_links(sat: date) -> dict:
 
 # --------------------------------------------------------------------------- main
 def load_sources(fixtures: Path | None):
-    """Retourne (noaa_text, gfz_raw, {site: open_meteo_raw}, {site: {modèle: raw}}, erreurs, erreurs_modèles)."""
+    """Retourne (noaa_text, gfz_raw, {site: open_meteo_raw}, {site: {modèle: raw}}, discussion_text, erreurs, erreurs_modèles)."""
     errors, model_errors = [], []
 
     def get(name, url, sink=errors, optional=False):
@@ -446,11 +452,12 @@ def load_sources(fixtures: Path | None):
     meteo = {k: get(f"open_meteo_{k}.json", OPEN_METEO_URL.format(**s)) for k, s in SITES.items()}
     models = {k: {m: get(f"open_meteo_{k}_{m}.json", OPEN_METEO_MODEL_URL.format(model=m, **s), model_errors, True)
                   for m in SITE_MODELS[k]} for k, s in SITES.items()}
-    return noaa, gfz, meteo, models, errors, model_errors
+    discussion = get("discussion.txt", DISCUSSION_URL, optional=True)
+    return noaa, gfz, meteo, models, discussion, errors, model_errors
 
 
 def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_file: Path | None = None) -> int:
-    noaa_raw, gfz_raw, meteo_raw, models_raw, errors, model_errors = load_sources(fixtures)
+    noaa_raw, gfz_raw, meteo_raw, models_raw, discussion_raw, errors, model_errors = load_sources(fixtures)
     warnings: list[str] = []
 
     noaa_issued, noaa = None, {}
@@ -536,6 +543,20 @@ def run(out: Path, now: datetime, fixtures: Path | None, page_url: str, alert_fi
     env.filters["pct"] = lambda v: "—" if v is None else f"{v * 100:.0f} %"
 
     out.mkdir(parents=True, exist_ok=True)
+    # Discussion NOAA : copiée telle quelle pour les tâches Claude (qui n'ont pas d'accès web).
+    # En cas d'échec, le fichier précédent est conservé et "discussion" vaut null dans data.json.
+    discussion = None
+    if discussion_raw:
+        try:
+            issued = parse_issued(discussion_raw, "Discussion NOAA")
+            (out / "sources").mkdir(exist_ok=True)
+            (out / "sources" / "discussion.txt").write_text(discussion_raw, encoding="utf-8")
+            discussion = {"file": "sources/discussion.txt", "issued": issued.isoformat(), "fetched_utc": now.isoformat()}
+            if now - issued > timedelta(hours=NOAA_STALE_HOURS):
+                warnings.append(f"Discussion NOAA ancienne (émise le {issued:%d/%m %H:%M} UTC).")
+        except ValueError as e:
+            errors.append(str(e))
+    ctx["discussion"] = discussion
     for asset in (ROOT / "static").glob("*"):  # favicons et fichiers statiques
         shutil.copy2(asset, out / asset.name)
     (out / "index.html").write_text(env.get_template("index.html.j2").render(**ctx), encoding="utf-8")
@@ -567,6 +588,7 @@ def to_json(ctx: dict, now: datetime) -> dict:
             "nights": [night(n) for n in ctx["nights"]], "alerts": [{"start": s.start.isoformat(), "kp": s.kp} for s in ctx["alerts"]],
             "warnings": ctx["warnings"], "errors": ctx["errors"],
             "models_used": ctx["models_used"], "model_errors": ctx["model_errors"],
+            "discussion": ctx.get("discussion"),
             "agreement_thresholds": {"bon": "écart ≤ 20 pts", "moyen": "écart ≤ 40 pts", "faible": "écart > 40 pts"}}
 
 

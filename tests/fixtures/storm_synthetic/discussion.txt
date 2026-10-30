@@ -1,0 +1,15 @@
+:Product: Forecast Discussion
+:Issued: 2026 Oct 16 1230 UTC
+# Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
+#
+Solar Activity
+
+.24 hr Summary...
+Solar activity reached moderate levels. Region 4321 produced an M2 flare.
+A full-halo CME was observed, with an Earth-directed component.
+
+Geospace
+
+.Forecast...
+The geomagnetic field is expected to reach G2 (Moderate) storm levels on
+17 Oct with the anticipated CME arrival (fixture synthétique de test).

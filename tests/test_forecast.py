@@ -145,6 +145,25 @@ class Samedi(unittest.TestCase):
         self.assertEqual(index.count(">NOAA Forecast</a>"), 1)              # une seule série de liens
         self.assertEqual(index.count('href="reservation.html"'), 1)
 
+    def test_discussion_et_page_rapport(self):
+        with tempfile.TemporaryDirectory() as d:
+            f.run(Path(d), datetime(2026, 10, 16, 17, 15, tzinfo=UTC), FIX / "storm_synthetic", "")
+            data = json.loads((Path(d) / "data.json").read_text())
+            disc = (Path(d) / "sources" / "discussion.txt").read_text()
+            index = (Path(d) / "index.html").read_text()
+            rapport = (Path(d) / "rapport.html").read_text()
+        self.assertIn(":Product: Forecast Discussion", disc)                 # copie brute
+        self.assertEqual(data["discussion"]["issued"], "2026-10-16T12:30:00+00:00")
+        self.assertEqual(data["discussion"]["file"], "sources/discussion.txt")
+        self.assertIn('href="rapport.html">Rapport d\'analyse</a>', index)
+        self.assertLess(index.index("Organisation voyage"), index.index("Rapport d'analyse"))
+        self.assertIn("contents/docs/rapport.json", rapport)                 # lu dans le dépôt, sans republier
+        self.assertNotIn("innerHTML", rapport)                               # rendu en texte seul
+        # sans discussion (fixture réelle) : pas d'erreur, champ null
+        code, data, _ = self.run_scenario("real_2026-10-14", "2026-10-14T13:15")
+        self.assertIsNone(data["discussion"])
+        self.assertEqual(data["errors"], [])
+
     def test_samedi_partiel_jeudi(self):
         # bulletin couvrant 15-17/10 : nuit de samedi 17 couverte jusqu'à 00h UTC seulement
         text = (FIX / "storm_synthetic" / "noaa.txt").read_text().replace("Oct 16 1230", "Oct 15 1230") \
