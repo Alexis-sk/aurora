@@ -1,20 +1,20 @@
 :Product: Forecast Discussion
-:Issued: 2026 Oct 31 1230 UTC
+:Issued: 2026 Nov 01 0030 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity continued at very low levels. Region 4564 (N04E51,
-Dro/beta) exhibited minor growth while Region 4565 (N13E70, Hsx/alpha)
-was stable.
+Solar activity continued at very low levels. Only minor changes were
+observed in Regions 4564 (N04E44, Dro/beta) and 4565 (N13E63,
+Hsx/alpha).
 
 No Earth-directed CMEs were observed at the available coronagraph
 imagery.
 
 .Forecast...
 Solar activity is expected to be at very low levels with a chance for
-isolated C-class flares through 02 Nov.
+isolated C-class flares through 03 Nov.
 
 Energetic Particle
 
@@ -25,29 +25,33 @@ levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to continue at normal
-to moderate levels on 31 Oct-02 Nov. The greater than 10 MeV proton flux
-is anticipated to persist at background levels through 02 Nov.
+to moderate levels through 02 Nov, with high levels likely by 03 Nov.
+The greater than 10 MeV proton flux is anticipated to persist at
+background levels through 02 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters were enhanced due to positive polarity CH HSS
-influence. Total magnetic field strength reached a peak of 11 nT and the
-Bz component reached as far south as -10 nT. Solar wind speeds increased
-to a peak of 440 km/s. The phi angle was predominately positive.
+Solar wind parameters reflected the onset of CIR ahead of a positive
+polarity CH HSS. Total magnetic field strength increased to peak of 12
+nT late in the period, with sustained periods of southward Bz reaching
+as far south as -11 nT. Solar wind speeds increased from ~350 km/s at
+the beginning of the UT day to between 550-615 km/s by the end of the
+day. Phi angle was predominantly oriented in the positive solar sector.
 
 .Forecast...
-Enhanced solar wind conditions are likely on 31 Oct-02 Nov due to
-positive polarity CH HSS influences.
+Enhanced solar wind conditions are likely to continue through 02 Nov due
+to positive polarity CH HSS influences. A return to mostly nominal
+conditions is expected over 03 Nov.
 
 Geospace
 
 .24 hr Summary...
-The geomagnetic field was at quiet to active levels due to positive
-polarity CH HSS influences.
+The geomagnetic field increased to G2 (Moderate) geomagnetic storm
+levels due to the onset of a influence form a positive polarity CH HSS.
 
 .Forecast...
-The geomagnetic field is likely to reach G1 (Minor) geomagnetic storm
-levels on 31 Oct-01 Nov due to influence from a positive polarity CH
-HSS. Quiet to unsettled levels are likely on 02 Nov as CH HSS influence
-wanes.
+The geomagnetic field is expected to reach G1 (Minor) geomagnetic storm
+levels on 01 Nov due to continued influence from a positive polarity CH
+HSS. Quiet to unsettled levels are likely on 02 Nov and quiet conditions
+are likely on 03 Nov as CH HSS influence wanes.
