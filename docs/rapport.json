@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-05T04:03:45+00:00",
+  "generated_utc": "2026-11-05T13:16:48+00:00",
   "status": "ras",
   "test": false,
   "saturday": "2026-11-07",
@@ -8,9 +8,9 @@
     "site": "Tromsø",
     "score": 0.33320000000000005
   },
-  "data_generated_utc": "2026-11-05T04:02:17.985793+00:00",
+  "data_generated_utc": "2026-11-05T13:15:25.295299+00:00",
   "title": "RAS aurores : Kp max nuit de samedi = 3,33, pas d'envoi.",
-  "summary": "Pour la nuit du 07/11 au 08/11, le NOAA prévoit un Kp maximal de 3,33, sous le seuil de 4 : aucune analyse n'est nécessaire (prévision encore partielle, sur 3 tranches de 3 heures).",
+  "summary": "Pour la nuit du 07/11 au 08/11, le NOAA prévoit un Kp maximal de 3,33, sous le seuil de 4 : aucune analyse n'est nécessaire (nuit encore partielle, 3 tranches du NOAA sur 6).",
   "sections": [],
   "sources": []
 }
