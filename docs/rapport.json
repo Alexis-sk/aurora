@@ -1,1 +1,62 @@
-{"generated_utc": "2026-11-06T04:13:27+00:00", "status": "analyse", "test": false, "saturday": "2026-11-07", "kp_max": 4.67, "recommendation": {"site": "Grindavík", "score": 0.4806}, "data_generated_utc": "2026-11-06T04:11:02.194035+00:00", "title": "KP max > 4 — nuit du sam. 07/11 : Kp 4,67 selon le NOAA — recommandation : Grindavík (48 %)", "summary": "Pour la nuit du 07/11 au 08/11, le NOAA prévoit un Kp maximal de 4,67, atteint entre 06h et 09h UTC dimanche, en toute fin de nuit.\nLes prévisionnistes du NOAA attribuent cette activité à un flux de vent solaire rapide issu d'un trou coronal de polarité négative et jugent un orage G1 probable, avec une possibilité de G2 les 07 et 08/11.\nGrindavík est recommandé (48 %, contre 42 % pour Tromsø), avec une fenêtre entre 06h et 09h UTC (06h à 09h heure locale), mais le ciel y est prévu entièrement couvert, nuages bas compris.\nLa confiance est faible : l'activité géomagnétique est favorable, mais tous les modèles concordent sur un ciel couvert à 100 % toute la nuit sur les deux sites.", "sections": [{"title": "Activité solaire", "text": "La discussion des prévisionnistes du NOAA utilisée ici a été émise le 06/11 à 00h30 UTC et a bien été rafraîchie pendant ce run.\n\nCe que dit le NOAA :\n- Un trou coronal de polarité négative devrait envoyer un flux de vent solaire rapide qui perturbera le vent solaire du 06 au 08/11.\n- Le champ géomagnétique devrait probablement atteindre le niveau d'orage G1 (mineur) du 06 au 08/11, avec une possibilité de G2 (modéré) les 07 et 08/11.\n- La région active 4566 a produit une éruption M3.5 le 05/11 à 18h33 UTC, accompagnée d'un sursaut radio de type II et d'un premier signe de CME dans les coronographes. Le NOAA précise que d'autres images sont nécessaires pour analyser l'événement et ne donne pas encore d'heure d'arrivée.\n- Des éruptions de classe M restent possibles, et des éruptions X peu probables, du 06 au 08/11, surtout depuis les régions 4565 et 4566.\n- Le vent solaire était calme au moment du bulletin, avec une vitesse retombée vers 320 km/s.\n\nMon interprétation : la prévision de Kp repose surtout sur le trou coronal. La CME du 05/11 n'est pas intégrée explicitement au raisonnement du NOAA. Si elle se révèle dirigée vers la Terre, elle pourrait renforcer l'activité, mais rien ne permet de l'affirmer aujourd'hui. Le Kp prévu monte au fil de la nuit, de 3,33 en soirée à 4,67 entre 06h et 09h UTC."}, {"title": "Météo Grindavík", "text": "Le modèle de référence prévoit un ciel couvert à 100 % sur toute la nuit, et les trois modèles concordent. Les nuages bas et moyens sont à 100 % sur toutes les tranches, ce qui ne laisse aucune ouverture. Seuls les nuages hauts reculent un peu en fin de nuit (81 % entre 06h et 09h UTC), sans effet utile puisque la couche basse reste fermée.\n\nDes précipitations sont attendues sur toute la nuit, jusqu'à 4,2 mm entre 18h et 21h UTC. Le vent est fort, de 34 à 45 km/h avec des rafales jusqu'à 71 km/h vers 00h–03h UTC, pour environ 8 °C.\n\nLa nuit noire va de 18h à 09h UTC. La tranche entre 06h et 09h UTC est la moins mauvaise, car elle coïncide avec le Kp le plus élevé (4,67) et reste dans la nuit noire."}, {"title": "Météo Tromsø", "text": "Le modèle de référence prévoit lui aussi un ciel couvert à 100 % toute la nuit, avec un bon accord entre les trois modèles. Les nuages bas descendent à 78 % entre 21h et 00h UTC, ce qui reste trop couvert pour espérer des trouées, puis remontent à 100 %.\n\nDes précipitations sont prévues toute la nuit, avec un maximum de 4,3 mm entre 06h et 09h UTC. Le vent est modéré, de 10 à 22 km/h, et la température avoisine 4 °C.\n\nLa nuit noire va de 15h à 06h UTC. La meilleure tranche est entre 03h et 06h UTC (04h à 07h heure locale), où le Kp atteint 4,33. Le pic de Kp de 06h–09h UTC tombe après la fin de la nuit noire à Tromsø."}, {"title": "Lune", "text": "La Lune est presque nouvelle, avec une illumination de 1 à 3 % selon les tranches. Elle reste sous l'horizon pendant toute la nuit noire sur les deux sites. Elle ne gênera donc pas l'observation."}, {"title": "Décision", "text": "Le score de la page donne Grindavík à 48 % et Tromsø à 42 %. La nuit est complète, avec six tranches de prévision du NOAA.\n\nGrindavík l'emporte uniquement parce que sa nuit noire inclut la tranche de 06h à 09h UTC, où le NOAA place le Kp maximal de 4,67. À Tromsø, la meilleure fenêtre est entre 03h et 06h UTC (04h à 07h heure locale), avec un Kp de 4,33.\n\nEn pratique, la météo est rédhibitoire sur les deux sites : tous les modèles s'accordent sur un ciel entièrement couvert, nuages bas compris, avec de la pluie. La confiance est donc faible, et je te déconseille de te déplacer sur la base de cette prévision.\n\nCe qui pourrait faire changer d'avis : une ouverture du ciel dans les prochains runs, surtout dans les nuages bas, ou une confirmation par le NOAA que la CME du 05/11 se dirige vers la Terre, ce qui renforcerait l'activité. Le prochain contrôle à 13h00 UTC intégrera le bulletin de 12h30 UTC."}], "sources": [{"label": "Discussion des prévisionnistes du NOAA (copie du 06/11 à 00h30 UTC)", "url": "https://github.com/Alexis-sk/aurora/blob/main/docs/sources/discussion.txt"}, {"label": "NOAA SWPC — Forecast Discussion", "url": "https://services.swpc.noaa.gov/text/discussion.txt"}, {"label": "Données de la page (data.json)", "url": "https://alexis-sk.github.io/aurora/data.json"}, {"label": "Page aurores", "url": "https://alexis-sk.github.io/aurora/"}]}
+{
+ "generated_utc": "2026-11-06T13:18:12+00:00",
+ "status": "analyse",
+ "test": false,
+ "saturday": "2026-11-07",
+ "kp_max": 4.67,
+ "recommendation": {
+  "site": "Grindavík",
+  "score": 0.4806
+ },
+ "data_generated_utc": "2026-11-06T13:14:22.059793+00:00",
+ "title": "KP max > 4 — nuit du sam. 07/11 : Kp 4,67 selon le NOAA — recommandation : Grindavík (48 %)",
+ "summary": "Pour la nuit du 07/11 au 08/11, le NOAA prévoit un Kp maximal de 4,67, atteint entre 06h et 09h UTC le dimanche matin.\nLes prévisionnistes du NOAA attribuent cette activité à un flux de vent solaire rapide issu d'un trou coronal de polarité négative et jugent un orage G1 probable du 06/11 au 08/11, avec une possibilité de G2.\nGrindavík est recommandé (48 %, contre 42 % pour Tromsø), avec une fenêtre entre 06h et 09h UTC (06h à 09h heure locale), mais le ciel y est entièrement couvert par des nuages bas.\nLa confiance est faible : l'activité géomagnétique est favorable, mais tous les modèles s'accordent sur un ciel couvert à 100 % toute la nuit sur les deux sites.",
+ "sections": [
+  {
+   "title": "Activité solaire",
+   "text": "La discussion des prévisionnistes du NOAA utilisée ici a été émise le 06/11 à 12h30 UTC et a bien été rafraîchie pendant ce run.\n\nCe que dit le NOAA :\n- Le vent solaire montre l'arrivée d'une région d'interaction en corotation, qui précède le flux de vent rapide d'un trou coronal de polarité négative. Le vent solaire devrait rester renforcé du 06/11 au 08/11.\n- Le champ géomagnétique devrait probablement atteindre le niveau d'orage G1 (mineur) du 06/11 au 08/11, avec une possibilité de G2 (modéré).\n- La région active 4566 a produit une éruption M3,5 le 05/11 à 18h33 UTC, mais aucune CME dirigée vers la Terre n'a été détectée. L'activité éruptive devrait rester faible, avec une possibilité d'éruptions de classe M et une faible possibilité de classe X jusqu'au 08/11.\n\nMon interprétation : aucune CME n'est attendue, l'activité de samedi soir dépend donc uniquement du flux de vent rapide. Le Kp prévu monte progressivement au fil de la nuit, de 2,67 en début de soirée à 4,67 entre 06h et 09h UTC, ce qui place le meilleur moment en toute fin de nuit. La prévision signale aussi un Kp de 5 entre 00h et 03h UTC le 07/11, c'est-à-dire la nuit de vendredi à samedi, et un autre entre 18h et 21h UTC le 08/11."
+  },
+  {
+   "title": "Météo Grindavík",
+   "text": "Le modèle de référence donne une couverture nuageuse de 100 % sur toutes les tranches de la nuit, et les trois modèles (DMI, ECMWF et ICON) concordent, avec un écart d'au plus 1 point. Les nuages bas sont à 100 % toute la nuit, ce qui exclut toute observation.\n\nLe vent est fort, entre 35 et 46 km/h, avec des rafales jusqu'à 69 km/h, et la pluie s'intensifie en fin de nuit (jusqu'à 4,1 mm entre 06h et 09h UTC). La température reste douce, autour de 8 °C.\n\nLa meilleure fenêtre théorique se situe entre 06h et 09h UTC, parce qu'elle combine la nuit noire et le Kp le plus élevé, mais le ciel y est aussi couvert qu'ailleurs."
+  },
+  {
+   "title": "Météo Tromsø",
+   "text": "Le modèle de référence donne lui aussi une couverture nuageuse de 100 % sur toute la nuit, et les trois modèles (MET Norway, ECMWF et ICON) concordent parfaitement. Les nuages bas sont entre 95 et 100 % toute la nuit.\n\nLe vent est modéré, entre 13 et 21 km/h, avec des rafales jusqu'à 36 km/h, et la température avoisine 4 °C. Les précipitations augmentent au fil de la nuit, jusqu'à 4,8 mm entre 06h et 09h UTC.\n\nLa meilleure fenêtre en nuit noire se situe entre 03h et 06h UTC (04h à 07h heure locale), avec un Kp de 4,33. La tranche suivante, qui porte le Kp le plus élevé, n'est plus en nuit noire à Tromsø."
+  },
+  {
+   "title": "Lune",
+   "text": "La lune est presque nouvelle, avec une illumination comprise entre 1 et 3 % selon l'heure. Elle reste sous l'horizon pendant toute la nuit noire sur les deux sites. Elle ne gênera donc pas l'observation."
+  },
+  {
+   "title": "Décision",
+   "text": "La page recommande Grindavík avec un score de 48 %, contre 42 % pour Tromsø. La nuit est complète, avec les six tranches de prévision du NOAA.\n\nMon interprétation : l'écart vient uniquement du fait que Grindavík est encore en nuit noire entre 06h et 09h UTC, quand le Kp culmine. Sur le plan météo, les deux sites sont aussi mauvais l'un que l'autre, avec un ciel entièrement couvert et de la pluie, et Grindavík ajoute un vent fort.\n\nSi tu dois choisir, Grindavík offre la meilleure fenêtre théorique entre 06h et 09h UTC (06h à 09h heure locale). En pratique, avec cette météo, les chances de voir une aurore samedi soir sont très faibles sur les deux sites. La confiance est faible.\n\nCe qui pourrait faire changer d'avis : une ouverture nuageuse dans les prochains runs des modèles, surtout une baisse des nuages bas, ou une révision à la hausse du Kp par le NOAA vers le niveau G2 dans le bulletin de samedi."
+  }
+ ],
+ "sources": [
+  {
+   "label": "Discussion des prévisionnistes du NOAA (copie du 06/11 12h30 UTC)",
+   "url": "https://github.com/Alexis-sk/aurora/blob/main/docs/sources/discussion.txt"
+  },
+  {
+   "label": "NOAA SWPC — Forecast Discussion",
+   "url": "https://www.swpc.noaa.gov/products/forecast-discussion"
+  },
+  {
+   "label": "NOAA SWPC — Prévision à 3 jours",
+   "url": "https://services.swpc.noaa.gov/text/3-day-forecast.txt"
+  },
+  {
+   "label": "Données de la page (data.json)",
+   "url": "https://github.com/Alexis-sk/aurora/blob/main/docs/data.json"
+  },
+  {
+   "label": "Prévisions nuages et météo Open-Meteo",
+   "url": "https://open-meteo.com/"
+  },
+  {
+   "label": "Page aurores",
+   "url": "https://alexis-sk.github.io/aurora/"
+  }
+ ]
+}
