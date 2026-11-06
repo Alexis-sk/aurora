@@ -1,73 +1,62 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 05 1230 UTC
+:Issued: 2026 Nov 06 0030 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity reached low levels with two C-class flares in the past
-24h: a C1.2 at 04/0654 UTC from Region 4566 (S06E40,
-Fai/beta-gamma-delta), and a C2.2 from a region beyond the SE limb. The
-background X-ray level raised during the period as the active regions on
-disk showed growth and a new region emerged and was numbered: Region
-4567 (N17W41, Cro/beta). The other two regions on disk, 4564 (N03W14,
-Dro/beta) and 4565 (N15E08 Dsi/beta), gained trail spots and magnetic
-complexity during the period.
+Solar activity reached moderate levels. Region 4566 (S06E28,
+Fki/beta-gamma-delta) produced an M3.5/2b flare at 05/1833 UTC.
+Associated with the event was a Type II radio sweep (est. shock speed of
+609 km/s reported by Sag Hill Observatory). Subsequent coronagraph
+imagery contained the intial signature of a CME but further coronagraph
+imagery is needed to fully analyze the event.
 
-No Earth-directed CMEs were observed in the available coronagraph
-imagery.
+Newly numbered Region 4568 (S08E53, Bxi/beta) was mostly quiet as it
+developed from plage. Another region of flux was observed rotating
+around the SE limb but was not developed enough to assign an active
+region number. Only minor changes were observed in the remaining spotted
+active regions on the visible disk.
 
 .Forecast...
 Solar activity is expected to be at low levels, with a chance for
-M-class flares and a slight chance for X-class events on 05-07 Nov,
-mostly due to Regions 4565 and 4566 configuration and development.
+M-class flares and a slight chance for X-class events on 06-08 Nov,
+primarily due to the potential from Regions 4565 and 4566.
 
 Energetic Particle
 
 .24 hr Summary...
-The greater than 2 MeV electron flux showed a sharp decrease at the
-beginning of the day, reflecting the stretched magnetotail, returning to
-high levels after 04/1410 UTC (the peak flux of 1,737 pfu occurred at
-04/0040 UTC). The greater than 10 MeV proton flux remained at background
-levels.
+The greater than 2 MeV electron flux continued to reach high levels with
+a maximum flux of 2,197 pfu observed at 05/1700 UTC. The greater than 10
+MeV proton flux remained at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to continue reaching
-high levels on 05 Nov, returning to moderate levels on 06-07 Nov. The
+high levels on 06 Nov, returning to moderate levels on 07-08 Nov. The
 greater than 10 MeV proton flux is expected to remain at background
-levels through 07 Nov.
+levels through 08 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected a mild disturbance likely associated
-with a high speed stream (HSS) from a small positive coronal hole (+CH)
-in the NW quadrant that was detected few days ago an is no longer
-identifiable in the EUV imagery. Solar wind speeds were elevated from
-375 km/s level up to 425 km/s, while a slight increase in temperature
-with a simultaneous decrease in densities were observed. Total
-interplanetary magnetic field (IMF) strength oscillated around 7 nT and
-the Bz (north-south) component was mostly negative. Bz remained under -5
-nT for a sustained period of 45 min around 04/0400 UTC, reaching as
-negative as -8 nT at 04/0424 UTC. Phi angle remained mostly in the
-positive sector (away from the Sun) in the past 24h.
+Solar wind parameters reflected nominal conditions. Total magnetic field
+strength reached 7 nT. No significant periods of southward Bz were
+observed. Solar wind speeds declined from ~380 km/s to ~320 km/s by the
+end of the UT day. Phi was predominantly oriented in a positive solar
+sector.
 
 .Forecast...
-The solar wind near-Earth is expected to remain mildly disturbed on 05
-Nov, as the geoeffective weak +CH/HSS wanes and a possible glancing blow
-influence of 01 Nov CME begins. Additional solar wind disturbances are
-likely on 06-07 Nov when a -CH/HSS is anticipated to impact the
-Geospace.
+The solar wind disturbances are likely on 06-08 Nov due to the
+anticipated influence of a negative polarity CH HSS over the next three
+days (06-08 Nov).
 
 Geospace
 
 .24 hr Summary...
-The geomagnetic activity has been quiet to unsettled for the past 24h.
+The geomagnetic field was quiet.
 
 .Forecast...
-The geomagnetic field activity is expected to reach unsettled to active
-conditions on 05 Nov as the currently geoeffective weak +CH/HSS wanes
-and a possible glancing blow influence of 01 Nov CME occurs. Minor
-storming (G1) levels are likely on 06-07 Nov (with a slight chance for
-Moderate Storms - G2 - on 07 Nov), due to the anticipated influences of
-a negative polarity CH/HSS.
+The geomagnetic field activity is likely to reach G1 (Minor) geomagnetic
+storm levels on 06-08 Nov, with a chance for G2 (Moderate) levels on
+07-08 Nov, due to the anticipated influences of a negative polarity CH
+HSS.
