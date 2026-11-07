@@ -1,16 +1,58 @@
 {
-  "generated_utc": "2026-11-07T04:13:37+00:00",
-  "status": "ras",
-  "test": false,
-  "saturday": "2026-11-07",
-  "kp_max": 4.0,
-  "recommendation": {
-    "site": "Tromsø",
-    "score": 0.36000000000000004
+ "generated_utc": "2026-11-07T13:14:15+00:00",
+ "status": "analyse",
+ "test": false,
+ "saturday": "2026-11-07",
+ "kp_max": 4.67,
+ "recommendation": {
+  "site": "Tromsø",
+  "score": 0.4806
+ },
+ "data_generated_utc": "2026-11-07T13:11:55.855043+00:00",
+ "title": "KP max > 4 — nuit du sam. 07/11 : Kp 4,67 selon le NOAA — recommandation : Tromsø (48 %)",
+ "summary": "Pour la nuit du 07/11 au 08/11, qui commence ce soir, le NOAA prévoit un Kp maximal de 4,67, atteint entre 21h et 00h UTC.\nLes prévisionnistes du NOAA attribuent cette activité au flux de vent solaire rapide d'un trou coronal de polarité négative et jugent un orage G1 probable, avec une possibilité de G2, du 07/11 au 09/11.\nTromsø est recommandé (48 %, à égalité avec Grindavík à 48 %), avec une fenêtre entre 21h et 00h UTC (22h à 01h heure locale), mais le ciel y sera entièrement couvert, avec de la pluie.\nLa confiance est très faible : l'activité géomagnétique est favorable, mais tous les modèles concordent sur un ciel couvert à 100 % sur les deux sites pendant toute la nuit.",
+ "sections": [
+  {
+   "title": "Activité solaire",
+   "text": "La discussion des prévisionnistes du NOAA a été émise le 07/11 à 12h30 UTC et a été copiée pendant ce run : elle est à jour.\n\nCe que dit le NOAA :\n- Le vent solaire est sous l'influence d'un flux rapide issu d'un trou coronal de polarité négative. Sa vitesse est passée d'environ 350 à 510 km/s, le champ magnétique total a atteint 15 nT et sa composante Bz est descendue jusqu'à -11 nT.\n- Cette influence doit se poursuivre du 07/11 au 09/11. Le champ géomagnétique devrait atteindre le niveau d'orage G1 (mineur), avec une possibilité de G2 (modéré).\n- Aucune CME dirigée vers la Terre n'a été observée, donc aucune arrivée de CME n'est attendue samedi soir.\n- La région active 4566 a produit de nombreuses éruptions de classe C, la plus forte étant une C6.2 le 07/11 à 11h57 UTC. Le NOAA prévoit une activité faible avec un risque d'éruptions de classe M et un faible risque de classe X, sans effet annoncé sur la nuit de samedi.\n\nMon interprétation : le Kp de 4,67 prévu entre 21h et 00h UTC correspond au seuil d'un orage G1. Une Bz déjà descendue à -11 nT montre que le flux rapide peut coupler efficacement, ce qui rend le scénario crédible. Le Kp prévu est de 3,67 entre 18h et 21h UTC puis de 4,00 entre 00h et 03h UTC, donc le cœur de l'activité se situe en fin de soirée."
   },
-  "data_generated_utc": "2026-11-07T04:12:46.350399+00:00",
-  "title": "RAS aurores : Kp max nuit de samedi = 4, pas d'envoi.",
-  "summary": "Le NOAA prévoit un Kp maximal de 4 pour la nuit de ce samedi 07/11 au dimanche 08/11, sous le seuil d'alerte : pas d'analyse ni de notification.",
-  "sections": [],
-  "sources": []
+  {
+   "title": "Météo Grindavík",
+   "text": "Le ciel sera entièrement couvert toute la nuit : le modèle de référence donne 100 % de nuages dans chaque tranche, et les nuages bas, moyens et hauts sont tous à 100 %. Les deux modèles disponibles concordent parfaitement (le modèle ECMWF n'a pas pu être récupéré pendant ce run).\nIl pleuvra entre 1,2 et 2,4 mm par tranche à partir de 18h UTC, avec un vent fort d'environ 35 km/h et des rafales jusqu'à 65 km/h. La température restera proche de 8 °C.\nAucune fenêtre n'est exploitable : la nuit noire commence vers 18h UTC, mais aucune éclaircie n'est prévue."
+  },
+  {
+   "title": "Météo Tromsø",
+   "text": "Le ciel sera lui aussi entièrement couvert : le modèle de référence donne 100 % de nuages dans toutes les tranches et les trois modèles concordent. Les nuages bas, les plus gênants, couvrent entre 94 et 100 % du ciel.\nIl pleuvra toute la nuit (entre 1,2 et 2,1 mm par tranche jusqu'à 06h UTC, puis 5,4 mm ensuite). Le vent faiblit au fil de la nuit, de 24 km/h en début de soirée à 11 km/h vers 03h UTC, et la température restera autour de 4 °C.\nLa moins mauvaise fenêtre est celle du pic de Kp, entre 21h et 00h UTC (22h à 01h heure locale), avec un vent plus calme de 17 km/h, mais sans éclaircie prévue."
+  },
+  {
+   "title": "Lune",
+   "text": "La lune est quasiment nouvelle (2 à 3 % d'illumination) et reste sous l'horizon pendant toute la nuit noire sur les deux sites. Elle ne gênera donc pas l'observation."
+  },
+  {
+   "title": "Décision",
+   "text": "Le score de la page recommande Tromsø (48 %), mais Grindavík obtient exactement le même score (48 %) : les deux sites sont à égalité parce que la couverture nuageuse y est identique. La nuit est complète, avec 6 tranches du NOAA.\nSi tu sors malgré tout, vise Tromsø entre 21h et 00h UTC (22h à 01h heure locale), où le vent est plus faible qu'à Grindavík. Les chances de voir une aurore sont toutefois très faibles, car un ciel couvert à 100 % avec des nuages bas et de la pluie bloque toute observation.\nLa confiance est très faible. Ce qui pourrait faire changer d'avis : une éclaircie locale non prévue par les modèles, peu probable vu leur accord, ou une prévision nuageuse revue à la baisse au prochain run.\nÀ titre d'information, les données de la page donnent pour la nuit de dimanche un Kp maximal de 5,00 selon le NOAA, avec un score de 75 % pour Grindavík grâce à une baisse de la couverture nuageuse en fin de nuit."
+  }
+ ],
+ "sources": [
+  {
+   "label": "Le NOAA SWPC — discussion des prévisionnistes (émise le 07/11 à 12h30 UTC)",
+   "url": "https://services.swpc.noaa.gov/text/discussion.txt"
+  },
+  {
+   "label": "Copie de la discussion dans le dépôt",
+   "url": "https://github.com/Alexis-sk/aurora/blob/main/docs/sources/discussion.txt"
+  },
+  {
+   "label": "Le NOAA SWPC — prévision Kp sur 3 jours",
+   "url": "https://services.swpc.noaa.gov/text/3-day-forecast.txt"
+  },
+  {
+   "label": "Données agrégées data.json (généré le 07/11 à 13h11 UTC)",
+   "url": "https://alexis-sk.github.io/aurora/data.json"
+  },
+  {
+   "label": "Open-Meteo — modèles météo",
+   "url": "https://open-meteo.com/"
+  }
+ ]
 }
