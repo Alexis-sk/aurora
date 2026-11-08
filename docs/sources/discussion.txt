@@ -1,34 +1,36 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 07 1230 UTC
+:Issued: 2026 Nov 08 0030 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity was at low levels. Region 4566 (S06E13,
-Dkc/beta-gamma-delta) produced numerous C-flares throughout the period,
-the largest being a C6.2 at 07/1157 UTC. Region 4566 exhibited minor
-growth and Region 4570 (S13E54, Bxo/beta) gained an additional spot, but
-remained mostly quiet. The remaining regions were either stable or in
-decay. No Earth-directed CMEs were observed in available coronagraph
-imagery.
+Solar activity increased to moderate levels. Region 4566 (S06E06,
+Dkc/beta-gamma-delta) was the primary producer of X-ray activity during
+the period. Three R1 (Minor) events were observed, the largest of which
+was an M1.9 (R1) flare at 07/1842 UTC. Continued sunspot development was
+observed in this regions intermediate and trailer spots, while the
+remaining numbered regions were either stable or in decay.
+
+Despite the elevated flare activity, no Earth-directed CMEs were
+observed in available coronagraph imagery.
 
 .Forecast...
-Solar activity is expected to be low with a chance for M-class flares
-(R1-R2/Minor-Moderate), and a slight chance for an X-class flare
-(R3-Strong), over 07-09 Nov.
+Solar activity is likely to see moderate M-class flares
+(R1-R2/Minor-Moderate), and a chance for an X-class flare (R3-Strong)
+over 08-10 Nov.
 
 Energetic Particle
 
 .24 hr Summary...
-The greater than 2 MeV electron flux reached high levels with a peak
-flux of 4631 pfu observed at 06/1720 UTC. The greater than 10 MeV proton
-flux was at background levels.
+The greater than 2 MeV electron flux decreased to moderate levels. The
+greater than 10 MeV proton flux was at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is likely to be at normal to
-moderate levels on 07-09 Nov. The greater than 10 MeV proton flux is
-expected to remain at background levels through 09 Nov.
+moderate levels on 08-09 Nov, with high levels likely by 10 Nov. There
+is a slight chance for the greater than 10 MeV proton flux to exceed S1
+(Minor) levels over 08-10 Nov.
 
 Solar Wind
 
@@ -36,19 +38,22 @@ Solar Wind
 Solar wind parameters reflected the influence from a negative polarity
 CH HSS. Total magnetic field strength reached 15 nT, and the Bz
 component reached as far south as -11 nT. Solar wind speeds increased
-steadily from a low of around 350 km/s to a peak of 510 km/s. Phi was
+steadily from a low of around 425 km/s to a peak of ~736 km/s. Phi was
 mostly oriented in the negative solar sector.
 
 .Forecast...
 The solar wind environment is expected to remain enhanced as CH HSS
-influences continued over 07-09 Nov.
+influences continues over 08-10 Nov.
 
 Geospace
 
 .24 hr Summary...
-The geomagnetic field was at quiet to unsettled levels.
+The geomagnetic field reached G1 (Minor) geomagnetic storm levels late
+in the UT day.
 
 .Forecast...
-The geomagnetic field is likely to reach G1 (Minor) geomagnetic storm
-levels, with a chance for G2 (Moderate) storm levels, on 07-09 Nov due
-to anticipated influence from a negative polarity CH HSS.
+The geomagnetic field is expected to reach G1 (Minor) geomagnetic storm
+levels, with a chance for G2 (Moderate) storm levels on 08 Nov, likely
+continuing into 09 Nov due to anticipated influence from a negative
+polarity CH HSS. As coronal hole effects wane, unsettled to active
+conditions are likely on 10 Nov.
