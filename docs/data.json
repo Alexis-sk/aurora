@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-11-09T23:01:41.094811+00:00",
- "noaa_issued": "2026-11-09T12:30:00+00:00",
+ "generated_utc": "2026-11-10T06:11:36.738486+00:00",
+ "noaa_issued": "2026-11-10T00:30:00+00:00",
  "saturday": {
   "date": "2026-11-14",
   "kp_max": null,
@@ -17,38 +17,46 @@
     "moon_illum": 24.8,
     "sites": {
      "tromso": {
-      "clouds_min": null,
-      "clouds_max": null,
-      "clouds_mean": null,
-      "clouds_low": null,
-      "clouds_mid": null,
-      "clouds_high": null,
-      "precip_mm": null,
-      "wind_kmh": null,
-      "gust_kmh": null,
-      "temp_c": null,
-      "models": {},
-      "model_spread": null,
-      "agreement": null,
+      "clouds_min": 44,
+      "clouds_max": 48,
+      "clouds_mean": 46.0,
+      "clouds_low": 24.7,
+      "clouds_mid": 22.7,
+      "clouds_high": 6.3,
+      "precip_mm": 0.0,
+      "wind_kmh": 2.8,
+      "gust_kmh": 14.0,
+      "temp_c": -8.9,
+      "models": {
+       "metno_seamless": 46.0,
+       "ecmwf_ifs": 46.0,
+       "icon_seamless": 34.0
+      },
+      "model_spread": 12.0,
+      "agreement": "bon",
       "moon_alt": -6.870230300248305,
       "moon_up_frac": 0.0,
       "dark": true,
       "score": null
      },
      "grindavik": {
-      "clouds_min": null,
-      "clouds_max": null,
-      "clouds_mean": null,
-      "clouds_low": null,
-      "clouds_mid": null,
-      "clouds_high": null,
-      "precip_mm": null,
-      "wind_kmh": null,
-      "gust_kmh": null,
-      "temp_c": null,
-      "models": {},
-      "model_spread": null,
-      "agreement": null,
+      "clouds_min": 44,
+      "clouds_max": 57,
+      "clouds_mean": 49.333333333333336,
+      "clouds_low": 45.0,
+      "clouds_mid": 7.0,
+      "clouds_high": 0.0,
+      "precip_mm": 0.1,
+      "wind_kmh": 33.5,
+      "gust_kmh": 56.9,
+      "temp_c": -1.5,
+      "models": {
+       "dmi_seamless": 49.3,
+       "ecmwf_ifs": 49.3,
+       "icon_seamless": 0.0
+      },
+      "model_spread": 49.3,
+      "agreement": "faible",
       "moon_alt": 0.030082977894886058,
       "moon_up_frac": 0.6666666666666666,
       "dark": false,
@@ -63,38 +71,46 @@
     "moon_illum": 25.8,
     "sites": {
      "tromso": {
-      "clouds_min": null,
-      "clouds_max": null,
-      "clouds_mean": null,
-      "clouds_low": null,
-      "clouds_mid": null,
-      "clouds_high": null,
-      "precip_mm": null,
-      "wind_kmh": null,
-      "gust_kmh": null,
-      "temp_c": null,
-      "models": {},
-      "model_spread": null,
-      "agreement": null,
+      "clouds_min": 56,
+      "clouds_max": 86,
+      "clouds_mean": 70.33333333333333,
+      "clouds_low": 32.3,
+      "clouds_mid": 0.0,
+      "clouds_high": 51.3,
+      "precip_mm": 0.0,
+      "wind_kmh": 3.7,
+      "gust_kmh": 16.9,
+      "temp_c": -9.1,
+      "models": {
+       "metno_seamless": 70.3,
+       "ecmwf_ifs": 70.3,
+       "icon_seamless": 100.0
+      },
+      "model_spread": 29.7,
+      "agreement": "moyen",
       "moon_alt": -16.730379324764275,
       "moon_up_frac": 0.0,
       "dark": true,
       "score": null
      },
      "grindavik": {
-      "clouds_min": null,
-      "clouds_max": null,
-      "clouds_mean": null,
-      "clouds_low": null,
-      "clouds_mid": null,
-      "clouds_high": null,
-      "precip_mm": null,
-      "wind_kmh": null,
-      "gust_kmh": null,
-      "temp_c": null,
-      "models": {},
-      "model_spread": null,
-      "agreement": null,
+      "clouds_min": 28,
+      "clouds_max": 60,
+      "clouds_mean": 45.0,
+      "clouds_low": 45.3,
+      "clouds_mid": 0.0,
+      "clouds_high": 0.0,
+      "precip_mm": 0.0,
+      "wind_kmh": 27.0,
+      "gust_kmh": 55.8,
+      "temp_c": -1.8,
+      "models": {
+       "dmi_seamless": 45.0,
+       "ecmwf_ifs": 45.0,
+       "icon_seamless": 0.0
+      },
+      "model_spread": 45.0,
+      "agreement": "faible",
       "moon_alt": -1.6213881913831794,
       "moon_up_frac": 0.3333333333333333,
       "dark": true,
@@ -109,38 +125,46 @@
     "moon_illum": 26.8,
     "sites": {
      "tromso": {
-      "clouds_min": null,
-      "clouds_max": null,
-      "clouds_mean": null,
-      "clouds_low": null,
-      "clouds_mid": null,
-      "clouds_high": null,
-      "precip_mm": null,
-      "wind_kmh": null,
-      "gust_kmh": null,
-      "temp_c": null,
-      "models": {},
-      "model_spread": null,
-      "agreement": null,
+      "clouds_min": 98,
+      "clouds_max": 100,
+      "clouds_mean": 99.33333333333333,
+      "clouds_low": 5.7,
+      "clouds_mid": 33.0,
+      "clouds_high": 99.0,
+      "precip_mm": 0.0,
+      "wind_kmh": 3.8,
+      "gust_kmh": 20.2,
+      "temp_c": -8.8,
+      "models": {
+       "metno_seamless": 99.3,
+       "ecmwf_ifs": 99.3,
+       "icon_seamless": 100.0
+      },
+      "model_spread": 0.7,
+      "agreement": "bon",
       "moon_alt": -31.020950191202882,
       "moon_up_frac": 0.0,
       "dark": true,
       "score": null
      },
      "grindavik": {
-      "clouds_min": null,
-      "clouds_max": null,
-      "clouds_mean": null,
-      "clouds_low": null,
-      "clouds_mid": null,
-      "clouds_high": null,
-      "precip_mm": null,
-      "wind_kmh": null,
-      "gust_kmh": null,
-      "temp_c": null,
-      "models": {},
-      "model_spread": null,
-      "agreement": null,
+      "clouds_min": 3,
+      "clouds_max": 12,
+      "clouds_mean": 6.666666666666667,
+      "clouds_low": 6.7,
+      "clouds_mid": 0.0,
+      "clouds_high": 0.0,
+      "precip_mm": 0.0,
+      "wind_kmh": 20.5,
+      "gust_kmh": 46.4,
+      "temp_c": -2.6,
+      "models": {
+       "dmi_seamless": 6.7,
+       "ecmwf_ifs": 6.7,
+       "icon_seamless": 0.0
+      },
+      "model_spread": 6.7,
+      "agreement": "bon",
       "moon_alt": -14.560544338667116,
       "moon_up_frac": 0.0,
       "dark": true,
@@ -291,370 +315,11 @@
  "recommendation": null,
  "nights": [
   {
-   "date": "2026-11-09",
-   "kp_max": 4.67,
-   "site_scores": {
-    "tromso": 0.48993333333333333,
-    "grindavik": 0.8806
-   },
-   "noaa_slots": 6,
-   "slots": [
-    {
-     "start": "2026-11-09T15:00:00+00:00",
-     "kp": 2.67,
-     "gfz": null,
-     "moon_illum": 0.3,
-     "sites": {
-      "tromso": {
-       "clouds_min": 67,
-       "clouds_max": 98,
-       "clouds_mean": 85.66666666666667,
-       "clouds_low": 76.3,
-       "clouds_mid": 48.0,
-       "clouds_high": 0.0,
-       "precip_mm": 1.5,
-       "wind_kmh": 21.5,
-       "gust_kmh": 47.2,
-       "temp_c": 3.3,
-       "models": {
-        "metno_seamless": 85.7,
-        "ecmwf_ifs": 89.0,
-        "icon_seamless": 87.3
-       },
-       "model_spread": 3.3,
-       "agreement": "bon",
-       "moon_alt": -21.44913674872535,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.3641333333333333
-      },
-      "grindavik": {
-       "clouds_min": 0,
-       "clouds_max": 0,
-       "clouds_mean": 0.0,
-       "clouds_low": 0.0,
-       "clouds_mid": 0.0,
-       "clouds_high": 0.0,
-       "precip_mm": 0.0,
-       "wind_kmh": 10.4,
-       "gust_kmh": 15.1,
-       "temp_c": 1.3,
-       "models": {
-        "dmi_seamless": 0.0,
-        "ecmwf_ifs": 20.0,
-        "icon_seamless": 3.7
-       },
-       "model_spread": 20.0,
-       "agreement": "bon",
-       "moon_alt": -4.861995028592706,
-       "moon_up_frac": 0.0,
-       "dark": false,
-       "score": null
-      }
-     }
-    },
-    {
-     "start": "2026-11-09T18:00:00+00:00",
-     "kp": 3.67,
-     "gfz": null,
-     "moon_illum": 0.5,
-     "sites": {
-      "tromso": {
-       "clouds_min": 80,
-       "clouds_max": 94,
-       "clouds_mean": 88.66666666666667,
-       "clouds_low": 80.3,
-       "clouds_mid": 58.3,
-       "clouds_high": 0.0,
-       "precip_mm": 0.2,
-       "wind_kmh": 16.8,
-       "gust_kmh": 36.7,
-       "temp_c": 1.5,
-       "models": {
-        "metno_seamless": 88.7,
-        "ecmwf_ifs": 91.3,
-        "icon_seamless": 76.7
-       },
-       "model_spread": 14.6,
-       "agreement": "bon",
-       "moon_alt": -36.29630143817559,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.39213333333333333
-      },
-      "grindavik": {
-       "clouds_min": 0,
-       "clouds_max": 0,
-       "clouds_mean": 0.0,
-       "clouds_low": 0.0,
-       "clouds_mid": 0.0,
-       "clouds_high": 0.0,
-       "precip_mm": 0.0,
-       "wind_kmh": 11.4,
-       "gust_kmh": 16.2,
-       "temp_c": -1.1,
-       "models": {
-        "dmi_seamless": 0.0,
-        "ecmwf_ifs": 29.7,
-        "icon_seamless": 24.7
-       },
-       "model_spread": 29.7,
-       "agreement": "moyen",
-       "moon_alt": -21.535227868118778,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.7468000000000001
-      }
-     }
-    },
-    {
-     "start": "2026-11-09T21:00:00+00:00",
-     "kp": 4.67,
-     "gfz": {
-      "median": 3.333333,
-      "q25": 3.333333,
-      "q75": 3.333333,
-      "min": 3.333333,
-      "max": 3.666666
-     },
-     "moon_illum": 0.6,
-     "sites": {
-      "tromso": {
-       "clouds_min": 97,
-       "clouds_max": 99,
-       "clouds_mean": 97.66666666666667,
-       "clouds_low": 81.0,
-       "clouds_mid": 53.3,
-       "clouds_high": 0.0,
-       "precip_mm": 0.5,
-       "wind_kmh": 14.3,
-       "gust_kmh": 30.2,
-       "temp_c": 1.6,
-       "models": {
-        "metno_seamless": 97.7,
-        "ecmwf_ifs": 89.7,
-        "icon_seamless": 84.3
-       },
-       "model_spread": 13.4,
-       "agreement": "bon",
-       "moon_alt": -44.693838022693264,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.48993333333333333
-      },
-      "grindavik": {
-       "clouds_min": 0,
-       "clouds_max": 0,
-       "clouds_mean": 0.0,
-       "clouds_low": 0.0,
-       "clouds_mid": 0.0,
-       "clouds_high": 0.0,
-       "precip_mm": 0.0,
-       "wind_kmh": 9.8,
-       "gust_kmh": 13.7,
-       "temp_c": -1.8,
-       "models": {
-        "dmi_seamless": 0.0,
-        "ecmwf_ifs": 14.3,
-        "icon_seamless": 7.7
-       },
-       "model_spread": 14.3,
-       "agreement": "bon",
-       "moon_alt": -40.30306799022349,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.8806
-      }
-     }
-    },
-    {
-     "start": "2026-11-10T00:00:00+00:00",
-     "kp": 3.67,
-     "gfz": {
-      "median": 2.666666,
-      "q25": 2.0,
-      "q75": 3.0,
-      "min": 1.333333,
-      "max": 4.333333
-     },
-     "moon_illum": 0.8,
-     "sites": {
-      "tromso": {
-       "clouds_min": 73,
-       "clouds_max": 99,
-       "clouds_mean": 89.66666666666667,
-       "clouds_low": 46.3,
-       "clouds_mid": 66.7,
-       "clouds_high": 0.0,
-       "precip_mm": 0.3,
-       "wind_kmh": 17.0,
-       "gust_kmh": 29.2,
-       "temp_c": 1.6,
-       "models": {
-        "metno_seamless": 89.7,
-        "ecmwf_ifs": 79.7,
-        "icon_seamless": 87.7
-       },
-       "model_spread": 10.0,
-       "agreement": "bon",
-       "moon_alt": -40.08581333310372,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.38813333333333333
-      },
-      "grindavik": {
-       "clouds_min": 0,
-       "clouds_max": 0,
-       "clouds_mean": 0.0,
-       "clouds_low": 0.0,
-       "clouds_mid": 0.0,
-       "clouds_high": 0.0,
-       "precip_mm": 0.0,
-       "wind_kmh": 6.8,
-       "gust_kmh": 7.9,
-       "temp_c": -1.9,
-       "models": {
-        "dmi_seamless": 0.0,
-        "ecmwf_ifs": 26.7,
-        "icon_seamless": 38.7
-       },
-       "model_spread": 38.7,
-       "agreement": "moyen",
-       "moon_alt": -50.85849014488539,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.7468000000000001
-      }
-     }
-    },
-    {
-     "start": "2026-11-10T03:00:00+00:00",
-     "kp": 3.67,
-     "gfz": {
-      "median": 2.333333,
-      "q25": 1.333333,
-      "q75": 2.333333,
-      "min": 1.0,
-      "max": 4.0
-     },
-     "moon_illum": 1.0,
-     "sites": {
-      "tromso": {
-       "clouds_min": 85,
-       "clouds_max": 99,
-       "clouds_mean": 94.0,
-       "clouds_low": 72.3,
-       "clouds_mid": 58.3,
-       "clouds_high": 0.0,
-       "precip_mm": 0.4,
-       "wind_kmh": 17.0,
-       "gust_kmh": 35.6,
-       "temp_c": 1.2,
-       "models": {
-        "metno_seamless": 94.0,
-        "ecmwf_ifs": 89.0,
-        "icon_seamless": 91.3
-       },
-       "model_spread": 5.0,
-       "agreement": "bon",
-       "moon_alt": -26.724103797557248,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.3708
-      },
-      "grindavik": {
-       "clouds_min": 21,
-       "clouds_max": 91,
-       "clouds_mean": 64.33333333333333,
-       "clouds_low": 62.3,
-       "clouds_mid": 0.0,
-       "clouds_high": 7.3,
-       "precip_mm": 0.0,
-       "wind_kmh": 2.4,
-       "gust_kmh": 6.5,
-       "temp_c": -0.9,
-       "models": {
-        "dmi_seamless": 64.3,
-        "ecmwf_ifs": 65.3,
-        "icon_seamless": 64.7
-       },
-       "model_spread": 1.0,
-       "agreement": "bon",
-       "moon_alt": -43.51539816443428,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.4894666666666667
-      }
-     }
-    },
-    {
-     "start": "2026-11-10T06:00:00+00:00",
-     "kp": 2.67,
-     "gfz": {
-      "median": 2.0,
-      "q25": 1.333333,
-      "q75": 2.333333,
-      "min": 1.333333,
-      "max": 3.333333
-     },
-     "moon_illum": 1.2,
-     "sites": {
-      "tromso": {
-       "clouds_min": 67,
-       "clouds_max": 100,
-       "clouds_mean": 84.66666666666667,
-       "clouds_low": 75.3,
-       "clouds_mid": 74.0,
-       "clouds_high": 0.0,
-       "precip_mm": 1.4,
-       "wind_kmh": 14.5,
-       "gust_kmh": 36.7,
-       "temp_c": 1.1,
-       "models": {
-        "metno_seamless": 84.7,
-        "ecmwf_ifs": 93.0,
-        "icon_seamless": 97.0
-       },
-       "model_spread": 12.3,
-       "agreement": "bon",
-       "moon_alt": -13.259780061241438,
-       "moon_up_frac": 0.0,
-       "dark": false,
-       "score": null
-      },
-      "grindavik": {
-       "clouds_min": 0,
-       "clouds_max": 71,
-       "clouds_mean": 23.666666666666668,
-       "clouds_low": 23.7,
-       "clouds_mid": 0.0,
-       "clouds_high": 0.0,
-       "precip_mm": 0.0,
-       "wind_kmh": 8.0,
-       "gust_kmh": 12.2,
-       "temp_c": -0.6,
-       "models": {
-        "dmi_seamless": 23.7,
-        "ecmwf_ifs": 98.3,
-        "icon_seamless": 72.7
-       },
-       "model_spread": 74.6,
-       "agreement": "faible",
-       "moon_alt": -25.855274706827654,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": 0.6121333333333334
-      }
-     }
-    }
-   ]
-  },
-  {
    "date": "2026-11-10",
-   "kp_max": 2.67,
+   "kp_max": 3.0,
    "site_scores": {
-    "tromso": 0.44933333333333336,
-    "grindavik": 0.5294666666666668
+    "tromso": 0.37333333333333335,
+    "grindavik": 0.6548
    },
    "noaa_slots": 6,
    "slots": [
@@ -662,55 +327,55 @@
      "start": "2026-11-10T15:00:00+00:00",
      "kp": 1.67,
      "gfz": {
-      "median": 1.666666,
-      "q25": 1.666666,
+      "median": 1.333333,
+      "q25": 1.0,
       "q75": 1.666666,
-      "min": 1.0,
-      "max": 3.666666
+      "min": 0.666666,
+      "max": 3.333333
      },
      "moon_illum": 2.1,
      "sites": {
       "tromso": {
-       "clouds_min": 84,
-       "clouds_max": 95,
-       "clouds_mean": 89.66666666666667,
-       "clouds_low": 69.7,
-       "clouds_mid": 69.7,
-       "clouds_high": 43.7,
-       "precip_mm": 0.3,
-       "wind_kmh": 10.9,
-       "gust_kmh": 31.0,
-       "temp_c": 1.6,
+       "clouds_min": 76,
+       "clouds_max": 81,
+       "clouds_mean": 79.33333333333333,
+       "clouds_low": 64.0,
+       "clouds_mid": 58.3,
+       "clouds_high": 27.3,
+       "precip_mm": 0.1,
+       "wind_kmh": 13.6,
+       "gust_kmh": 30.6,
+       "temp_c": 0.6,
        "models": {
-        "metno_seamless": 89.7,
-        "ecmwf_ifs": 95.7,
-        "icon_seamless": 100.0
+        "metno_seamless": 79.3,
+        "ecmwf_ifs": 88.3,
+        "icon_seamless": 88.3
        },
-       "model_spread": 10.3,
+       "model_spread": 9.0,
        "agreement": "bon",
        "moon_alt": -20.043425760928784,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.30813333333333337
+       "score": 0.3494666666666667
       },
       "grindavik": {
-       "clouds_min": 76,
-       "clouds_max": 88,
-       "clouds_mean": 81.66666666666667,
-       "clouds_low": 21.0,
+       "clouds_min": 9,
+       "clouds_max": 23,
+       "clouds_mean": 16.666666666666668,
+       "clouds_low": 0.7,
        "clouds_mid": 0.0,
-       "clouds_high": 73.3,
+       "clouds_high": 16.0,
        "precip_mm": 0.0,
-       "wind_kmh": 24.0,
-       "gust_kmh": 38.5,
-       "temp_c": 4.7,
+       "wind_kmh": 27.2,
+       "gust_kmh": 41.8,
+       "temp_c": 5.1,
        "models": {
-        "dmi_seamless": 81.7,
-        "ecmwf_ifs": 34.3,
-        "icon_seamless": 24.0
+        "dmi_seamless": 16.7,
+        "ecmwf_ifs": 30.7,
+        "icon_seamless": 50.0
        },
-       "model_spread": 57.7,
-       "agreement": "faible",
+       "model_spread": 33.3,
+       "agreement": "moyen",
        "moon_alt": -4.423458037176983,
        "moon_up_frac": 0.0,
        "dark": false,
@@ -725,56 +390,56 @@
       "median": 1.666666,
       "q25": 1.333333,
       "q75": 1.666666,
-      "min": 1.0,
-      "max": 3.666666
+      "min": 0.666666,
+      "max": 3.333333
      },
      "moon_illum": 2.4,
      "sites": {
       "tromso": {
-       "clouds_min": 82,
-       "clouds_max": 96,
-       "clouds_mean": 88.66666666666667,
-       "clouds_low": 66.7,
-       "clouds_mid": 91.7,
-       "clouds_high": 34.0,
-       "precip_mm": 0.7,
-       "wind_kmh": 13.8,
-       "gust_kmh": 29.2,
-       "temp_c": 1.5,
+       "clouds_min": 84,
+       "clouds_max": 98,
+       "clouds_mean": 89.0,
+       "clouds_low": 72.0,
+       "clouds_mid": 88.0,
+       "clouds_high": 38.7,
+       "precip_mm": 0.0,
+       "wind_kmh": 16.6,
+       "gust_kmh": 28.4,
+       "temp_c": 0.6,
        "models": {
-        "metno_seamless": 88.7,
+        "metno_seamless": 89.0,
         "ecmwf_ifs": 97.3,
-        "icon_seamless": 94.3
+        "icon_seamless": 98.0
        },
-       "model_spread": 8.6,
+       "model_spread": 9.0,
        "agreement": "bon",
        "moon_alt": -34.964155002834644,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.3121333333333334
+       "score": 0.3108
       },
       "grindavik": {
-       "clouds_min": 6,
-       "clouds_max": 59,
-       "clouds_mean": 34.333333333333336,
+       "clouds_min": 0,
+       "clouds_max": 8,
+       "clouds_mean": 3.0,
        "clouds_low": 0.0,
-       "clouds_mid": 2.7,
-       "clouds_high": 33.0,
+       "clouds_mid": 0.0,
+       "clouds_high": 3.0,
        "precip_mm": 0.0,
-       "wind_kmh": 20.5,
-       "gust_kmh": 33.5,
-       "temp_c": 2.7,
+       "wind_kmh": 26.2,
+       "gust_kmh": 39.2,
+       "temp_c": 2.8,
        "models": {
-        "dmi_seamless": 34.3,
-        "ecmwf_ifs": 46.0,
-        "icon_seamless": 12.7
+        "dmi_seamless": 3.0,
+        "ecmwf_ifs": 35.7,
+        "icon_seamless": 1.3
        },
-       "model_spread": 33.3,
+       "model_spread": 34.4,
        "agreement": "moyen",
        "moon_alt": -18.79516770897393,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.5294666666666668
+       "score": 0.6548
       }
      }
     },
@@ -784,177 +449,177 @@
      "gfz": {
       "median": 1.666666,
       "q25": 1.333333,
-      "q75": 1.666666,
-      "min": 0.666666,
-      "max": 3.666666
+      "q75": 2.0,
+      "min": 1.0,
+      "max": 3.333333
      },
      "moon_illum": 2.8,
      "sites": {
       "tromso": {
        "clouds_min": 97,
-       "clouds_max": 99,
-       "clouds_mean": 98.33333333333333,
-       "clouds_low": 73.7,
-       "clouds_mid": 93.7,
-       "clouds_high": 81.0,
-       "precip_mm": 0.3,
-       "wind_kmh": 16.2,
-       "gust_kmh": 27.7,
-       "temp_c": 1.3,
+       "clouds_max": 100,
+       "clouds_mean": 98.66666666666667,
+       "clouds_low": 78.0,
+       "clouds_mid": 84.3,
+       "clouds_high": 69.0,
+       "precip_mm": 0.4,
+       "wind_kmh": 15.9,
+       "gust_kmh": 28.4,
+       "temp_c": 0.6,
        "models": {
-        "metno_seamless": 98.3,
-        "ecmwf_ifs": 99.0,
-        "icon_seamless": 99.0
+        "metno_seamless": 98.7,
+        "ecmwf_ifs": 97.0,
+        "icon_seamless": 100.0
        },
-       "model_spread": 0.7,
+       "model_spread": 3.0,
        "agreement": "bon",
        "moon_alt": -46.06623134771851,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.31346666666666667
+       "score": 0.3121333333333334
       },
       "grindavik": {
-       "clouds_min": 66,
-       "clouds_max": 71,
-       "clouds_mean": 68.33333333333333,
+       "clouds_min": 83,
+       "clouds_max": 100,
+       "clouds_mean": 93.66666666666667,
        "clouds_low": 0.0,
-       "clouds_mid": 2.0,
-       "clouds_high": 68.0,
+       "clouds_mid": 3.0,
+       "clouds_high": 93.7,
        "precip_mm": 0.0,
-       "wind_kmh": 19.2,
-       "gust_kmh": 33.5,
-       "temp_c": 2.0,
+       "wind_kmh": 18.6,
+       "gust_kmh": 37.1,
+       "temp_c": 1.4,
        "models": {
-        "dmi_seamless": 68.3,
-        "ecmwf_ifs": 87.7,
-        "icon_seamless": 13.3
+        "dmi_seamless": 93.7,
+        "ecmwf_ifs": 76.0,
+        "icon_seamless": 21.3
        },
-       "model_spread": 74.4,
+       "model_spread": 72.4,
        "agreement": "faible",
        "moon_alt": -37.623929703380576,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.4334666666666667
+       "score": 0.3321333333333333
       }
      }
     },
     {
      "start": "2026-11-11T00:00:00+00:00",
-     "kp": 2.33,
+     "kp": 3.0,
      "gfz": {
       "median": 1.666666,
-      "q25": 1.333333,
-      "q75": 1.666666,
-      "min": 0.666666,
+      "q25": 1.666666,
+      "q75": 2.333333,
+      "min": 1.0,
       "max": 3.666666
      },
      "moon_illum": 3.2,
      "sites": {
       "tromso": {
-       "clouds_min": 98,
-       "clouds_max": 100,
-       "clouds_mean": 98.66666666666667,
-       "clouds_low": 72.7,
-       "clouds_mid": 99.3,
-       "clouds_high": 77.7,
-       "precip_mm": 2.5,
-       "wind_kmh": 13.7,
-       "gust_kmh": 25.6,
-       "temp_c": 1.2,
+       "clouds_min": 95,
+       "clouds_max": 99,
+       "clouds_mean": 97.33333333333333,
+       "clouds_low": 86.0,
+       "clouds_mid": 98.0,
+       "clouds_high": 62.0,
+       "precip_mm": 0.0,
+       "wind_kmh": 17.6,
+       "gust_kmh": 37.4,
+       "temp_c": 0.3,
        "models": {
-        "metno_seamless": 98.7,
+        "metno_seamless": 97.3,
         "ecmwf_ifs": 100.0,
-        "icon_seamless": 100.0
+        "icon_seamless": 95.7
        },
-       "model_spread": 1.3,
+       "model_spread": 4.3,
        "agreement": "bon",
        "moon_alt": -45.011223253045415,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.2985333333333333
+       "score": 0.3306666666666667
       },
       "grindavik": {
-       "clouds_min": 95,
+       "clouds_min": 94,
        "clouds_max": 99,
-       "clouds_mean": 97.66666666666667,
+       "clouds_mean": 96.33333333333333,
        "clouds_low": 0.0,
-       "clouds_mid": 0.3,
-       "clouds_high": 97.7,
+       "clouds_mid": 10.7,
+       "clouds_high": 96.3,
        "precip_mm": 0.0,
-       "wind_kmh": 9.9,
+       "wind_kmh": 9.8,
        "gust_kmh": 19.1,
-       "temp_c": 0.1,
+       "temp_c": -0.2,
        "models": {
-        "dmi_seamless": 97.7,
-        "ecmwf_ifs": 62.7,
-        "icon_seamless": 89.0
+        "dmi_seamless": 96.3,
+        "ecmwf_ifs": 63.7,
+        "icon_seamless": 28.0
        },
-       "model_spread": 35.0,
-       "agreement": "moyen",
+       "model_spread": 68.3,
+       "agreement": "faible",
        "moon_alt": -51.88697319991674,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.3025333333333333
+       "score": 0.3346666666666667
       }
      }
     },
     {
      "start": "2026-11-11T03:00:00+00:00",
-     "kp": 2.0,
+     "kp": 3.0,
      "gfz": {
-      "median": 1.333333,
-      "q25": 1.0,
-      "q75": 1.666666,
-      "min": 0.666666,
-      "max": 3.666666
+      "median": 1.666666,
+      "q25": 1.666666,
+      "q75": 2.333333,
+      "min": 1.0,
+      "max": 4.0
      },
      "moon_illum": 3.6,
      "sites": {
       "tromso": {
-       "clouds_min": 29,
-       "clouds_max": 78,
-       "clouds_mean": 57.666666666666664,
-       "clouds_low": 81.0,
-       "clouds_mid": 92.7,
-       "clouds_high": 0.7,
+       "clouds_min": 73,
+       "clouds_max": 94,
+       "clouds_mean": 86.66666666666667,
+       "clouds_low": 76.7,
+       "clouds_mid": 96.7,
+       "clouds_high": 0.0,
        "precip_mm": 0.0,
-       "wind_kmh": 15.4,
-       "gust_kmh": 27.4,
-       "temp_c": 0.9,
+       "wind_kmh": 15.5,
+       "gust_kmh": 26.6,
+       "temp_c": -0.3,
        "models": {
-        "metno_seamless": 57.7,
-        "ecmwf_ifs": 98.3,
-        "icon_seamless": 99.7
+        "metno_seamless": 86.7,
+        "ecmwf_ifs": 99.0,
+        "icon_seamless": 67.0
        },
-       "model_spread": 42.0,
-       "agreement": "faible",
+       "model_spread": 32.0,
+       "agreement": "moyen",
        "moon_alt": -32.9362171967445,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.44933333333333336
+       "score": 0.37333333333333335
       },
       "grindavik": {
-       "clouds_min": 11,
-       "clouds_max": 98,
-       "clouds_mean": 68.33333333333333,
+       "clouds_min": 76,
+       "clouds_max": 100,
+       "clouds_mean": 91.66666666666667,
        "clouds_low": 0.0,
-       "clouds_mid": 5.3,
-       "clouds_high": 66.0,
+       "clouds_mid": 6.3,
+       "clouds_high": 91.0,
        "precip_mm": 0.0,
-       "wind_kmh": 7.8,
-       "gust_kmh": 12.6,
-       "temp_c": -0.8,
+       "wind_kmh": 6.8,
+       "gust_kmh": 16.6,
+       "temp_c": -1.2,
        "models": {
-        "dmi_seamless": 68.3,
-        "ecmwf_ifs": 64.3,
-        "icon_seamless": 34.0
+        "dmi_seamless": 91.7,
+        "ecmwf_ifs": 87.3,
+        "icon_seamless": 45.3
        },
-       "model_spread": 34.3,
-       "agreement": "moyen",
+       "model_spread": 46.4,
+       "agreement": "faible",
        "moon_alt": -49.38204571804416,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.40666666666666673
+       "score": 0.35333333333333333
       }
      }
     },
@@ -962,31 +627,31 @@
      "start": "2026-11-11T06:00:00+00:00",
      "kp": 2.67,
      "gfz": {
-      "median": 1.0,
-      "q25": 1.0,
-      "q75": 1.333333,
-      "min": 0.666666,
+      "median": 2.0,
+      "q25": 1.666666,
+      "q75": 2.666666,
+      "min": 1.0,
       "max": 3.666666
      },
      "moon_illum": 4.1,
      "sites": {
       "tromso": {
-       "clouds_min": 23,
-       "clouds_max": 36,
-       "clouds_mean": 28.0,
-       "clouds_low": 69.3,
-       "clouds_mid": 78.0,
+       "clouds_min": 36,
+       "clouds_max": 69,
+       "clouds_mean": 51.0,
+       "clouds_low": 73.7,
+       "clouds_mid": 94.0,
        "clouds_high": 0.0,
        "precip_mm": 0.0,
-       "wind_kmh": 12.9,
-       "gust_kmh": 24.5,
-       "temp_c": 0.3,
+       "wind_kmh": 14.4,
+       "gust_kmh": 25.2,
+       "temp_c": -0.5,
        "models": {
-        "metno_seamless": 28.0,
-        "ecmwf_ifs": 94.0,
-        "icon_seamless": 78.3
+        "metno_seamless": 51.0,
+        "ecmwf_ifs": 98.7,
+        "icon_seamless": 70.3
        },
-       "model_spread": 66.0,
+       "model_spread": 47.7,
        "agreement": "faible",
        "moon_alt": -18.649795670226673,
        "moon_up_frac": 0.0,
@@ -994,27 +659,27 @@
        "score": null
       },
       "grindavik": {
-       "clouds_min": 7,
-       "clouds_max": 95,
-       "clouds_mean": 63.0,
+       "clouds_min": 94,
+       "clouds_max": 99,
+       "clouds_mean": 97.33333333333333,
        "clouds_low": 0.0,
-       "clouds_mid": 3.0,
-       "clouds_high": 60.3,
+       "clouds_mid": 0.3,
+       "clouds_high": 97.3,
        "precip_mm": 0.0,
-       "wind_kmh": 15.1,
-       "gust_kmh": 23.4,
-       "temp_c": -1.6,
+       "wind_kmh": 12.5,
+       "gust_kmh": 26.3,
+       "temp_c": -2.6,
        "models": {
-        "dmi_seamless": 63.0,
-        "ecmwf_ifs": 37.7,
-        "icon_seamless": 40.3
+        "dmi_seamless": 97.3,
+        "ecmwf_ifs": 44.3,
+        "icon_seamless": 29.3
        },
-       "model_spread": 25.3,
-       "agreement": "moyen",
+       "model_spread": 68.0,
+       "agreement": "faible",
        "moon_alt": -32.98054512445788,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.45480000000000004
+       "score": 0.3174666666666667
       }
      }
     }
@@ -1022,65 +687,65 @@
   },
   {
    "date": "2026-11-11",
-   "kp_max": 2.67,
+   "kp_max": 3.0,
    "site_scores": {
-    "tromso": 0.6574666666666666,
-    "grindavik": 0.6841333333333334
+    "tromso": 0.6654666666666667,
+    "grindavik": 0.6625333333333334
    },
-   "noaa_slots": 3,
+   "noaa_slots": 6,
    "slots": [
     {
      "start": "2026-11-11T15:00:00+00:00",
-     "kp": 2.33,
+     "kp": 1.33,
      "gfz": {
-      "median": 1.333333,
-      "q25": 1.0,
-      "q75": 1.666666,
-      "min": 0.666666,
+      "median": 2.333333,
+      "q25": 2.0,
+      "q75": 2.666666,
+      "min": 1.666666,
       "max": 3.333333
      },
      "moon_illum": 5.6,
      "sites": {
       "tromso": {
-       "clouds_min": 28,
-       "clouds_max": 64,
-       "clouds_mean": 46.666666666666664,
-       "clouds_low": 91.7,
-       "clouds_mid": 18.3,
+       "clouds_min": 46,
+       "clouds_max": 60,
+       "clouds_mean": 54.0,
+       "clouds_low": 56.3,
+       "clouds_mid": 59.3,
        "clouds_high": 0.0,
        "precip_mm": 0.0,
-       "wind_kmh": 5.9,
+       "wind_kmh": 6.5,
        "gust_kmh": 13.3,
-       "temp_c": -1.4,
+       "temp_c": -2.1,
        "models": {
-        "metno_seamless": 46.7,
-        "ecmwf_ifs": 92.3,
-        "icon_seamless": 0.0
+        "metno_seamless": 54.0,
+        "ecmwf_ifs": 82.3,
+        "icon_seamless": 0.3
        },
-       "model_spread": 92.3,
+       "model_spread": 82.0,
        "agreement": "faible",
        "moon_alt": -17.750184624455123,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.5065333333333334
+       "score": 0.43720000000000003
       },
       "grindavik": {
-       "clouds_min": 78,
-       "clouds_max": 95,
-       "clouds_mean": 87.0,
+       "clouds_min": 0,
+       "clouds_max": 59,
+       "clouds_mean": 19.666666666666668,
        "clouds_low": 0.0,
        "clouds_mid": 0.0,
-       "clouds_high": 87.0,
+       "clouds_high": 19.7,
        "precip_mm": 0.0,
-       "wind_kmh": 10.5,
-       "gust_kmh": 18.7,
-       "temp_c": -1.3,
+       "wind_kmh": 7.3,
+       "gust_kmh": 17.6,
+       "temp_c": -1.5,
        "models": {
-        "dmi_seamless": 87.0,
-        "ecmwf_ifs": 34.0,
-        "icon_seamless": 74.7
+        "dmi_seamless": 19.7,
+        "ecmwf_ifs": 26.0,
+        "icon_seamless": 87.7
        },
-       "model_spread": 53.0,
+       "model_spread": 68.0,
        "agreement": "faible",
        "moon_alt": -3.6838574062044995,
        "moon_up_frac": 0.0,
@@ -1093,271 +758,271 @@
      "start": "2026-11-11T18:00:00+00:00",
      "kp": 2.33,
      "gfz": {
-      "median": 1.666666,
-      "q25": 1.0,
-      "q75": 1.666666,
-      "min": 0.666666,
-      "max": 3.666666
+      "median": 2.333333,
+      "q25": 2.0,
+      "q75": 2.666666,
+      "min": 2.0,
+      "max": 3.333333
      },
      "moon_illum": 6.1,
      "sites": {
       "tromso": {
-       "clouds_min": 12,
-       "clouds_max": 21,
-       "clouds_mean": 16.0,
-       "clouds_low": 83.7,
-       "clouds_mid": 0.3,
+       "clouds_min": 24,
+       "clouds_max": 36,
+       "clouds_mean": 30.333333333333332,
+       "clouds_low": 77.3,
+       "clouds_mid": 15.3,
        "clouds_high": 0.0,
        "precip_mm": 0.0,
-       "wind_kmh": 9.2,
-       "gust_kmh": 14.8,
-       "temp_c": -2.8,
+       "wind_kmh": 8.3,
+       "gust_kmh": 15.8,
+       "temp_c": -3.3,
        "models": {
-        "metno_seamless": 16.0,
-        "ecmwf_ifs": 83.7,
-        "icon_seamless": 0.0
+        "metno_seamless": 30.3,
+        "ecmwf_ifs": 87.0,
+        "icon_seamless": 7.0
        },
-       "model_spread": 83.7,
+       "model_spread": 80.0,
        "agreement": "faible",
        "moon_alt": -32.06851337968066,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.6292
+       "score": 0.5718666666666667
       },
       "grindavik": {
-       "clouds_min": 2,
-       "clouds_max": 63,
-       "clouds_mean": 28.333333333333332,
+       "clouds_min": 0,
+       "clouds_max": 23,
+       "clouds_mean": 7.666666666666667,
        "clouds_low": 0.0,
        "clouds_mid": 0.0,
-       "clouds_high": 28.3,
+       "clouds_high": 7.7,
        "precip_mm": 0.0,
-       "wind_kmh": 13.7,
-       "gust_kmh": 19.4,
-       "temp_c": -4.0,
+       "wind_kmh": 10.2,
+       "gust_kmh": 15.1,
+       "temp_c": -4.5,
        "models": {
-        "dmi_seamless": 28.3,
-        "ecmwf_ifs": 20.0,
-        "icon_seamless": 1.3
+        "dmi_seamless": 7.7,
+        "ecmwf_ifs": 26.7,
+        "icon_seamless": 65.0
        },
-       "model_spread": 27.0,
-       "agreement": "moyen",
+       "model_spread": 57.3,
+       "agreement": "faible",
        "moon_alt": -15.27522801266057,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.5798666666666668
+       "score": 0.6625333333333334
       }
      }
     },
     {
      "start": "2026-11-11T21:00:00+00:00",
-     "kp": 2.67,
+     "kp": 2.33,
      "gfz": {
-      "median": 1.666666,
-      "q25": 1.0,
-      "q75": 1.666666,
-      "min": 1.0,
-      "max": 3.666666
+      "median": 2.666666,
+      "q25": 2.0,
+      "q75": 2.666666,
+      "min": 1.666666,
+      "max": 3.0
      },
      "moon_illum": 6.7,
      "sites": {
       "tromso": {
-       "clouds_min": 2,
-       "clouds_max": 26,
-       "clouds_mean": 12.333333333333334,
-       "clouds_low": 98.3,
+       "clouds_min": 26,
+       "clouds_max": 31,
+       "clouds_mean": 28.333333333333332,
+       "clouds_low": 100.0,
        "clouds_mid": 0.0,
        "clouds_high": 0.0,
        "precip_mm": 0.0,
        "wind_kmh": 8.3,
-       "gust_kmh": 15.8,
-       "temp_c": -3.1,
+       "gust_kmh": 14.4,
+       "temp_c": -3.6,
        "models": {
-        "metno_seamless": 12.3,
-        "ecmwf_ifs": 98.3,
+        "metno_seamless": 28.3,
+        "ecmwf_ifs": 100.0,
         "icon_seamless": 0.0
        },
-       "model_spread": 98.3,
+       "model_spread": 100.0,
        "agreement": "faible",
        "moon_alt": -45.08929573035324,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.6574666666666666
+       "score": 0.5798666666666668
       },
       "grindavik": {
-       "clouds_min": 0,
-       "clouds_max": 14,
-       "clouds_mean": 5.666666666666667,
+       "clouds_min": 52,
+       "clouds_max": 99,
+       "clouds_mean": 82.33333333333333,
        "clouds_low": 0.0,
-       "clouds_mid": 0.0,
-       "clouds_high": 5.7,
+       "clouds_mid": 19.3,
+       "clouds_high": 82.0,
        "precip_mm": 0.0,
-       "wind_kmh": 12.0,
-       "gust_kmh": 21.2,
-       "temp_c": -4.6,
+       "wind_kmh": 13.4,
+       "gust_kmh": 20.9,
+       "temp_c": -3.8,
        "models": {
-        "dmi_seamless": 5.7,
-        "ecmwf_ifs": 55.7,
-        "icon_seamless": 54.0
+        "dmi_seamless": 82.3,
+        "ecmwf_ifs": 74.7,
+        "icon_seamless": 29.3
        },
-       "model_spread": 50.0,
+       "model_spread": 53.0,
        "agreement": "faible",
        "moon_alt": -33.359115189395006,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": 0.6841333333333334
+       "score": 0.3638666666666667
       }
      }
     },
     {
      "start": "2026-11-12T00:00:00+00:00",
-     "kp": null,
+     "kp": 3.0,
      "gfz": {
-      "median": 1.666666,
-      "q25": 1.333333,
-      "q75": 2.0,
-      "min": 1.0,
-      "max": 3.666666
+      "median": 2.333333,
+      "q25": 2.0,
+      "q75": 2.666666,
+      "min": 1.666666,
+      "max": 3.0
      },
      "moon_illum": 7.3,
      "sites": {
       "tromso": {
-       "clouds_min": 1,
-       "clouds_max": 2,
-       "clouds_mean": 1.3333333333333333,
-       "clouds_low": 96.7,
+       "clouds_min": 12,
+       "clouds_max": 23,
+       "clouds_mean": 16.333333333333332,
+       "clouds_low": 99.3,
        "clouds_mid": 0.0,
        "clouds_high": 0.0,
        "precip_mm": 0.0,
-       "wind_kmh": 8.4,
-       "gust_kmh": 13.7,
-       "temp_c": -3.4,
+       "wind_kmh": 8.5,
+       "gust_kmh": 14.0,
+       "temp_c": -4.5,
        "models": {
-        "metno_seamless": 1.3,
-        "ecmwf_ifs": 96.7,
+        "metno_seamless": 16.3,
+        "ecmwf_ifs": 99.3,
         "icon_seamless": 0.0
        },
-       "model_spread": 96.7,
+       "model_spread": 99.3,
        "agreement": "faible",
        "moon_alt": -47.883635402832184,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": null
-      },
-      "grindavik": {
-       "clouds_min": 49,
-       "clouds_max": 86,
-       "clouds_mean": 67.33333333333333,
-       "clouds_low": 0.0,
-       "clouds_mid": 7.0,
-       "clouds_high": 65.3,
-       "precip_mm": 0.0,
-       "wind_kmh": 9.0,
-       "gust_kmh": 12.6,
-       "temp_c": -5.2,
-       "models": {
-        "dmi_seamless": 67.3,
-        "ecmwf_ifs": 100.0,
-        "icon_seamless": 82.0
-       },
-       "model_spread": 32.7,
-       "agreement": "moyen",
-       "moon_alt": -50.09957416582693,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": null
-      }
-     }
-    },
-    {
-     "start": "2026-11-12T03:00:00+00:00",
-     "kp": null,
-     "gfz": {
-      "median": 1.666666,
-      "q25": 1.666666,
-      "q75": 2.0,
-      "min": 0.666666,
-      "max": 3.666666
-     },
-     "moon_illum": 8.0,
-     "sites": {
-      "tromso": {
-       "clouds_min": 8,
-       "clouds_max": 26,
-       "clouds_mean": 15.333333333333334,
-       "clouds_low": 94.3,
-       "clouds_mid": 0.0,
-       "clouds_high": 0.0,
-       "precip_mm": 0.0,
-       "wind_kmh": 6.1,
-       "gust_kmh": 11.5,
-       "temp_c": -3.9,
-       "models": {
-        "metno_seamless": 15.3,
-        "ecmwf_ifs": 94.3,
-        "icon_seamless": 0.0
-       },
-       "model_spread": 94.3,
-       "agreement": "faible",
-       "moon_alt": -37.90522762925296,
-       "moon_up_frac": 0.0,
-       "dark": true,
-       "score": null
+       "score": 0.6546666666666667
       },
       "grindavik": {
        "clouds_min": 99,
        "clouds_max": 100,
        "clouds_mean": 99.66666666666667,
-       "clouds_low": 1.0,
-       "clouds_mid": 93.3,
-       "clouds_high": 90.3,
+       "clouds_low": 0.0,
+       "clouds_mid": 86.7,
+       "clouds_high": 89.3,
        "precip_mm": 0.0,
-       "wind_kmh": 5.5,
-       "gust_kmh": 8.5,
-       "temp_c": -1.9,
+       "wind_kmh": 10.4,
+       "gust_kmh": 18.4,
+       "temp_c": -1.0,
        "models": {
         "dmi_seamless": 99.7,
-        "ecmwf_ifs": 100.0,
-        "icon_seamless": 97.3
+        "ecmwf_ifs": 99.7,
+        "icon_seamless": 76.7
        },
-       "model_spread": 2.7,
+       "model_spread": 23.0,
+       "agreement": "moyen",
+       "moon_alt": -50.09957416582693,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": 0.32133333333333336
+      }
+     }
+    },
+    {
+     "start": "2026-11-12T03:00:00+00:00",
+     "kp": 2.67,
+     "gfz": {
+      "median": 2.666666,
+      "q25": 2.0,
+      "q75": 2.666666,
+      "min": 1.666666,
+      "max": 3.0
+     },
+     "moon_illum": 8.0,
+     "sites": {
+      "tromso": {
+       "clouds_min": 1,
+       "clouds_max": 25,
+       "clouds_mean": 10.333333333333334,
+       "clouds_low": 97.7,
+       "clouds_mid": 0.0,
+       "clouds_high": 0.0,
+       "precip_mm": 0.0,
+       "wind_kmh": 7.8,
+       "gust_kmh": 13.3,
+       "temp_c": -5.1,
+       "models": {
+        "metno_seamless": 10.3,
+        "ecmwf_ifs": 97.7,
+        "icon_seamless": 0.0
+       },
+       "model_spread": 97.7,
+       "agreement": "faible",
+       "moon_alt": -37.90522762925296,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": 0.6654666666666667
+      },
+      "grindavik": {
+       "clouds_min": 100,
+       "clouds_max": 100,
+       "clouds_mean": 100.0,
+       "clouds_low": 93.0,
+       "clouds_mid": 95.3,
+       "clouds_high": 96.3,
+       "precip_mm": 0.0,
+       "wind_kmh": 15.6,
+       "gust_kmh": 22.7,
+       "temp_c": 1.1,
+       "models": {
+        "dmi_seamless": 100.0,
+        "ecmwf_ifs": 99.0,
+        "icon_seamless": 95.7
+       },
+       "model_spread": 4.3,
        "agreement": "bon",
        "moon_alt": -53.04560892467726,
        "moon_up_frac": 0.0,
        "dark": true,
-       "score": null
+       "score": 0.3068
       }
      }
     },
     {
      "start": "2026-11-12T06:00:00+00:00",
-     "kp": null,
+     "kp": 2.33,
      "gfz": {
-      "median": 1.666666,
-      "q25": 1.333333,
-      "q75": 2.333333,
-      "min": 0.666666,
+      "median": 2.333333,
+      "q25": 2.333333,
+      "q75": 2.666666,
+      "min": 1.666666,
       "max": 3.0
      },
      "moon_illum": 8.6,
      "sites": {
       "tromso": {
-       "clouds_min": 42,
-       "clouds_max": 69,
-       "clouds_mean": 56.0,
-       "clouds_low": 76.0,
+       "clouds_min": 2,
+       "clouds_max": 5,
+       "clouds_mean": 3.3333333333333335,
+       "clouds_low": 95.7,
        "clouds_mid": 0.0,
        "clouds_high": 0.0,
        "precip_mm": 0.0,
-       "wind_kmh": 3.6,
-       "gust_kmh": 11.2,
-       "temp_c": -5.3,
+       "wind_kmh": 9.4,
+       "gust_kmh": 14.4,
+       "temp_c": -4.9,
        "models": {
-        "metno_seamless": 56.0,
-        "ecmwf_ifs": 76.0,
-        "icon_seamless": 0.0
+        "metno_seamless": 3.3,
+        "ecmwf_ifs": 95.7,
+        "icon_seamless": 3.3
        },
-       "model_spread": 76.0,
+       "model_spread": 92.4,
        "agreement": "faible",
        "moon_alt": -23.257883539066036,
        "moon_up_frac": 0.0,
@@ -1365,24 +1030,389 @@
        "score": null
       },
       "grindavik": {
-       "clouds_min": 97,
-       "clouds_max": 98,
-       "clouds_mean": 97.66666666666667,
-       "clouds_low": 1.7,
-       "clouds_mid": 55.3,
-       "clouds_high": 96.7,
+       "clouds_min": 100,
+       "clouds_max": 100,
+       "clouds_mean": 100.0,
+       "clouds_low": 100.0,
+       "clouds_mid": 96.3,
+       "clouds_high": 98.7,
        "precip_mm": 0.0,
-       "wind_kmh": 1.2,
-       "gust_kmh": 2.2,
-       "temp_c": -0.1,
+       "wind_kmh": 18.1,
+       "gust_kmh": 28.1,
+       "temp_c": 2.5,
        "models": {
-        "dmi_seamless": 97.7,
-        "ecmwf_ifs": 97.7,
-        "icon_seamless": 94.0
+        "dmi_seamless": 100.0,
+        "ecmwf_ifs": 100.0,
+        "icon_seamless": 91.0
        },
-       "model_spread": 3.7,
+       "model_spread": 9.0,
        "agreement": "bon",
        "moon_alt": -38.99171948090523,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": 0.2932
+      }
+     }
+    }
+   ]
+  },
+  {
+   "date": "2026-11-12",
+   "kp_max": 2.0,
+   "site_scores": {
+    "tromso": 0.3186666666666667,
+    "grindavik": 0.28
+   },
+   "noaa_slots": 3,
+   "slots": [
+    {
+     "start": "2026-11-12T15:00:00+00:00",
+     "kp": 1.33,
+     "gfz": {
+      "median": 2.666666,
+      "q25": 2.333333,
+      "q75": 3.0,
+      "min": 1.333333,
+      "max": 3.0
+     },
+     "moon_illum": 10.7,
+     "sites": {
+      "tromso": {
+       "clouds_min": 97,
+       "clouds_max": 99,
+       "clouds_mean": 98.0,
+       "clouds_low": 98.0,
+       "clouds_mid": 0.0,
+       "clouds_high": 0.0,
+       "precip_mm": 0.0,
+       "wind_kmh": 2.3,
+       "gust_kmh": 9.0,
+       "temp_c": -5.4,
+       "models": {
+        "metno_seamless": 98.0,
+        "ecmwf_ifs": 98.0,
+        "icon_seamless": 38.7
+       },
+       "model_spread": 59.3,
+       "agreement": "faible",
+       "moon_alt": -14.69757842398508,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": 0.26120000000000004
+      },
+      "grindavik": {
+       "clouds_min": 100,
+       "clouds_max": 100,
+       "clouds_mean": 100.0,
+       "clouds_low": 100.0,
+       "clouds_mid": 100.0,
+       "clouds_high": 84.0,
+       "precip_mm": 1.7,
+       "wind_kmh": 8.1,
+       "gust_kmh": 17.6,
+       "temp_c": 3.5,
+       "models": {
+        "dmi_seamless": 100.0,
+        "ecmwf_ifs": 100.0,
+        "icon_seamless": 98.7
+       },
+       "model_spread": 1.3,
+       "agreement": "bon",
+       "moon_alt": -2.66801660444002,
+       "moon_up_frac": 0.0,
+       "dark": false,
+       "score": null
+      }
+     }
+    },
+    {
+     "start": "2026-11-12T18:00:00+00:00",
+     "kp": 1.0,
+     "gfz": {
+      "median": 2.666666,
+      "q25": 2.333333,
+      "q75": 2.666666,
+      "min": 1.666666,
+      "max": 3.333333
+     },
+     "moon_illum": 11.4,
+     "sites": {
+      "tromso": {
+       "clouds_min": 88,
+       "clouds_max": 93,
+       "clouds_mean": 91.0,
+       "clouds_low": 89.0,
+       "clouds_mid": 0.0,
+       "clouds_high": 15.7,
+       "precip_mm": 0.0,
+       "wind_kmh": 2.0,
+       "gust_kmh": 8.6,
+       "temp_c": -5.9,
+       "models": {
+        "metno_seamless": 91.0,
+        "ecmwf_ifs": 91.0,
+        "icon_seamless": 55.7
+       },
+       "model_spread": 35.3,
+       "agreement": "moyen",
+       "moon_alt": -27.88104392785632,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": 0.276
+      },
+      "grindavik": {
+       "clouds_min": 100,
+       "clouds_max": 100,
+       "clouds_mean": 100.0,
+       "clouds_low": 99.7,
+       "clouds_mid": 100.0,
+       "clouds_high": 100.0,
+       "precip_mm": 1.8,
+       "wind_kmh": 16.2,
+       "gust_kmh": 38.5,
+       "temp_c": 4.6,
+       "models": {
+        "dmi_seamless": 100.0,
+        "ecmwf_ifs": 100.0,
+        "icon_seamless": 100.0
+       },
+       "model_spread": 0.0,
+       "agreement": "bon",
+       "moon_alt": -11.138997786216017,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": 0.24000000000000002
+      }
+     }
+    },
+    {
+     "start": "2026-11-12T21:00:00+00:00",
+     "kp": 2.0,
+     "gfz": {
+      "median": 2.333333,
+      "q25": 2.333333,
+      "q75": 2.666666,
+      "min": 1.666666,
+      "max": 2.666666
+     },
+     "moon_illum": 12.2,
+     "sites": {
+      "tromso": {
+       "clouds_min": 88,
+       "clouds_max": 92,
+       "clouds_mean": 90.33333333333333,
+       "clouds_low": 87.0,
+       "clouds_mid": 0.0,
+       "clouds_high": 25.3,
+       "precip_mm": 0.0,
+       "wind_kmh": 2.1,
+       "gust_kmh": 8.3,
+       "temp_c": -6.4,
+       "models": {
+        "metno_seamless": 90.3,
+        "ecmwf_ifs": 90.3,
+        "icon_seamless": 61.0
+       },
+       "model_spread": 29.3,
+       "agreement": "moyen",
+       "moon_alt": -41.97311754418331,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": 0.3186666666666667
+      },
+      "grindavik": {
+       "clouds_min": 100,
+       "clouds_max": 100,
+       "clouds_mean": 100.0,
+       "clouds_low": 99.3,
+       "clouds_mid": 100.0,
+       "clouds_high": 100.0,
+       "precip_mm": 1.1,
+       "wind_kmh": 25.1,
+       "gust_kmh": 46.8,
+       "temp_c": 5.5,
+       "models": {
+        "dmi_seamless": 100.0,
+        "ecmwf_ifs": 100.0,
+        "icon_seamless": 100.0
+       },
+       "model_spread": 0.0,
+       "agreement": "bon",
+       "moon_alt": -27.888572503868968,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": 0.28
+      }
+     }
+    },
+    {
+     "start": "2026-11-13T00:00:00+00:00",
+     "kp": null,
+     "gfz": {
+      "median": 2.333333,
+      "q25": 2.0,
+      "q75": 2.333333,
+      "min": 1.666666,
+      "max": 2.666666
+     },
+     "moon_illum": 13.0,
+     "sites": {
+      "tromso": {
+       "clouds_min": 75,
+       "clouds_max": 91,
+       "clouds_mean": 85.0,
+       "clouds_low": 81.0,
+       "clouds_mid": 0.0,
+       "clouds_high": 20.3,
+       "precip_mm": 0.0,
+       "wind_kmh": 2.2,
+       "gust_kmh": 8.6,
+       "temp_c": -6.6,
+       "models": {
+        "metno_seamless": 85.0,
+        "ecmwf_ifs": 85.0,
+        "icon_seamless": 76.0
+       },
+       "model_spread": 9.0,
+       "agreement": "bon",
+       "moon_alt": -48.35841209732352,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": null
+      },
+      "grindavik": {
+       "clouds_min": 100,
+       "clouds_max": 100,
+       "clouds_mean": 100.0,
+       "clouds_low": 99.7,
+       "clouds_mid": 100.0,
+       "clouds_high": 99.7,
+       "precip_mm": 1.1,
+       "wind_kmh": 25.6,
+       "gust_kmh": 46.4,
+       "temp_c": 5.2,
+       "models": {
+        "dmi_seamless": 100.0,
+        "ecmwf_ifs": 100.0,
+        "icon_seamless": 100.0
+       },
+       "model_spread": 0.0,
+       "agreement": "bon",
+       "moon_alt": -45.91090943089783,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": null
+      }
+     }
+    },
+    {
+     "start": "2026-11-13T03:00:00+00:00",
+     "kp": null,
+     "gfz": {
+      "median": 2.333333,
+      "q25": 1.666666,
+      "q75": 2.666666,
+      "min": 1.666666,
+      "max": 2.666666
+     },
+     "moon_illum": 13.8,
+     "sites": {
+      "tromso": {
+       "clouds_min": 64,
+       "clouds_max": 92,
+       "clouds_mean": 77.0,
+       "clouds_low": 52.0,
+       "clouds_mid": 0.0,
+       "clouds_high": 47.7,
+       "precip_mm": 0.0,
+       "wind_kmh": 2.5,
+       "gust_kmh": 9.7,
+       "temp_c": -7.1,
+       "models": {
+        "metno_seamless": 77.0,
+        "ecmwf_ifs": 77.0,
+        "icon_seamless": 74.7
+       },
+       "model_spread": 2.3,
+       "agreement": "bon",
+       "moon_alt": -41.30304866584838,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": null
+      },
+      "grindavik": {
+       "clouds_min": 100,
+       "clouds_max": 100,
+       "clouds_mean": 100.0,
+       "clouds_low": 100.0,
+       "clouds_mid": 100.0,
+       "clouds_high": 100.0,
+       "precip_mm": 1.9,
+       "wind_kmh": 20.9,
+       "gust_kmh": 47.2,
+       "temp_c": 4.7,
+       "models": {
+        "dmi_seamless": 100.0,
+        "ecmwf_ifs": 100.0,
+        "icon_seamless": 100.0
+       },
+       "model_spread": 0.0,
+       "agreement": "bon",
+       "moon_alt": -53.93418238475007,
+       "moon_up_frac": 0.0,
+       "dark": true,
+       "score": null
+      }
+     }
+    },
+    {
+     "start": "2026-11-13T06:00:00+00:00",
+     "kp": null,
+     "gfz": null,
+     "moon_illum": 14.6,
+     "sites": {
+      "tromso": {
+       "clouds_min": 60,
+       "clouds_max": 77,
+       "clouds_mean": 66.0,
+       "clouds_low": 40.3,
+       "clouds_mid": 0.0,
+       "clouds_high": 43.3,
+       "precip_mm": 0.0,
+       "wind_kmh": 2.2,
+       "gust_kmh": 9.4,
+       "temp_c": -7.5,
+       "models": {
+        "metno_seamless": 66.0,
+        "ecmwf_ifs": 66.0,
+        "icon_seamless": 79.3
+       },
+       "model_spread": 13.3,
+       "agreement": "bon",
+       "moon_alt": -26.90810055606093,
+       "moon_up_frac": 0.0,
+       "dark": false,
+       "score": null
+      },
+      "grindavik": {
+       "clouds_min": 100,
+       "clouds_max": 100,
+       "clouds_mean": 100.0,
+       "clouds_low": 91.7,
+       "clouds_mid": 100.0,
+       "clouds_high": 99.0,
+       "precip_mm": 0.9,
+       "wind_kmh": 20.8,
+       "gust_kmh": 38.2,
+       "temp_c": 3.5,
+       "models": {
+        "dmi_seamless": 100.0,
+        "ecmwf_ifs": 100.0,
+        "icon_seamless": 100.0
+       },
+       "model_spread": 0.0,
+       "agreement": "bon",
+       "moon_alt": -43.520210032704554,
        "moon_up_frac": 0.0,
        "dark": true,
        "score": null
@@ -1410,8 +1440,8 @@
  "model_errors": [],
  "discussion": {
   "file": "sources/discussion.txt",
-  "issued": "2026-11-09T12:30:00+00:00",
-  "fetched_utc": "2026-11-09T23:01:41.094811+00:00"
+  "issued": "2026-11-10T00:30:00+00:00",
+  "fetched_utc": "2026-11-10T06:11:36.738486+00:00"
  },
  "agreement_thresholds": {
   "bon": "écart ≤ 20 pts",
