@@ -1,16 +1,18 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 10 0030 UTC
+:Issued: 2026 Nov 10 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity was at low levels. Region 4566 (S07W21,
+Solar activity was at low levels. Region 4566 (S07W28,
 Dkc/beta-gamma-delta) produced the majority of the C-class flares. The
-largest was a C5.7 flare at 09/0410 UTC. The region exhibited separation
-and decay in its trailing spots while maintaining a delta within its
-leader spots. Slight growth was observed in Region 4568 (S08W01,
-Bxo/beta). The rest of the spotted regions were relatively stable or in
+largest was a C9.3/Sf flare at 10/0834 UTC. The region also produced a
+C8.6 flare at 1002 UTC and exhibited separation and decay in its
+trailing spots while maintaining a delta within its leader spots.
+Slight growth was observed in Region 4568 (S08W08, Bxo/beta). New spots
+emerged to the SW of Region 4572 (N12E64, Hsx/alpha), but has yet to be
+numbered. The rest of the spotted regions were relatively stable or in
 decay.
 
 No Earth-directed CMEs were observed in available coronagraph imagery.
@@ -36,7 +38,7 @@ Solar Wind
 .24 hr Summary...
 Solar wind parameters reflected the influence from a negative polarity
 CH HSS. Total field ranged from 2-5 nT while the Bz component was
-between +/-4 nT. Solar wind speed decreased from approximately 781 km/s
+between +/-4 nT. Solar wind speed decreased from approximately 750 km/s
 to near 635 km/s. Phi angle was mostly negative.
 
 .Forecast...
