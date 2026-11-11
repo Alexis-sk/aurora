@@ -1,17 +1,18 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 11 0030 UTC
+:Issued: 2026 Nov 11 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity was at low levels. Region 4566 (S07W34,
-Ekc/beta-gamma-delta) produced the majority of the C-class flares. The
-largest was a C9.3 at 10/0834 UTC. Region 4566 displayed overall
-indications of weakening as the spot group decays, although the region
-still contains several small delta magnetic areas. Slight growth was
-observed in Regions 4568 (S09W15, Cso/beta) and newly numbered 4573
-(N08E50, Dro/beta).
+Solar activity was at low levels. Region 4566 (S07W41,
+Ekc/beta-gamma-delta) produced the majority of the C-class flares.
+Region 4566 displayed overall indications of weakening as the spot group
+decays, although the region still contains several small delta magnetic
+areas. Slight growth was observed in Regions 4568 (S09W22, Cso/beta) and
+newly numbered 4573 (N08E43, Dro/beta). Two additional regions were
+numbered this period: 4574 (N13E71, Cso/beta) and 4575 (S13E66,
+Hsx/alpha).
 
 No Earth-directed CMEs were observed in available coronagraph imagery.
 
