@@ -1,15 +1,16 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 12 0030 UTC
+:Issued: 2026 Nov 12 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
 Solar activity reached moderate levels due to an M1.7 flare at 11/2121
-UTC from Region 4566 (S07W48, Eki/beta-gamma). Region 4566 continued to
-decay, decreasing in both areal coverage and magnetic complexity. Slight
-growth was observed in Region 4574 (N16E61, Dao/beta). The rest of the
-numbered regions were either stable or in decay.
+UTC from Region 4566 (S07W55, Eki/beta-gamma). Region 4566 also produced
+a C7.0 flare at 12/0344 UTC. The region continued to decay, decreasing
+in both areal coverage and magnetic complexity. Slight growth was
+observed in Region 4574 (N16E54, Dao/beta). The rest of the numbered
+regions were either stable or in decay.
 
 No Earth-directed CMEs were observed in available coronagraph imagery.
 
@@ -32,10 +33,10 @@ at background levels on 12-14 Nov.
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected continued, but diminishing influence,
+Solar wind parameters reflected continued, but diminishing influence
 from a negative polarity CH HSS. Total field ranged from 1-5 nT while
 the Bz component was between +4/-3 nT. Solar wind speed decreased from
-approximately 555 km/s to near 485 km/s. Phi angle was mostly negative
+approximately 529 km/s to near 479 km/s. Phi angle was mostly negative
 with some variability after 11/0955 UTC.
 
 .Forecast...
