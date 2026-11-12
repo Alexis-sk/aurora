@@ -1,48 +1,46 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 11 1230 UTC
+:Issued: 2026 Nov 12 0030 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity was at low levels. Region 4566 (S07W41,
-Ekc/beta-gamma-delta) produced the majority of the C-class flares.
-Region 4566 displayed overall indications of weakening as the spot group
-decays, although the region still contains several small delta magnetic
-areas. Slight growth was observed in Regions 4568 (S09W22, Cso/beta) and
-newly numbered 4573 (N08E43, Dro/beta). Two additional regions were
-numbered this period: 4574 (N13E71, Cso/beta) and 4575 (S13E66,
-Hsx/alpha).
+Solar activity reached moderate levels due to an M1.7 flare at 11/2121
+UTC from Region 4566 (S07W48, Eki/beta-gamma). Region 4566 continued to
+decay, decreasing in both areal coverage and magnetic complexity. Slight
+growth was observed in Region 4574 (N16E61, Dao/beta). The rest of the
+numbered regions were either stable or in decay.
 
 No Earth-directed CMEs were observed in available coronagraph imagery.
 
 .Forecast...
-M-class flares (R1-R2/Minor-Moderate) are likely, with a slight chance
-for an X-class flare (R3-Strong), over 11-13 Nov.
+Solar activity is expected to be low with a chance for M-class flares
+(R1-R2, Minor-Moderate) over 12-14 Nov.
 
 Energetic Particle
 
 .24 hr Summary...
 The greater than 2 MeV electron flux reached high levels with a peak
-flux of 6,420 pfu observed at 10/1550 UTC. The greater than 10 MeV
+flux of 7,897 pfu observed at 11/1555 UTC. The greater than 10 MeV
 proton flux was at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is likely to reach high levels over
-11-13 Nov. There is a slight chance for the greater than 10 MeV proton
-flux to exceed S1 (Minor) levels over 11-13 Nov.
+12-14 Nov. The greater than 10 MeV proton flux is expected to continue
+at background levels on 12-14 Nov.
 
 Solar Wind
 
 .24 hr Summary...
 Solar wind parameters reflected continued, but diminishing influence,
-from a negative polarity CH HSS. Total field ranged from 2-5 nT while
-the Bz component was between +5/-3 nT. Solar wind speed decreased from
-approximately 705 km/s to near 600 km/s. Phi angle was mostly negative.
+from a negative polarity CH HSS. Total field ranged from 1-5 nT while
+the Bz component was between +4/-3 nT. Solar wind speed decreased from
+approximately 555 km/s to near 485 km/s. Phi angle was mostly negative
+with some variability after 11/0955 UTC.
 
 .Forecast...
-The solar wind environment is expected to gradually diminish on 11-12
-Nov. A return to nominal conditions is expected by 13 Nov.
+The solar wind environment is expected to gradually diminish on 12 Nov.
+A return to nominal conditions is expected by 13-14 Nov.
 
 Geospace
 
@@ -50,6 +48,4 @@ Geospace
 The geomagnetic field was quiet to unsettled.
 
 .Forecast...
-Quiet to unsettled conditions are expected on 11-12 Nov as HSS activity
-gradually diminishes. Mostly quiet conditions are expected to return on
-13 Nov.
+Mostly quiet conditions are expected on 12-14 Nov.
