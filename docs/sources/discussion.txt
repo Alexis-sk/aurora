@@ -1,15 +1,14 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 13 0030 UTC
+:Issued: 2026 Nov 13 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity was at low levels today. Region 4566 (S08W62,
+Solar activity was at low levels today. Region 4566 (S08W69,
 Eai/beta-gamma) was responsible for the majority of the C-class flares.
-The largest was a C7.0 flare at 12/0344 UTC. Region 4566 continued to
-decay as it approached the western limb. New Region 4576 (S18W12,
-Bxo/beta) was numbered.
+Region 4566 continued to decay as it approached the western limb. New
+Region 4576 (S18W19, Bxo/beta) was numbered.
 
 No Earth-directed CMEs were observed in available coronagraph imagery.
 
