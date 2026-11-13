@@ -1,16 +1,16 @@
 {
-  "generated_utc": "2026-11-12T13:18:15+00:00",
+  "generated_utc": "2026-11-13T04:14:24+00:00",
   "status": "ras",
   "test": false,
   "saturday": "2026-11-14",
   "kp_max": 1.67,
   "recommendation": {
     "site": "Tromsø",
-    "score": 0.6492
+    "score": 0.6532
   },
-  "data_generated_utc": "2026-11-12T13:16:24.171642+00:00",
+  "data_generated_utc": "2026-11-13T04:12:22.921916+00:00",
   "title": "RAS aurores : Kp max nuit de samedi = 1,67, pas d'envoi.",
-  "summary": "Pour la nuit du 14/11 au 15/11, le NOAA prévoit un Kp maximal de 1,67 (bulletin de 12h30 UTC, nuit encore partielle), sous le seuil de 4 : pas d'analyse.",
+  "summary": "Pour la nuit du 14/11 au 15/11, le NOAA prévoit un Kp maximal de 1,67, en dessous du seuil de 4 : aucune analyse n'est nécessaire.",
   "sections": [],
   "sources": []
 }
