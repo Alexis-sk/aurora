@@ -1,20 +1,21 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 16 0030 UTC
+:Issued: 2026 Nov 16 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity continued at low levels. Regions 4575 (S10E12,
-Hsx/alpha), 4578 (S12W46, Cso/beta) and 4579 (N15E58, Hsx/alpha) all
-produced weak C-class flares during the period. Regions 4574 (N17E06,
-Dai/beta) and 4578 exhibited growth, mainly in their leader spots. The
-remaining regions were stable or in decay.
+Solar activity was at low levels. While Regions 4574 (N17W00, Dai/beta)
+and 4575 (S10E05, Hsx/alpha) were the most active, producing the
+majority of the low-level B- and C-class flares, Region 4579 (N15E52,
+Hsx/alpha) spawned the largest of the period: a C5.4/1f at 16/0658 UTC.
+Regions 4574 and 4576 (S18W59, Dao/beta) both experienced growth in
+their leader spots, while the remaining regions were unchanged or
+exhibited slight decay.
 
-From approximately 14/0130-0930 UTC, a large filament was observed in
-GOES SUVI/AIA 304 imagery lifting off the solar disk in the southern
-hemisphere. However, no discernible CME could be located in available
-coronagraph imagery.
+At approximately 16/0439 UTC, an estimated eight degree long filament,
+centered near N19W57, was observed lifting off the visible disk in GONG
+H-alpha imagery. Analysis of the resulting CME is currently underway.
 
 .Forecast...
 Solar activity is expected to be low with a chance for M-class flares
@@ -36,20 +37,16 @@ Nov.
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected ambient solar wind conditions. Total
-field ranged from 2-4 nT while the Bz component was variable between
-+/-3 nT. Solar wind speed saw a slow, gradual decrease from beginning
-values near 400 km/s to end the period around 340 km/s. Phi was in a
-mostly negative orientation.
+Solar wind parameters reflected a background solar wind regime. Total
+field ranged from 2-4 nT, the Bz component was variable between +/-3 nT,
+and solar wind speed continued its gradual decline to end of period
+speeds under 300 km/s. Phi was in a mostly negative orientation.
 
 .Forecast...
-Nominal solar wind conditions are expected early on 16 Nov, with a
-gradual increase in solar wind parameters later on 16 Nov. This increase
-is due to the anticipated onset of a SSBC in advance of a positive
-polarity CH HSS. Further enhancements are expected on 17-18 Nov as a
-positive polarity CH HSS moves into a geoeffective position. This is
-coupled with the possible arrival of the 14 Nov CME late on 17 Nov into
-early 18 Nov.
+Nominal solar wind conditions are expected on 16 Nov. Weak enhancements
+in solar wind parameters are likely on 17-18 Nov as a positive polarity
+CH HSS moves into a geoeffective position, coupled with the possible
+arrival of the 14 Nov CME late on 17 Nov into early 18 Nov.
 
 Geospace
 
@@ -58,7 +55,7 @@ The geomagnetic field was quiet.
 
 .Forecast...
 Mostly quiet conditions are expected early on 16 Nov, increasing to
-unsettled to isolated active periods later on 16 Nov. A further increase
-to active to isolated G1 (Minor) levels on 17-18 Nov as the CH HSS moves
-into a geoeffective position. This is coupled with the possible arrival
+unsettled to isolated active periods late in the day. A further increase
+to active to isolated G1 (Minor) levels is likely on 17-18 Nov as the CH
+HSS moves into a geoeffective position along with the possible arrival
 of the 14 Nov CME late in the period.
