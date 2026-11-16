@@ -1,20 +1,15 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 15 1230 UTC
+:Issued: 2026 Nov 16 0030 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity continued at low levels. Regions 4576 (S18W46,
-Dai/beta-gamma) 4578 (S12W39, Cao/beta), and 4579 (N15E66, Hsx/alpha)
-all contributed low-level C-class flares. The most notable event was a
-C2.8/Sf at 14/2127 from Region 4579. This flare was accompanied by a
-Type II radio sweep, with an estimated velocity of 1,972 km/s, and a
-Type IV radio sweep. An associated CME was subsequently first observed
-in LASCO coronagraph imagery at ~14/2136 UTC, with modeling and analysis
-indicating possible glancing influences late on 17 to early 18 Nov.
-Regions 4574 and 4578 exhibited growth, mainly in their leader spots,
-during the period while the remaining regions were stable or in decay.
+Solar activity continued at low levels. Regions 4575 (S10E12,
+Hsx/alpha), 4578 (S12W46, Cso/beta) and 4579 (N15E58, Hsx/alpha) all
+produced weak C-class flares during the period. Regions 4574 (N17E06,
+Dai/beta) and 4578 exhibited growth, mainly in their leader spots. The
+remaining regions were stable or in decay.
 
 From approximately 14/0130-0930 UTC, a large filament was observed in
 GOES SUVI/AIA 304 imagery lifting off the solar disk in the southern
@@ -23,37 +18,38 @@ coronagraph imagery.
 
 .Forecast...
 Solar activity is expected to be low with a chance for M-class flares
-(R1-R2, Minor-Moderate) over 15-17 Nov.
+(R1-R2, Minor-Moderate) over 16-18 Nov.
 
 Energetic Particle
 
 .24 hr Summary...
 The greater than 2 MeV electron flux reached high levels with a peak
-flux of 5,837 pfu observed at 14/1300 UTC. The greater than 10 MeV
+flux of 3,378 pfu observed at 15/1405 UTC. The greater than 10 MeV
 proton flux was at background levels.
 
 .Forecast...
-The greater than 2 MeV electron flux is expected to reach high levels
-through 16 Nov and decrease to moderate levels on 17 Nov. The greater
-than 10 MeV proton flux is expected to continue at background levels on
-15-17 Nov.
+The greater than 2 MeV electron flux is expected to reach high levels on
+16 Nov and decrease to moderate levels on 17-18 Nov. The greater than 10
+MeV proton flux is expected to continue at background levels on 16-18
+Nov.
 
 Solar Wind
 
 .24 hr Summary...
 Solar wind parameters reflected ambient solar wind conditions. Total
-field ranged from 1-4 nT while the Bz component was variable between
-+/-4 nT. Solar wind speed saw a slow and steady decrease from beginning
-values near 430 km/s to end the period around 365 km/s. Phi was in a
+field ranged from 2-4 nT while the Bz component was variable between
++/-3 nT. Solar wind speed saw a slow, gradual decrease from beginning
+values near 400 km/s to end the period around 340 km/s. Phi was in a
 mostly negative orientation.
 
 .Forecast...
-Nominal solar wind conditions are expected on 15 Nov. A gradual increase
-in solar wind parameters is likely on 16 Nov with the anticipated onset
-of a SSBC in advance of a positive polarity CH HSS. Further enhancements
-are possible on 17 Nov as a positive polarity CH HSS moves into a
-geoeffective position coupled with the possible arrival of the 14 Nov
-CME late in the period.
+Nominal solar wind conditions are expected early on 16 Nov, with a
+gradual increase in solar wind parameters later on 16 Nov. This increase
+is due to the anticipated onset of a SSBC in advance of a positive
+polarity CH HSS. Further enhancements are expected on 17-18 Nov as a
+positive polarity CH HSS moves into a geoeffective position. This is
+coupled with the possible arrival of the 14 Nov CME late on 17 Nov into
+early 18 Nov.
 
 Geospace
 
@@ -61,8 +57,8 @@ Geospace
 The geomagnetic field was quiet.
 
 .Forecast...
-Mostly quiet conditions are expected on 15 Nov, with an increase to
-unsettled to isolated active periods on 16 Nov, and a further increase
-to active to isolated G1 (Minor) levels on 17 Nov as the CH HSS moves
-into a geoeffective position coupled with the possible arrival of the 14
-Nov CME late in the period.
+Mostly quiet conditions are expected early on 16 Nov, increasing to
+unsettled to isolated active periods later on 16 Nov. A further increase
+to active to isolated G1 (Minor) levels on 17-18 Nov as the CH HSS moves
+into a geoeffective position. This is coupled with the possible arrival
+of the 14 Nov CME late in the period.
