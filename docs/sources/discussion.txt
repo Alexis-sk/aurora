@@ -1,31 +1,22 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 17 0030 UTC
+:Issued: 2026 Nov 17 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity remained at low levels, with the largest flare of the
-period a C5.4/1f at 16/0658 UTC from Region 4579 (N15E46, Hhx/alpha).
-However, Region 4578 (S12W59, Cri/beta) was the main flare factory of
-the reporting period as it exhibited consistent flux emergence in its
-intermediary region. Region 4576 (S19W67, Dao/beta), just south of 4578,
-also exhibited some growth but didnt produce any flaring activity.
-Regions 4572 (N13W24, Cro/beta) and 4577 (S07W24, Dro/beta) had spots
-re-emerging during the reported period, while the remaining regions were
-stable or in slight decay.
-
-At approximately 16/0439 UTC, an estimated eight degree long filament,
-centered near N19W57, was observed lifting off the visible disk in GONG
-H-alpha imagery. An associated CME first became visible in LASCO C2 at
-16/0524 UTC. Modeling estimated a very slow velocity (<200 km/s) with
-the majority of the bulk directed ahead of Earths orbit. A possible
-glancing blow cannot necessarily be ruled out on 22-23 Nov, however
-confidence is low.
+Solar activity remained at low levels. Region 4578 (S12W67, Dri/beta)
+produced a C5.3 at 16/1630 UTC, which was the largest event of the
+reporting period. Regions 4572 (N14W32, Cro/beta) and 4577 (S07W30,
+Dro/beta) tacked on low level C-class flares as well. New spots centered
+near S08E04 were observed, but remain unnumbered this period as we await
+corroborating solar observatory reports or signs of significant
+activity. No new Earth-directed CMEs were observed this reporting
+period.
 
 .Forecast...
-Solar activity is expected to be low with a chance for M-class flares
-(R1-R2, Minor-Moderate) over 17-19 Nov.
+Solar activity is expected to be low with a slight chance for M-class
+flares (R1-R2, Minor-Moderate) over 17-19 Nov.
 
 Energetic Particle
 
@@ -43,17 +34,21 @@ background levels on 17-19 Nov.
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected a background solar wind regime______.
-Total magnetic field (Bt) ranged from 2-5 nT, with largely neutral Bz
-(north-south) component. Solar wind speed continued its gradual decline
-to end of period speeds under 300 km/s. Phi was in a predominantly
-negative (towards the Sun) orientation.
+The solar wind environment reflected a minor disturbance beginning near
+the turn of the UTC-day which appeared to have resulted in a solar
+sector boundary crossing. Total field was mostly ambient-like until late
+in the period where a sharp enhancement occurred near 17/0730 UTC and
+values increased to 7 nT. The Bz component also deflected southward at
+this time, reaching -4 nT. However, solar wind speeds remained
+relatively low averaging near 300 km/s. Phi became positive at
+approximately 17/0732 UTC.
 
 .Forecast...
-Weak enhancements in solar wind parameters are likely on 17-18 Nov as a
-positive polarity CH HSS moves into a geoeffective position, coupled
-with the possible arrival of the 14 Nov CME late on 17 Nov into early 18
-Nov. These enhancements are anticipated to begin waning through 19 Nov.
+Weak enhancements in solar wind parameters are likely to continue over
+the course of 17 Nov and through 18 Nov as a positive polarity CH HSS
+moves into a geoeffective position, coupled with the possible arrival of
+the 14 Nov CME late on 17 Nov into early 18 Nov. These enhancements are
+anticipated to begin waning through 19 Nov.
 
 Geospace
 
