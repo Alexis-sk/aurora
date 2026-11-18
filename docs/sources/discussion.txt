@@ -1,5 +1,5 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 18 0030 UTC
+:Issued: 2026 Nov 18 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
@@ -7,28 +7,27 @@ Solar Activity
 .24 hr Summary...
 Solar activity reached moderate levels with two M-flares from Region
 4578 (S11W73, Dri/beta-gamma): an M1.1 at 17/1549 UTC and an M1.7 at
-17/2139 UTC. Two new regions were numbered this period. The first was
-Region 4580 (N15W89, Cro/beta), which while it continued to grow was
-quiet. A new region in the SE emerged rapidly midway through the
-reporting period and began producing low-level C-flares; this region was
-numbered as Region 4581 (S09E67, Cro/gamma). Region 4578 exhibited rapid
-flux emergence later in the reporting period, and Region 4581 continued
-to evolve throughout the period. Region 4575 (S09W15, Hrx/alpha)
-definitively lost its trailing spots and became a H-type. The remaining
-regions were either stable or in slight decay.
+17/2139 UTC. Region 4572 (N13W44, Cai/beta) grew in overall extent while
+gaining new spots primarily in its intermediate area. Newly numbered
+Region 4581 (S08E59, Dai/beta) underwent evolution, exhibiting rapid
+flux emergence while developing asymmetric penumbra on both its leading
+and trailing spot groups while producing low-level C-class flaring. The
+remaining active regions appeared either stable or in slight decay.
 
 A CME associated with the M1.1 first became visible in LASCO C2 imagery
 at approximately 17/1600 UTC. Modeling indicates that this eruption
 becomes tangled with the CMEs from 16 Nov and that the structure may
 produce a glancing blow early on 22 Nov. An eruption near Region 4579
-was observed by SUVI around 17/1930 UTC and an associated CME trajectory
-was modeled. No Earth-directed component was identified at that event
-and no other Earth-directed CME was observed at available coronagraph
-imagery during the period.
+was observed by SUVI around 17/1930 UTC with the associated CME being
+determined to be off the Sun-Earth Line. Multiple westerly CMEs
+originating from either on or just beyond the western limb were observed
+after 18/0000 UTC and are thus not currently considered a significant
+Earth-directed threat.
 
 .Forecast...
-Solar activity is expected to be low with a slight chance for M-class
-flares (R1-R2, Minor-Moderate) over 18-20 Nov.
+Solar activity is expected to be low with a chance for M-class flares
+(R1-R2, Minor-Moderate) over 18-19 Nov. Probabilities decrease to a
+slight chance thereafter as Region 4578 exits the western limb.
 
 Energetic Particle
 
@@ -46,18 +45,12 @@ background levels on through 20 Nov.
 Solar Wind
 
 .24 hr Summary...
-The solar wind environment reflected a solar sector boundary crossing
-(SSBC) at approximately 17/0730 UTC which gradually lead to slightly
-elevated parameters. Total magnetic field (Bt) was mostly ambient-like
-until the SSBC, after which it initially jumped to 7 nT and began to
-gradually increase, ending the reporting period around 9 nT, with a peak
-of 10 nT at 17/2059 UTC. The Bz (north-south) component also deflected
-southward at this time, averaging approximately -4 nT until
-approximately 17/1900 UTC, where it became extremely variable, with
-several maximum southward deflections of -8 nT. However, solar wind
-speeds remained relatively low throughout the reporting period, never
-reaching above 360 km/s. Phi became positive at approximately 17/0732
-UTC (SSBC).
+Solar wind parameters were weakly enhanced under CIR effects associated
+with a positive polarity CH HSS. Total field increased from 7 nT to a
+peak of 10 nT while the Bz component underwent several brief southward
+deflections reaching -5 to -8 nT. Solar wind speeds increased gradually
+from near 300 km/s to just above 400 km/s by the end of the reporting
+period. Phi was predominantly positive.
 
 .Forecast...
 Weak enhancements in solar wind parameters are likely to continue
