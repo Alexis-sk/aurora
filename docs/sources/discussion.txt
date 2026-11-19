@@ -1,47 +1,39 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 19 0030 UTC
+:Issued: 2026 Nov 19 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity returned to low levels, with the largest flare of the
-reporting period being a C7.3 at 18/0037 UTC from Region 4579 (N16E18,
-Hkx/alpha), which developed a distinct asymmetry throughout the period.
-Region 4578 (S11W86, Eai/beta-gamma) also produced a C6.6 at 18/0620
-UTC. Region 4581 (S08E53, Dai/beta-gamma) continued to exhibit extensive
-flux emergence in its intermediary region. The remaining active regions
-appeared either stable or in slight decay.
+Solar activity was at low levels. Region 4578 continued to produce
+C-class flare activity as it exited the western limb to include a C4.9
+flare at 18/1320 UTC. Region 4576 followed suit producing departing
+activity in the form of a C4.9 as well which peaked at 19/0049 UTC.
+Region 4581 (S09E45, Dai/beta-gamma) remained noteworthy as it grew in
+length, gained additional spots and exhibited maturing penumbra on both
+its leading and trailing spots. Despite this growth, AR 4581 only
+produced C1 and C2 flares during the reporting period.
 
-A CME associated with the M1.7 at 17/2130 UTC from Region 4578 finally
-had enough imagery to be analyzed; modeling indicates that like the CME
-associated with the earlier M1.1 from the same region, the structure is
-likely to become entangled with the CME structures ahead of it. A large
-structure became visible in LASCO C2 imagery at approximately at 18/0125
-UTC and in STEREO coronagraph imagery at approximately 18/0525 UTC, with
-field line movement but no X-ray flare seen in Region 4578 around that
-an hour earlier. However, data gaps and contamination made analysis
-extremely difficult at the time of the eruption and a full analysis was
-only able to be carried out this reporting period. Triangulation with
-STEREO indicates that only the southern half of the structure is from
-the Earth-facing side of the western limb, and modeling suggests this
-structure will also become entangled with the previous CMEs. Both of
-these structures are likely to contribute to a potential glancing blow
-from the filament eruption that left the Sun on 14 Nov, arriving at the
-near-Earth environment mid-day on 22 Nov.
+Other activity included a minor eruption originating from Region 4579
+(N15E11, Hax/alpha) which began at approximately 19/0708 UTC as observed
+in GOES SUVI 304 imagery. A possibly related subsequent narrow and faint
+CME was then seen in LASCO C2 and STEREO-A coronagraph imagery beginning
+near 19/0924 UTC and 19/0753 UTC, respectively. Modeling of this event
+was attempted with results pending still pending as of the time of this
+writing.
 
 .Forecast...
 Solar activity is expected to be low with a chance for M-class flares
 (R1-R2, Minor-Moderate) on 19 Nov. Probabilities for M-class events
-decrease to a slight chance on 20-21 Nov as Region 4578 exits the
+decrease to a slight chance on 20-21 Nov as Region 4578 fully exits the
 western limb.
 
 Energetic Particle
 
 .24 hr Summary...
 The greater than 2 MeV electron flux reached high levels with a peak
-flux of 1,004 pfu observed at 18/1630 UTC. The greater than 10 MeV
-proton flux was at background levels.
+flux of 1,004 pfu observed at one five minute interval at 18/1630 UTC.
+The greater than 10 MeV proton flux was at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to reach high levels on
@@ -51,30 +43,28 @@ at background levels on through 21 Nov.
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected waning influence from a minor positive
-polarity CH HSS. Total magnetic field (Bt) gradually decreased from 10
-nT at the beginning of the period to end at approximately 7 nT. The Bz
-(north-south) component was largely southward, with several deflections
-of -6 to -9 nT throughout the period.
-
-Solar wind speeds averaged approximately 375 km/s until roughly 18/2020
-UTC, when they began to increase, ending the period at 415 km/s level.
-Phi was positive (away from the Sun), except for a roughly 6 hr interval
-starting at approximately 18/1240 UTC.
+Solar wind parameters reflected relatively weak positive polarity CH HSS
+influences. Total fiend generally ranged 5-9 nT. The Bz component of the
+IMF underwent a few sustained southward deflections reaching -5 to - 7
+nT, but was otherwise near neutral or northward. Solar wind speeds
+increased from ~370-380 km/s to ~425-450 km/s, indicating the onset of
+the high speed stream itself at approximately 18/2010 UTC. Phi became
+predominantly positive near 18/1844 UTC.
 
 .Forecast...
-Solar wind parameters are expected to continue trending towards
-background levels on 19 Nov as the influence of the weak positive
-polarity CH HSS continues to wane. A solar sector boundary crossing
+Sustained positive polarity CH HSS influences are expected to persist
+for the remainder of 19 Nov. A solar sector boundary crossing
 anticipated on 20 Nov and the potential onset of a weak negative
-polarity CH HSS on 21 Nov are likely to elevated the solar wind
-parameters on those days.
+polarity CH HSS on 21 Nov are likely to cause additional disturbances on
+those respective days.
 
 Geospace
 
 .24 hr Summary...
-The geomagnetic field was at quiet to unsettled levels during the
-period.
+The geomagnetic field was largely quiet to unsettled with the exception
+of an isolated G1 (Minor) geomagnetic storm period at the beginning of
+the 19 Nov UTC-day.
 
 .Forecast...
-Largely unsettled conditions are anticipated on 19-21 Nov.
+Primarily quiet to unsettled conditions are expected through 21 Nov with
+a chance for isolated active periods.
