@@ -1,36 +1,27 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 20 0030 UTC
+:Issued: 2026 Nov 20 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity reached moderate levels (M1-R1) off the WSW limb at
-19/1324. C-class reached low levels from Regions 4572 (N11W62,
-Cro/beta), 4574(N15E04, Hax/alpha), 4577 (S07W60, Cro/beta), and 4581
-(S08E38, Dai/beta) during the past 24 hours.
+Solar activity reached moderate (R1-Minor) levels following an M2.4
+flare off the WSW limb at 19/1324 UTC and an M1.1 flare from Region 4572
+(N11W70, Axx/alpha) at 19/1359 UTC. Late in the period, Region 4579
+(N16W02, Hsx/alpha) added a C9.6 flare that peaked at 20/1130 UTC.
+Regions 4572, 4574 (N16W51, Axx/alpha), 4577 (S06W66, Axx/alpha), and
+4581 (S07E14, Dso/beta) all contributed low-level C-class flares during
+the past 24 hours, despite reflecting either stagnant or decaying
+trends.
 
-was at low levels. Region 4578 continued to produce C-class flare
-activity as it exited the western limb to include a C4.9 flare at
-18/1320 UTC. Region 4576 followed suit producing departing activity in
-the form of a C4.9 as well which peaked at 19/0049 UTC. Region 4581
-(S09E45, Dai/beta-gamma) remained noteworthy as it grew in length,
-gained additional spots and exhibited maturing penumbra on both its
-leading and trailing spots. Despite this growth, AR 4581 only produced
-C1 and C2 flares during the reporting period.
-
-Other activity included a minor eruption originating from Region 4579
-(N15E04, Hax/alpha) which began at approximately 19/0708 UTC as observed
-in GOES SUVI 304 imagery. A possibly related subsequent narrow and faint
-CME was then seen in LASCO C2 and STEREO-A coronagraph imagery beginning
-near 19/0924 UTC and 19/0753 UTC, respectively. Modeling of this event
-was attempted with results pending still pending as of the time of this
-writing.
+Modeling of the previously discussed eruption was attempted with
+questionable results, at best. With only a handful of available/useful
+coronagraph images, analysis indicated a possible arrival at Earth just
+outside this forecast period. Confidence is low with this forecast.
 
 .Forecast...
-Solar activity is expected to be at a slight chance for M-class flares
-(R1-R2, Minor-Moderate) on 20-22 Nov as Region 4578 fully exits the
-western limb.
+Solar activity is likely to be at low levels, with a slight chance for
+M-class flares (R1-R2, Minor-Moderate) on 20-22 Nov.
 
 Energetic Particle
 
@@ -39,31 +30,31 @@ The greater than 2 MeV electron flux reached moderate levels. The
 greater than 10 MeV proton flux was at background levels.
 
 .Forecast...
-The greater than 2 MeV electron flux is expected to reach high levels on
-20-22 Nov. The greater than 10 MeV proton flux is expected to continue
-at background levels on through 21 Nov.
+The greater than 2 MeV electron flux is expected to be at moderate
+levels on 20-22 Nov. The greater than 10 MeV proton flux is expected to
+continue at background levels on through 22 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected relatively weak positive polarity CH HSS
-influences. Total field (Bt) ranged 3-10 nT. The Bz component of the IMF
-underwent a few sustained southward deflections reaching -7 nT. Solar
-wind speeds varied from ~400-500 km/s. Phi was mostly predominantly
-positive through the period.
+Solar wind parameters were near background levels. Total field (Bt)
+averaged 4-8 nT, while the Bz component saw southward deflections
+reaching -6 nT early before turning northward by the end of the period.
+Solar wind speeds gradually decreased from ~470-500 km/s to around 390
+km/s. Phi was predominantly positive through the period.
 
 .Forecast...
-Weak positive polarity CH HSS influences are expected to persist over 20
-Nov - 21 Nov.
+Continued background conditions are likely over 20 Nov - 22 Nov. Slight
+enhancements are possible during the period if the weakened, nearly
+closed, negative polarity CH HSS moves into a geoeffective position.
 
 Geospace
 
 .24 hr Summary...
-The geomagnetic field reached G1 (Minor) geomagnetic storm levels early
-in the period.
+The geomagnetic field was quiet to unsettled.
 
 .Forecast...
 Primarily quiet to unsettled conditions are expected through 21 Nov,
 with a chance for isolated active periods due to coronal hole
 influences. Unsettled to active periods are expected on 22 Nov with
-additional coronal hole and CME influences.
+additional coronal hole and possible CME influences.
