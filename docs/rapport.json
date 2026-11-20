@@ -1,16 +1,16 @@
 {
-  "generated_utc": "2026-11-19T13:17:08+00:00",
+  "generated_utc": "2026-11-20T04:12:23+00:00",
   "status": "ras",
   "test": false,
   "saturday": "2026-11-21",
   "kp_max": 2.33,
   "recommendation": {
-    "site": "Tromsø",
-    "score": 0.15653047768476097
+    "site": "Grindavík",
+    "score": 0.21833019470109577
   },
-  "data_generated_utc": "2026-11-19T13:16:11.443844+00:00",
-  "title": "RAS aurores : Kp max nuit de samedi = 2,33, pas d'envoi.",
-  "summary": "Pour la nuit du 21/11 au 22/11, le NOAA prévoit un Kp maximal de 2,33 (nuit partielle : 3/6 tranches couvertes) : pas d'analyse.",
+  "data_generated_utc": "2026-11-20T04:11:27.257431+00:00",
+  "title": "RAS aurores : Kp max nuit de samedi = 2.33, pas d'envoi.",
+  "summary": "Pour la nuit du samedi 21/11 au dimanche 22/11, le NOAA prévoit un Kp maximal de 2,33 : rien à signaler, aucune analyse.",
   "sections": [],
   "sources": []
 }
