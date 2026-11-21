@@ -1,60 +1,63 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 20 1230 UTC
+:Issued: 2026 Nov 21 0030 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity reached moderate (R1-Minor) levels following an M2.4
-flare off the WSW limb at 19/1324 UTC and an M1.1 flare from Region 4572
-(N11W70, Axx/alpha) at 19/1359 UTC. Late in the period, Region 4579
-(N16W02, Hsx/alpha) added a C9.6 flare that peaked at 20/1130 UTC.
-Regions 4572, 4574 (N16W51, Axx/alpha), 4577 (S06W66, Axx/alpha), and
-4581 (S07E14, Dso/beta) all contributed low-level C-class flares during
-the past 24 hours, despite reflecting either stagnant or decaying
-trends.
+Solar activity was at low levels in the past 24h. There are 5 active
+regions on the visible solar disk. The largest Region 4579 (N16W09,
+Hsx/alpha) was responsible for the largest flare of the period: a C9.6
+flare that peaked at 20/1130 UTC. The most magnetically complex Region
+4581 (S07E25, Dao/beta) continued quiet, as its intermediary spots
+decayed and reorganized. The remaining regions showed some decay as they
+rotated towards the west limb.
 
-Modeling of the previously discussed eruption was attempted with
-questionable results, at best. With only a handful of available/useful
-coronagraph images, analysis indicated a possible arrival at Earth just
-outside this forecast period. Confidence is low with this forecast.
+A filament that erupted near Region 4579 in the previous reported
+period, around 19/0730 UTC, was associated with a faint CME (poorly
+detected by the available coronagraphs). Analysis suggest a glancing
+blow near-Earth on Nov 23, that might create a combined effect with the
+anticipated arrival of a CME from 14 Nov. No other Earth-directed CMEs
+were identified in the available coronagraph imagery during the period.
 
 .Forecast...
 Solar activity is likely to be at low levels, with a slight chance for
-M-class flares (R1-R2, Minor-Moderate) on 20-22 Nov.
+M-class flares (R1-R2, Minor-Moderate) on 21-23 Nov.
 
 Energetic Particle
 
 .24 hr Summary...
-The greater than 2 MeV electron flux reached moderate levels. The
-greater than 10 MeV proton flux was at background levels.
+The greater than 2 MeV electron flux remained at moderate levels. The
+greater than 10 MeV proton flux continued at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to be at moderate
-levels on 20-22 Nov. The greater than 10 MeV proton flux is expected to
-continue at background levels on through 22 Nov.
+levels on 21-22 Nov, reaching high levels on 23 Nov. The greater than 10
+MeV proton flux is expected to continue at background levels on through
+23 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters were near background levels. Total field (Bt)
-averaged 4-8 nT, while the Bz component saw southward deflections
-reaching -6 nT early before turning northward by the end of the period.
-Solar wind speeds gradually decreased from ~470-500 km/s to around 390
-km/s. Phi was predominantly positive through the period.
+Solar wind parameters reflected undisturbed conditions near Earth in the
+past 24h. Total interplanetary magnetic field (Bt) slightly oscillated
+around 5 nT, while its north-south (Bz) component remained mostly
+neutral (+/- 5 nT) during the period. Solar wind speeds continued
+gradually decreasing, from 400 km/s down to 350 km/s levels. Phi was
+positive through the whole reported period.
 
 .Forecast...
-Continued background conditions are likely over 20 Nov - 22 Nov. Slight
-enhancements are possible during the period if the weakened, nearly
-closed, negative polarity CH HSS moves into a geoeffective position.
+Continued background solar wind conditions are likely on 21-22 Nov.
+Slight enhancements are possible on 23 Nov due to a low confidence
+glancing blow of CMEs from 14 Nov and 19 Nov.
 
 Geospace
 
 .24 hr Summary...
-The geomagnetic field was quiet to unsettled.
+The geomagnetic field has been at quiet levels for the past 24 hours.
 
 .Forecast...
-Primarily quiet to unsettled conditions are expected through 21 Nov,
-with a chance for isolated active periods due to coronal hole
-influences. Unsettled to active periods are expected on 22 Nov with
-additional coronal hole and possible CME influences.
+Quiet to unsettled conditions are expected on 21-22 Nov. Quiet to active
+periods are expected on 22 Nov, with a slight chance for isolated Minor
+storming (G1) period due to the possible additional CMEs glancing
+influences.
