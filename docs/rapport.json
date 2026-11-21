@@ -1,16 +1,1 @@
-{
-  "generated_utc": "2026-11-20T13:17:01+00:00",
-  "status": "ras",
-  "test": false,
-  "saturday": "2026-11-21",
-  "kp_max": 2.33,
-  "recommendation": {
-    "site": "Tromsø",
-    "score": 0.2336749113324424
-  },
-  "data_generated_utc": "2026-11-20T13:16:17.022513+00:00",
-  "title": "RAS aurores : Kp max nuit de samedi = 2.33, pas d'envoi.",
-  "summary": "Pour la nuit du 21/11 au 22/11, le NOAA prévoit un Kp maximal de 2,33 (bulletin de 12h30 UTC) : rien à signaler.",
-  "sections": [],
-  "sources": []
-}
+{"generated_utc": "2026-11-21T04:12:18+00:00", "status": "ras", "test": false, "saturday": "2026-11-21", "kp_max": 2.33, "recommendation": {"site": "Grindavík", "score": 0.21833019470109577}, "data_generated_utc": "2026-11-21T04:11:31.221625+00:00", "title": "RAS aurores : Kp max nuit de samedi = 2.33, pas d'envoi.", "summary": "Pour la nuit de ce soir (samedi 21/11), le NOAA prévoit un Kp maximal de 2,33 : pas d'analyse (données du 21/11 à 04h11 UTC, bulletin de 00h30 UTC ; le déploiement GitHub Pages du run a échoué, la page principale peut ne pas être à jour).", "sections": [], "sources": []}
