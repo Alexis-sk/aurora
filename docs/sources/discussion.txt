@@ -1,22 +1,25 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 21 1230 UTC
+:Issued: 2026 Nov 22 0030 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity dropped to very low levels with only B-level enhancements
-observed. Region 4579 (N14W16, Cso/beta) added a few trailer spots and
-was the only region to show growth during the period. Region 4581
-(S07E18, Dso/beta) exhibited overall decay, while the remaining regions
-decayed to plage as they rotated towards the west limb.
+Solar activity remained at very low levels with only a few B-class
+flares observed in the past 24h. The largest event was a B5.3 at 21/0708
+UTC that originated from Region 4577 (S06, Lo=57). This region decayed
+to plage during the period but remained active as it rotated towards the
+west limb. There are only two active regions with spots on the visible
+disk: Region 4579 (N15W18, Cso/beta) and Region 4581 (S07E12, Dso/beta).
+Region 4579 showed some decay in the past hours. Region 4572 (N12W94,
+Axx/alpha) rotated off during the reported period.
 
 No Earth-directed CMEs were identified in the available coronagraph
 imagery during the period.
 
 .Forecast...
-Solar activity is likely to be at low levels, with a slight chance for
-M-class flares (R1-R2, Minor-Moderate) on 21-23 Nov.
+Solar activity is likely to reach low levels, with a slight chance for
+M-class flares (R1-R2, Minor-Moderate) on 22-24 Nov.
 
 Energetic Particle
 
@@ -26,31 +29,32 @@ greater than 10 MeV proton flux continued at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to be at moderate
-levels on 21-22 Nov, reaching high levels on 23 Nov. The greater than 10
+levels on 22 Nov, reaching high levels on 23-24 Nov. The greater than 10
 MeV proton flux is expected to continue at background levels on through
-23 Nov.
+24 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters were indicative of a nominal solar wind regime.
-Total interplanetary magnetic field (Bt) averaged around 5 nT, the Bz
-component fluctuated between +/- 5 nT, and solar wind speeds decreased
-further, from ~385 km/s down to ~345 km/s. Phi was positive through the
-whole reported period.
+Solar wind parameters indicated an undisturbed solar wind regime, with
+total interplanetary magnetic field (Bt) around 5 nT and Bz component
+oscillating between +/- 5 nT. The solar wind speed was about 350 km/s
+(+/- 25 km/s) during the period. Phi was predominately positive through
+the reported period.
 
 .Forecast...
-Continued background solar wind conditions are likely on 21-22 Nov.
-Slight enhancements are possible on 23 Nov due to a low confidence
+Nominal solar wind conditions are likely on 22 and 24 Nov, with a slight
+and short-lived disturbance possible on 23 Nov due to a low confidence
 glancing blow of CMEs from 14 Nov and 19 Nov.
 
 Geospace
 
 .24 hr Summary...
-The geomagnetic field has been at mostly quiet levels, with an isolated
-unsettled period during the 21/0000-0003 UTC synoptic period.
+The geomagnetic activity has been at mostly quiet levels, with an
+isolated unsettled period during the 21/0000-0003 UTC synoptic period.
 
 .Forecast...
-Quiet to unsettled conditions are expected on 21-22 Nov. Quiet to active
-periods are expected on 22 Nov, with a slight chance for isolated G1
-(Minor) storming period due to the possible CME(s) glancing influences.
+Quiet geomagnetic conditions are expected on 22 Nov and 24 Nov. Quiet to
+active periods are expected on 23 Nov, with a slight chance for isolated
+G1 (Minor) storming period due to the possible CME(s) glancing
+influences.
