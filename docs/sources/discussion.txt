@@ -1,20 +1,20 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 23 1230 UTC
+:Issued: 2026 Nov 24 0030 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
 Solar activity continued at very low levels with only B-level
-enhancements observed. Region 4579 (N15W36, Hsx/alpha) remained stable
-and unchanged this period. Region 4581 (S08W01, Dro/beta) continued to
-exhibited minor decay, losing additional trailing spots.
+enhancements observed. Region 4579 (N16W49, Hsx/alpha) remained stable
+and unchanged this period. Region 4581 (S07W21, Hsx/alpha) continued to
+exhibited minor decay, losing all of its trailing spots.
 
 No Earth-directed CMEs were observed in available coronagraph imagery.
 
 .Forecast...
-Solar activity is expected to be at very low levels, with a chance for
-C-class flares on 23-25 Nov.
+Solar activity is expected to be at very low levels, with a slight
+chance for C-class flares on 24-26 Nov.
 
 Energetic Particle
 
@@ -24,23 +24,23 @@ greater than 10 MeV proton flux continued at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to be at normal to
-moderate levels on 23-25 Nov. The greater than 10 MeV proton flux is
-expected to continue at background levels on through 25 Nov.
+moderate levels on 24-26 Nov. The greater than 10 MeV proton flux is
+expected to continue at background levels on through 26 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters continued near background levels. Total field was
-between 1-5 nT, Bz was between +/- 4 nT, and wind speeds decreased from
-beginning speeds near 400 km/s to end the period around 320 km/s. Phi
-began the period in a negative orientation, switched to the positive
-sector after 22/1830 UTC, then rotated back to a negative position at
-around 23/1000 UTC.
+Solar wind parameters continued at background levels. Total magnetic
+field (Bt) was between 1-5 nT, with a Bz component between +/- 4 nT.
+Solar wind speeds averaged roughly 320 km/s throughout the reporting
+period. Phi began the period in a positive (away from the Sun)
+orientation, then became highly variable after 23/0945 UTC.
 
 .Forecast...
-Slightly enhanced solar wind conditions are possible on 23 Nov due to
-the anticipated glancing influence from the 19 Nov CME. Ambient solar
-wind conditions are expected to prevail on 24-25 Nov.
+Ambient solar wind conditions are expected to prevail on 24-25 Nov and
+into 26 Nov. A positive polarity coronal hole high speed stream (CH HSS)
+may begin onset late on 26 Nov; if it arrives, solar wind conditions may
+enhance slightly on 26 Nov.
 
 Geospace
 
@@ -48,7 +48,6 @@ Geospace
 Geomagnetic field activity was at quiet levels throughout the period.
 
 .Forecast...
-The geomagnetic field is expected to be at mostly quiet to unsettled
-levels, with isolated active periods likely, on 23 Nov due to possible
-glancing CME influences. Mostly quiet conditions are expected to prevail
-on 24-25 Nov.
+Mostly quiet conditions are expected to prevail on 24-25 Nov, with
+isolated active periods possible late on 26 Nov due to positive polarity
+CH HSS onset.
