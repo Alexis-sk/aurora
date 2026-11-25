@@ -1,13 +1,13 @@
 {
-  "generated_utc": "2026-11-25T13:19:46+00:00",
+  "generated_utc": "2026-11-25T13:22:00+00:00",
   "status": "ras",
   "test": false,
   "saturday": "2026-11-28",
   "kp_max": null,
   "recommendation": null,
-  "data_generated_utc": "2026-11-25T13:18:51.792151+00:00",
+  "data_generated_utc": "2026-11-25T13:20:25.189747+00:00",
   "title": "RAS aurores : Kp max nuit de samedi = absent, pas d'envoi.",
-  "summary": "La prévision du NOAA (bulletin du 25/11 à 12h30 UTC) ne couvre pas encore la nuit du samedi 28/11 au dimanche 29/11, donc aucun Kp n'est disponible et aucune analyse n'est faite ; le run du 25/11 à 13h18 UTC a bien mis à jour les données, mais son déploiement GitHub Pages a échoué (erreur côté GitHub).",
+  "summary": "La prévision du NOAA (bulletin du 25/11 à 12h30 UTC) ne couvre pas encore la nuit du samedi 28/11 au dimanche 29/11, donc aucun Kp n'est disponible et aucune analyse n'est faite ; le run du 25/11 à 13h20 UTC a bien mis à jour les données, mais son déploiement GitHub Pages a de nouveau échoué.",
   "sections": [],
   "sources": []
 }
