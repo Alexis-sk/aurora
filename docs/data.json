@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-25T13:18:51.792151+00:00",
+ "generated_utc": "2026-11-25T13:20:25.189747+00:00",
  "noaa_issued": "2026-11-25T12:30:00+00:00",
  "saturday": {
   "date": "2026-11-28",
@@ -1480,7 +1480,7 @@
  "discussion": {
   "file": "sources/discussion.txt",
   "issued": "2026-11-25T12:30:00+00:00",
-  "fetched_utc": "2026-11-25T13:18:51.792151+00:00"
+  "fetched_utc": "2026-11-25T13:20:25.189747+00:00"
  },
  "agreement_thresholds": {
   "bon": "écart ≤ 20 pts",
