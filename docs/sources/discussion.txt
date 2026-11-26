@@ -1,14 +1,14 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 26 0030 UTC
+:Issued: 2026 Nov 26 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
 Solar activity continued at very low levels with only B-level
-enhancements. There are three numbered regions on the disk, and all of
-them were stabled throughout the reporting period. No Earth-directed
-CMEs were observed in available coronagraph imagery.
+enhancements. Region 4582 (N19E28, Axx/alpha) continued to undergo
+gradual decay. No Earth-directed CMEs were observed in available
+coronagraph imagery.
 
 .Forecast...
 Solar activity is expected to be at very low levels, with a slight
@@ -29,24 +29,21 @@ background levels through 28 Nov.
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected solar sector boundary crossings and
-possibly early CIR influences. Total magnetic field (Bt) ranged from 2
-to 8 nT, while the Bz component ranged from +/- 6 nT. Solar wind speeds
-underwent a slight increase from ~310 km/s to ~395 km/s, but decreased
-to ~350 km/s by the end of the reporting period. Phi angle was mostly
-positive with deviations into a negative sector between 25/0735-1632
-UTC.
+Solar wind parameters reflected a solar sector boundary crossings. Total
+magnetic field (Bt) ranged from 2 to 6 nT, while the Bz component ranged
+from +/- 4 nT. Solar wind speeds underwent a slight decrease from ~395
+km/s to ~340 km/s by the end of the reporting period. Phi became
+predominantly positive after approximately 25/1635 UTC.
 
 .Forecast...
-Slightly disturbed solar wind conditions are anticipated to continue
-through late on 26 Nov as a recurrent positive polarity coronal hole
-high speed stream (CH HSS) becomes geoeffective bringing fast solar
-wind. CH HSS influences are expected to then persist through 28 Nov.
+Enhanced solar wind conditions due to positive polarity CH HSS
+influences are expected to arrive by late on 26 Nov and persist through
+28 Nov.
 
 Geospace
 
 .24 hr Summary...
-Geomagnetic field activity was at quiet to unsettled levels.
+Geomagnetic field activity was quiet.
 
 .Forecast...
 Quiet to active conditions are expected through most of 26 Nov. Isolated
