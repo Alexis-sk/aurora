@@ -1,16 +1,16 @@
 {
-  "generated_utc": "2026-11-26T13:14:43+00:00",
+  "generated_utc": "2026-11-27T04:12:31+00:00",
   "status": "ras",
   "test": false,
   "saturday": "2026-11-28",
   "kp_max": 3.33,
   "recommendation": {
     "site": "Grindavík",
-    "score": 0.2822209931517037
+    "score": 0.535824590542748
   },
-  "data_generated_utc": "2026-11-26T13:13:50.502332+00:00",
+  "data_generated_utc": "2026-11-27T04:11:39.693876+00:00",
   "title": "RAS aurores : Kp max nuit de samedi = 3,33, pas d'envoi.",
-  "summary": "Pour la nuit du 28/11 au 29/11, le NOAA prévoit un Kp maximal de 3,33 (prévision partielle sur 3 tranches), sous le seuil de 4 : pas d'analyse ni d'envoi.",
+  "summary": "Pour la nuit du 28/11 au 29/11, le NOAA prévoit un Kp maximal de 3,33, sous le seuil de 4 : pas d'analyse détaillée.",
   "sections": [],
   "sources": []
 }
