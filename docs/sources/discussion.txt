@@ -1,18 +1,19 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 26 1230 UTC
+:Issued: 2026 Nov 27 0030 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
 Solar activity continued at very low levels with only B-level
-enhancements. Region 4582 (N19E28, Axx/alpha) continued to undergo
-gradual decay. No Earth-directed CMEs were observed in available
-coronagraph imagery.
+enhancements, the majority of which came from beyond the eastern limb
+just south of the equator. Region 4582 (N18, L=241) fully decayed to
+plage. No Earth-directed CMEs were observed in available coronagraph
+imagery.
 
 .Forecast...
 Solar activity is expected to be at very low levels, with a slight
-chance for C-class flares on 26-28 Nov.
+chance for C-class flares on 27-29 Nov.
 
 Energetic Particle
 
@@ -22,23 +23,23 @@ greater than 10 MeV proton flux continued at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to be at normal to
-moderate levels on 26-27 Nov, and then reaching high levels on 28 Nov.
+moderate levels on 27 Nov, and then reaching high levels on 28-29 Nov.
 The greater than 10 MeV proton flux is expected to continue at
-background levels through 28 Nov.
+background levels through 29 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected a solar sector boundary crossings. Total
-magnetic field (Bt) ranged from 2 to 6 nT, while the Bz component ranged
-from +/- 4 nT. Solar wind speeds underwent a slight decrease from ~395
-km/s to ~340 km/s by the end of the reporting period. Phi became
-predominantly positive after approximately 25/1635 UTC.
+Solar wind parameters largely reflected background conditions. Total
+magnetic field (Bt) ranged from 3 to 6 nT, while the Bz component ranged
+from +3/-5 nT. Solar wind speeds gradually decreased throughout the
+period from ~350 km/s to ~295 km/s. Phi was predominantly positive (away
+from the Sun).
 
 .Forecast...
 Enhanced solar wind conditions due to positive polarity CH HSS
-influences are expected to arrive by late on 26 Nov and persist through
-28 Nov.
+influences are expected on 27-28 Nov, with 29 Nov largely returning to
+background conditions.
 
 Geospace
 
@@ -46,7 +47,7 @@ Geospace
 Geomagnetic field activity was quiet.
 
 .Forecast...
-Quiet to active conditions are expected through most of 26 Nov. Isolated
-G1 (Minor) geomagnetic storms are likely by late on 26 Nov and
-continuing into 27 Nov, with 28 Nov returning to generally unsettled to
-active conditions.
+Isolated G1 (Minor) geomagnetic storms are likely on 27 Nov and
+unsettled to active conditions on 28 Nov due to the positive polarity CH
+HSS moving through near-Earth space. 29 Nov is expected to see a
+returned to quiet conditions.
