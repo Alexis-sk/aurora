@@ -1,14 +1,14 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 27 0030 UTC
+:Issued: 2026 Nov 27 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
 Solar activity continued at very low levels with only B-level
-enhancements, the majority of which came from beyond the eastern limb
-just south of the equator. Region 4582 (N18, L=241) fully decayed to
-plage. No Earth-directed CMEs were observed in available coronagraph
+enhancements observed. Two new regions of emerging flux were noted in
+the E. hemisphere and will be assigned active region numbers if they
+persist. No Earth-directed CMEs were observed in available coronagraph
 imagery.
 
 .Forecast...
@@ -23,23 +23,24 @@ greater than 10 MeV proton flux continued at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to be at normal to
-moderate levels on 27 Nov, and then reaching high levels on 28-29 Nov.
-The greater than 10 MeV proton flux is expected to continue at
-background levels through 29 Nov.
+moderate levels on 27-28 Nov, with high levels likely by 29 Nov. The
+greater than 10 MeV proton flux is expected to continue at background
+levels through 29 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters largely reflected background conditions. Total
-magnetic field (Bt) ranged from 3 to 6 nT, while the Bz component ranged
-from +3/-5 nT. Solar wind speeds gradually decreased throughout the
-period from ~350 km/s to ~295 km/s. Phi was predominantly positive (away
-from the Sun).
+Solar wind parameters transitioned from nominal conditions to mildly
+enhanced after 27/0530 UTC. A steady increase in total magnetic field
+strength, up to a peak of ~13 nT at 27/1118 UTC. No significant periods
+of Bz south were observed. Solar wind speeds remained low, with speeds
+ranging from 276-346 km/s. Phi angle was predominantly oriented in the
+positive solar sector.
 
 .Forecast...
 Enhanced solar wind conditions due to positive polarity CH HSS
-influences are expected on 27-28 Nov, with 29 Nov largely returning to
-background conditions.
+influences are expected on 27-28 Nov, with background levels likely to
+return by 29 Nov.
 
 Geospace
 
