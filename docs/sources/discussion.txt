@@ -1,15 +1,16 @@
 :Product: Forecast Discussion
-:Issued: 2026 Nov 28 0030 UTC
+:Issued: 2026 Nov 28 1230 UTC
 # Prepared by the U.S. Dept. of Commerce, NOAA, Space Weather Prediction Center
 #
 Solar Activity
 
 .24 hr Summary...
-Solar activity reached low levels. New Region 4584 (S10E68, Cro/beta)
-produced all three C-class flares observed this period, the largest
-being a C3.9 at 27/1849 UTC. New Region 4583 (N05E33, Cao/beta) produced
-a few low-level B-class enhancements, but was otherwise unremarkable. No
-Earth-directed CMEs were observed in available coronagraph imagery.
+Solar activity was at low levels. Newly numbered Region 4584 (N10W15,
+Dso/beta) emerged recently but has yet to produced anything above
+B-class activity. Region 4585 was responsible for an impulsive C3.9/2n
+flare at 27/1849 UTC, the strongest of the period.
+
+No Earth-directed CMEs were observed in available coronagraph imagery.
 
 .Forecast...
 Solar activity is expected to be very low with a chance for C-flare
@@ -23,27 +24,26 @@ The greater than 10 MeV proton flux was at background levels.
 
 .Forecast...
 The greater than 2 MeV electron flux is expected to be at normal to
-moderate levels on 28 Nov, with high levels likely on 29-30 Nov. The
+moderate levels on 28-29 Nov, with high levels likely on 30 Nov. The
 proton flux is expected to remain at background levels through 30 Nov.
 
 Solar Wind
 
 .24 hr Summary...
-Solar wind parameters reflected the initial onset of positive polarity
-CH HSS influences. Total field strength increased to 15 nT, and the Bz
-component was predominately northward, only briefly reaching -6 nT late
-in the period. Solar wind speeds gradually increased from a low of 280
-km/s to a peak of around 375 km/s.
+Solar wind parameters continued at mildly enhanced levels. Total field
+strength observed a peak of 15 nT, and the Bz component reached as far
+south as -11 nT. Solar wind speeds steadily increased from a low of 293
+km/s to a peak of ~460 km/s. Phi was variable.
 
 .Forecast...
-The solar wind environment is expected to remain weakly enhanced due to
+The solar wind environment is continue at enhanced levels due to
 positive polarity CH HSS influences on 28-29 Nov. Background solar wind
 conditions are expected to prevail on 30 Nov.
 
 Geospace
 
 .24 hr Summary...
-The geomagnetic field was at quiet levels.
+The geomagnetic field was at quiet to active levels.
 
 .Forecast...
 The geomagnetic field is expected to be at quiet to active levels on 28
